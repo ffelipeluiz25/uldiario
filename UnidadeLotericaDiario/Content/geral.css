@@ -1,0 +1,161 @@
+
+body {
+    background-color: #321d80;
+}
+
+h1 {
+    color: #ffffff;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.card h2 {
+    font-family: 'Syne', sans-serif;
+    color: #ffffff;
+}
+
+.card h2 span {
+    font-size: 2.125rem;
+}
+
+.card input {
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    height: 55px;
+    text-align: center;
+}
+
+.card label,
+.card span {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.125rem;
+    color: #ffffff;
+}
+
+/*MEGA-SENA*/
+.card.card-mega-sena {
+    background-color: #066C3A;
+}
+
+.card.card-mega-sena .card-header {
+    background-color: #00612A;
+    border: none;
+}
+
+/*LOTOMANIA*/
+.card.card-lotomania {
+    background-color: #D59809;
+}
+
+.card.card-lotomania .card-header {
+    background-color: #BA5016;
+    border: none;
+}
+
+/*LOTOfácil*/
+.card.card-lotofacil {
+    background-color: #571F50;
+}
+
+.card.card-lotofacil .card-header {
+    background-color: #46183C;
+    border: none;
+}
+
+/*QUINA*/
+.card.card-quina {
+    background-color: #172A64;
+}
+
+.card.card-quina .card-header {
+    background-color: #1A184A;
+    border: none;
+}
+
+.card.card-quina hr {
+    border-top: 5px solid rgba(0,0,0,.3);
+}
+
+/*LOTECA*/
+.card.card-loteca {
+    background-color: #B73825;
+}
+
+.card.card-loteca .card-header {
+    background-color: #A32619;
+    border: none;
+}
+
+.card.card-loteca hr {
+    border-top: 5px solid rgba(0,0,0,.3);
+}
+
+/*TIMEMANIA*/
+.card.card-timemania {
+    background-color: #FDEE1F;
+}
+
+.card.card-timemania .card-header {
+    background-color: #D8C303;
+    border: none;
+}
+
+.card.card-timemania label,
+.card.card-timemania span {
+    color: #256C44;
+}
+
+/*DUPLA-SENA*/
+.card.card-dupla-sena {
+    background-color: #7B393A;
+}
+
+.card.card-dupla-sena .card-header {
+    background-color: #52372C;
+    border: none;
+}
+
+/*LOTOGOL*/
+.card.card-lotogol {
+    background-color: #3A8BB6;
+}
+
+.card.card-lotogol .card-header {
+    background-color: #1F7D9F;
+    border: none;
+}
+
+.card.card-lotogol hr {
+    border-top: 5px solid rgba(0,0,0,.3);
+}
+
+/*DIA DE SORTE*/
+.card.card-dia-de-sorte {
+    background-color: #DDD374;
+}
+
+.card.card-dia-de-sorte .card-header {
+    background-color: #B6A50D;
+    border: none;
+}
+
+.card.card-dia-de-sorte hr {
+    border-top: 5px solid rgba(0,0,0,.3);
+}
+
+.card.card-dia-de-sorte label,
+.card.card-dia-de-sorte span {
+    color: #282828;
+}
+
+span.titulo {
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 3.375rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
