@@ -1,6 +1,7 @@
 
 body {
     background-color: #321d80;
+    zoom: 30%;
 }
 
 span.titulo {
@@ -31,22 +32,38 @@ h1 {
 
 .card input {
     border: none;
-    font-size: 1.125rem;
+    font-size: 3.125rem;
     font-weight: bold;
-    height: 40px;
+    height: 50px;
     text-align: center;
+    border-radius: 1.25rem;
 }
 
 .card label,
 .card span {
     font-family: 'Syne', sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.425rem;
     color: #ffffff;
 }
 
 /*MEGA-SENA*/
+.form-control-mega-sena {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #28a745;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 .card.card-mega-sena {
     background-color: #066C3A;
+    font-size: 0rem;
 }
 
     .card.card-mega-sena .card-header {
@@ -57,6 +74,7 @@ h1 {
 /*LOTOMANIA*/
 .card.card-lotomania {
     background-color: #D59809;
+    font-size: 0rem;
 }
 
     .card.card-lotomania .card-header {
@@ -67,6 +85,7 @@ h1 {
 /*LOTOfácil*/
 .card.card-lotofacil {
     background-color: #571F50;
+    font-size: 0rem;
 }
 
     .card.card-lotofacil .card-header {
@@ -77,6 +96,7 @@ h1 {
 /*QUINA*/
 .card.card-quina {
     background-color: #172A64;
+    font-size: 0rem;
 }
 
     .card.card-quina .card-header {
@@ -91,6 +111,7 @@ h1 {
 /*LOTECA*/
 .card.card-loteca {
     background-color: #B73825;
+    font-size: 0rem;
 }
 
     .card.card-loteca .card-header {
@@ -105,6 +126,7 @@ h1 {
 /*TIMEMANIA*/
 .card.card-timemania {
     background-color: #FDEE1F;
+    font-size: 0rem;
 }
 
     .card.card-timemania .card-header {
@@ -120,6 +142,7 @@ h1 {
 /*DUPLA-SENA*/
 .card.card-dupla-sena {
     background-color: #7B393A;
+    font-size: 0rem;
 }
 
     .card.card-dupla-sena .card-header {
@@ -130,6 +153,7 @@ h1 {
 /*LOTOGOL*/
 .card.card-lotogol {
     background-color: #AAC02F;
+    font-size: 0rem;
 }
 
     .card.card-lotogol .card-header {
@@ -144,6 +168,7 @@ h1 {
 /*DIA DE SORTE*/
 .card.card-dia-de-sorte {
     background-color: #DDD374;
+    font-size: 0rem;
 }
 
     .card.card-dia-de-sorte .card-header {

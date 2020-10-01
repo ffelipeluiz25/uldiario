@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     CarregarTela();
-    document.body.style.zoom = 0.33;
+    //document.body.style.zoom = 0.80;
 });
 
 function CarregarTela() {
