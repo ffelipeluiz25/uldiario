@@ -89,10 +89,14 @@ namespace UnidadeLotericaDiario.Controllers
         {
             try
             {
-                //megaSena.ValorGanhadoresSena = Convert.ToDecimal(lotoMania.ValorGanhadoresSenaTeste);
-                //megaSena.ValorGanhadoresQuadra = Convert.ToDecimal(megaSena.ValorGanhadoresQuadraTeste);
-                //megaSena.ValorGanhadoresQuina = Convert.ToDecimal(megaSena.ValorGanhadoresQuinaTeste);
-                //megaSena.ValorAcumulado = Convert.ToDecimal(megaSena.ValorAcumuladoTeste);
+                lotoMania.ValorGanhadores20pts = Convert.ToDecimal(lotoMania.ValorGanhadores20ptsTeste);
+                lotoMania.ValorGanhadores19pts = Convert.ToDecimal(lotoMania.ValorGanhadores19ptsTeste);
+                lotoMania.ValorGanhadores18pts = Convert.ToDecimal(lotoMania.ValorGanhadores18ptsTeste);
+                lotoMania.ValorGanhadores17pts = Convert.ToDecimal(lotoMania.ValorGanhadores17ptsTeste);
+                lotoMania.ValorGanhadores16pts = Convert.ToDecimal(lotoMania.ValorGanhadores16ptsTeste);
+                lotoMania.ValorGanhadores15pts = Convert.ToDecimal(lotoMania.ValorGanhadores15ptsTeste);
+                lotoMania.ValorGanhadores0pts = Convert.ToDecimal(lotoMania.ValorGanhadores0ptsTeste);
+                lotoMania.ValorAcumulado = Convert.ToDecimal(lotoMania.ValorAcumuladoTeste);
                 new Repository.LotoManiaRepository().SalvarResultadoLotoMania(lotoMania);
                 return Json(new { sucesso = true });
             }

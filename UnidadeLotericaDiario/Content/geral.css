@@ -33,10 +33,11 @@ h1 {
 .card input {
     border: none;
     font-size: 3.125rem;
-    font-weight: bold;
+    font-weight: 900;
     height: 45px;
     text-align: center;
     border-radius: 1.25rem;
+    
 }
 
 .card label,
@@ -53,7 +54,6 @@ h1 {
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #28a745;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
