@@ -61,13 +61,13 @@ namespace UnidadeLotericaDiario.Repository
                     megasena.NumConcurso = Convert.ToInt32(dr["NUM_CONCURSO"]);
                     megasena.DatConcurso = dr["DAT_CONCURSO"].ToString();
                     megasena.NumSorteados = dr["NUM_SORTEADOS"].ToString();
-                    megasena.QtdeGanhadoresSena = Convert.ToInt32(dr["QTD_GANHADORES_SENA"]);
-                    megasena.ValorGanhadoresSena = Convert.ToDecimal(dr["VALOR_GANHADORES_SENA"]);
-                    megasena.QtdeGanhadoresQuina = Convert.ToInt32(dr["QTD_GANHADORES_QUINA"]);
-                    megasena.ValorGanhadoresQuina = Convert.ToDecimal(dr["VALOR_GANHADORES_QUINA"]);
-                    megasena.QtdeGanhadoresQuadra = Convert.ToInt32(dr["QTD_GANHADORES_QUADRA"]);
-                    megasena.ValorGanhadoresQuadra = Convert.ToDecimal(dr["VALOR_GANHADORES_QUADRA"]);
-                    megasena.ValorAcumulado = Convert.ToDecimal(dr["VALOR_ACUMULADO"]);
+                    megasena.QtdeGanhadoresSena = dr["QTD_GANHADORES_SENA"].ToString();
+                    megasena.ValorGanhadoresSena = dr["VALOR_GANHADORES_SENA"].ToString();
+                    megasena.QtdeGanhadoresQuina = dr["QTD_GANHADORES_QUINA"].ToString();
+                    megasena.ValorGanhadoresQuina = dr["VALOR_GANHADORES_QUINA"].ToString();
+                    megasena.QtdeGanhadoresQuadra = dr["QTD_GANHADORES_QUADRA"].ToString();
+                    megasena.ValorGanhadoresQuadra = dr["VALOR_GANHADORES_QUADRA"].ToString();
+                    megasena.ValorAcumulado = dr["VALOR_ACUMULADO"].ToString();
                 }
                 dr.Dispose();
                 con.Close();
@@ -78,8 +78,9 @@ namespace UnidadeLotericaDiario.Repository
             {
                 throw ex;
             }
-            finally { 
-            
+            finally
+            {
+
             }
         }
 
@@ -105,17 +106,17 @@ namespace UnidadeLotericaDiario.Repository
                                     VALOR_ACUMULADO
                                 ) VALUES 
                                 (
-                                    " + data.NumConcurso + @",
+                                    '" + data.NumConcurso + @"',
                                     '" + data.DatConcurso + @"',
                                     '" + data.NumSorteados + @"',
-                                    " + data.QtdeGanhadoresSena + @",
-                                    " + data.ValorGanhadoresSena.ToString().Replace(',', '.') + @",
-                                    " + data.QtdeGanhadoresQuina + @",
-                                    " + data.ValorGanhadoresQuina.ToString().Replace(',', '.') + @",
-                                    " + data.QtdeGanhadoresQuadra + @",
-                                    " + data.ValorGanhadoresQuadra.ToString().Replace(',', '.') + @",
-                                    " + data.ValorAcumulado.ToString().Replace(',', '.') + @"
-                                )";
+                                    '" + data.QtdeGanhadoresSena + @"',
+                                    '" + data.ValorGanhadoresSena.ToString() + @"',
+                                    '" + data.QtdeGanhadoresQuina + @"',
+                                    '" + data.ValorGanhadoresQuina.ToString() + @"',
+                                    '" + data.QtdeGanhadoresQuadra + @"',
+                                    '" + data.ValorGanhadoresQuadra.ToString() + @"',
+                                    '" + data.ValorAcumulado.ToString() + @"'
+                                );";
                 MySqlConnection con = new MySqlConnection(_connectionString);
                 MySqlCommand comand = new MySqlCommand(sql, con);
                 con.Open();

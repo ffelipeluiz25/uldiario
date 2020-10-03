@@ -1,7 +1,7 @@
 ﻿using System;
 namespace UnidadeLotericaDiario.Models
 {
-    public class LotoMania
+    public class LotoFacil
     {
         public string NumConcurso { get; set; }
         public string DatConcurso { get; set; }

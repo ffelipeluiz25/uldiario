@@ -43,10 +43,6 @@ namespace UnidadeLotericaDiario.Controllers
         {
             try
             {
-                megaSena.ValorGanhadoresSena = Convert.ToDecimal(megaSena.ValorGanhadoresSenaTeste);
-                megaSena.ValorGanhadoresQuadra = Convert.ToDecimal(megaSena.ValorGanhadoresQuadraTeste);
-                megaSena.ValorGanhadoresQuina = Convert.ToDecimal(megaSena.ValorGanhadoresQuinaTeste);
-                megaSena.ValorAcumulado = Convert.ToDecimal(megaSena.ValorAcumuladoTeste);
                 new Repository.MegaSenaRepository().SalvarResultadoMegaSena(megaSena);
                 return Json(new { sucesso = true });
             }
@@ -89,14 +85,6 @@ namespace UnidadeLotericaDiario.Controllers
         {
             try
             {
-                lotoMania.ValorGanhadores20pts = Convert.ToDecimal(lotoMania.ValorGanhadores20ptsTeste);
-                lotoMania.ValorGanhadores19pts = Convert.ToDecimal(lotoMania.ValorGanhadores19ptsTeste);
-                lotoMania.ValorGanhadores18pts = Convert.ToDecimal(lotoMania.ValorGanhadores18ptsTeste);
-                lotoMania.ValorGanhadores17pts = Convert.ToDecimal(lotoMania.ValorGanhadores17ptsTeste);
-                lotoMania.ValorGanhadores16pts = Convert.ToDecimal(lotoMania.ValorGanhadores16ptsTeste);
-                lotoMania.ValorGanhadores15pts = Convert.ToDecimal(lotoMania.ValorGanhadores15ptsTeste);
-                lotoMania.ValorGanhadores0pts = Convert.ToDecimal(lotoMania.ValorGanhadores0ptsTeste);
-                lotoMania.ValorAcumulado = Convert.ToDecimal(lotoMania.ValorAcumuladoTeste);
                 new Repository.LotoManiaRepository().SalvarResultadoLotoMania(lotoMania);
                 return Json(new { sucesso = true });
             }
@@ -108,5 +96,46 @@ namespace UnidadeLotericaDiario.Controllers
 
         #endregion
 
+        #region LotoFacil
+
+        /// <summary>
+        /// RecuperarUltimoResultadoMegaSena
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoLotoFacil()
+        {
+            try
+            {
+                var resultado = new Repository.LotoFacilRepository().RecuperarUltimoResultadoLotoFacil();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoLotoFacil
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoLotoFacil(LotoFacil lotoFacil)
+        {
+            try
+            {
+                new Repository.LotoFacilRepository().SalvarResultadoLotoFacil(lotoFacil);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+
+        #endregion
     }
 }

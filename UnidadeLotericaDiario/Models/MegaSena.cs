@@ -6,19 +6,12 @@ namespace UnidadeLotericaDiario.Models
         public int NumConcurso { get; set; }
         public string DatConcurso { get; set; }
         public string NumSorteados { get; set; }
-        public int QtdeGanhadoresSena { get; set; }
-        public decimal ValorGanhadoresSena { get; set; }
-        public int QtdeGanhadoresQuina { get; set; }
-        public decimal ValorGanhadoresQuina { get; set; }
-        public int QtdeGanhadoresQuadra { get; set; }
-        public decimal ValorGanhadoresQuadra { get; set; }
-        public decimal ValorAcumulado { get; set; }
-
-
-        public string ValorGanhadoresSenaTeste { get; set; }
-        public string ValorGanhadoresQuinaTeste { get; set; }
-        public string ValorGanhadoresQuadraTeste { get; set; }
-        public string ValorAcumuladoTeste { get; set; }
-
+        public string QtdeGanhadoresSena { get; set; }
+        public string ValorGanhadoresSena { get; set; }
+        public string QtdeGanhadoresQuina { get; set; }
+        public string ValorGanhadoresQuina { get; set; }
+        public string QtdeGanhadoresQuadra { get; set; }
+        public string ValorGanhadoresQuadra { get; set; }
+        public string ValorAcumulado { get; set; }
     }
 }

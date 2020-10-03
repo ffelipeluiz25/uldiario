@@ -1,7 +1,7 @@
 
 body {
     background-color: #321d80;
-    zoom: 30%;
+    background-image: url('../img/funco_trevos_apagados.png');
 }
 
 span.titulo {
@@ -37,7 +37,6 @@ h1 {
     height: 45px;
     text-align: center;
     border-radius: 1.25rem;
-    
 }
 
 .card label,

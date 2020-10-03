@@ -4,9 +4,8 @@ using System.Data;
 using UnidadeLotericaDiario.Models;
 namespace UnidadeLotericaDiario.Repository
 {
-    public class LotoManiaRepository
+    public class LotoFacilRepository
     {
-
 
         #region Atributos
 
@@ -16,19 +15,18 @@ namespace UnidadeLotericaDiario.Repository
 
         #region Construtor
 
-        public LotoManiaRepository()
+        public LotoFacilRepository()
         {
             _connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConexaoPadrao"].ConnectionString; ;
         }
 
         #endregion
 
-
         /// <summary>
-        /// RecuperarUltimoResultadoMegaSena
+        /// RecuperarUltimoResultadoLotoFacil
         /// </summary>
         /// <returns></returns>
-        public LotoMania RecuperarUltimoResultadoLotoMania()
+        public LotoFacil RecuperarUltimoResultadoLotoFacil()
         {
             try
             {
@@ -60,33 +58,33 @@ namespace UnidadeLotericaDiario.Repository
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 con.Open();
                 MySqlDataReader dr;
-                LotoMania lotoMania = null;
+                LotoFacil lotoFacil = null;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    lotoMania = new LotoMania();
-                    lotoMania.NumConcurso = dr["NUM_CONCURSO"].ToString();
-                    lotoMania.DatConcurso = dr["DAT_CONCURSO"].ToString();
-                    lotoMania.NumSorteados = dr["NUM_SORTEADOS"].ToString();
-                    lotoMania.QtdeGanhadores20pts = dr["QTD_GANHADORES_20PTS"].ToString();
-                    lotoMania.ValorGanhadores20pts =dr["VALOR_GANHADORES_20PTS"].ToString();
-                    lotoMania.QtdeGanhadores19pts = dr["QTD_GANHADORES_19PTS"].ToString();
-                    lotoMania.ValorGanhadores19pts =dr["VALOR_GANHADORES_19PTS"].ToString();
-                    lotoMania.QtdeGanhadores18pts = dr["QTD_GANHADORES_18PTS"].ToString();
-                    lotoMania.ValorGanhadores18pts =dr["VALOR_GANHADORES_18PTS"].ToString();
-                    lotoMania.QtdeGanhadores17pts = dr["QTD_GANHADORES_17PTS"].ToString();
-                    lotoMania.ValorGanhadores17pts =dr["VALOR_GANHADORES_17PTS"].ToString();
-                    lotoMania.QtdeGanhadores16pts = dr["QTD_GANHADORES_16PTS"].ToString();
-                    lotoMania.ValorGanhadores16pts =dr["VALOR_GANHADORES_16PTS"].ToString();
-                    lotoMania.QtdeGanhadores15pts = dr["QTD_GANHADORES_15PTS"].ToString();
-                    lotoMania.ValorGanhadores15pts =dr["VALOR_GANHADORES_15PTS"].ToString();
-                    lotoMania.QtdeGanhadores0pts = dr["QTD_GANHADORES_0PTS"].ToString();
-                    lotoMania.ValorGanhadores0pts =dr["VALOR_GANHADORES_0PTS"].ToString();
-                    lotoMania.ValorAcumulado =dr["VALOR_ACUMULADO"].ToString();
+                    lotoFacil = new LotoFacil();
+                    lotoFacil.NumConcurso = dr["NUM_CONCURSO"].ToString();
+                    lotoFacil.DatConcurso = dr["DAT_CONCURSO"].ToString();
+                    lotoFacil.NumSorteados = dr["NUM_SORTEADOS"].ToString();
+                    lotoFacil.QtdeGanhadores20pts = dr["QTD_GANHADORES_20PTS"].ToString();
+                    lotoFacil.ValorGanhadores20pts =dr["VALOR_GANHADORES_20PTS"].ToString();
+                    lotoFacil.QtdeGanhadores19pts = dr["QTD_GANHADORES_19PTS"].ToString();
+                    lotoFacil.ValorGanhadores19pts =dr["VALOR_GANHADORES_19PTS"].ToString();
+                    lotoFacil.QtdeGanhadores18pts = dr["QTD_GANHADORES_18PTS"].ToString();
+                    lotoFacil.ValorGanhadores18pts =dr["VALOR_GANHADORES_18PTS"].ToString();
+                    lotoFacil.QtdeGanhadores17pts = dr["QTD_GANHADORES_17PTS"].ToString();
+                    lotoFacil.ValorGanhadores17pts =dr["VALOR_GANHADORES_17PTS"].ToString();
+                    lotoFacil.QtdeGanhadores16pts = dr["QTD_GANHADORES_16PTS"].ToString();
+                    lotoFacil.ValorGanhadores16pts =dr["VALOR_GANHADORES_16PTS"].ToString();
+                    lotoFacil.QtdeGanhadores15pts = dr["QTD_GANHADORES_15PTS"].ToString();
+                    lotoFacil.ValorGanhadores15pts =dr["VALOR_GANHADORES_15PTS"].ToString();
+                    lotoFacil.QtdeGanhadores0pts = dr["QTD_GANHADORES_0PTS"].ToString();
+                    lotoFacil.ValorGanhadores0pts =dr["VALOR_GANHADORES_0PTS"].ToString();
+                    lotoFacil.ValorAcumulado =dr["VALOR_ACUMULADO"].ToString();
                 }
                 dr.Dispose();
                 con.Close();
-                return lotoMania;
+                return lotoFacil;
 
             }
             catch (Exception ex)
@@ -99,10 +97,10 @@ namespace UnidadeLotericaDiario.Repository
         }
 
         /// <summary>
-        /// SalvarResultadoLotoMania
+        /// SalvarResultadoLotoFacil
         /// </summary>
         /// <param name="data"></param>
-        public bool SalvarResultadoLotoMania(LotoMania data)
+        public bool SalvarResultadoLotoFacil(LotoFacil data)
         {
             try
             {
