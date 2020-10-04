@@ -347,7 +347,6 @@ function RecuperaLotoFacil() {
 }
 
 function RecuperaUltimoESalvaLotoFacil(resultado) {
-
     $.getJSON(urlBase + '/lotofacil/' + resultado.concursoAnterior).done(function (retornoLasted) {
         if (retornoLasted.success) {
             var resultado2 = retornoLasted.data;
@@ -369,7 +368,6 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
             $('#txtNum13Lotofacil_2').val(numeros[12]);
             $('#txtNum14Lotofacil_2').val(numeros[13]);
             $('#txtNum15Lotofacil_2').val(numeros[14]);
-
             $('#txtGanhadores15Lotofacil_2').val(resultado.qt_ganhador_faixa1);
             $('#txtValor15Lotofacil_2').val(resultado.vr_rateio_faixa1.toLocaleString('pt-BR'));
             $('#txtGanhadores14Lotofacil_2').val(resultado.qt_ganhador_faixa2);
@@ -380,9 +378,7 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
             $('#txtValor12Lotofacil_2').val(resultado.vr_rateio_faixa4.toLocaleString('pt-BR'));
             $('#txtGanhadores11Lotofacil_2').val(resultado.qt_ganhador_faixa5);
             $('#txtValor11Lotofacil_2').val(resultado.vr_rateio_faixa5.toLocaleString('pt-BR'));
-
             $('#txtValorAcumuladoLotofacil_2').val(resultado.vrAcumuladoEspecial.toLocaleString('pt-BR'));
-
 
             ///resultado 2 jogo
             $('#txtNumConcursoLotofacil').val(resultado2.concurso);
@@ -478,39 +474,42 @@ function RecuperaQuina() {
                                 RecuperaUltimoESalvaQuina(retornoLasted.data[0]);
                             }
                             else {
-                                $('#txtNumConcursoQuina').val(retorno.resultado.NumConcurso_1);
-                                $('#txtDataConcursoQuina').val(retorno.resultado.DatConcurso_1);
+                                $('#txtNumConcursoQuina_2').val(retorno.resultado.NumConcurso_1);
+                                $('#txtDataConcursoQuina_2').val(retorno.resultado.DatConcurso_1);
                                 var numeros = retorno.resultado.NumSorteados_1.split('-');
-                                $('#txtNum1Quina').val(numeros[0]);
-                                $('#txtNum2Quina').val(numeros[1]);
-                                $('#txtNum3Quina').val(numeros[2]);
-                                $('#txtNum4Quina').val(numeros[3]);
-                                $('#txtNum5Quina').val(numeros[4]);
-                                $('#txtGanhadoresQuinaQuina').val(retorno.resultado.QtdeGanhadoresQuina_1);
-                                $('#txtValorQuinaQuina').val(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaQuadra').val(retorno.resultado.QtdeGanhadoresQuadra_1);
-                                $('#txtValorQuinaQuadra').val(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaTerno').val(retorno.resultado.QtdeGanhadoresTerno_1);
-                                $('#txtValorQuinaTerno').val(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaDuque').val(retorno.resultado.QtdeGanhadoresDuque_1);
-                                $('#txtValorQuinaDuque').val(retorno.resultado.ValorGanhadoresDuque_1.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoQuina').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
-
-                                ///resultado 2 jogo
                                 $('#txtNum1Quina_2').val(numeros[0]);
                                 $('#txtNum2Quina_2').val(numeros[1]);
                                 $('#txtNum3Quina_2').val(numeros[2]);
                                 $('#txtNum4Quina_2').val(numeros[3]);
                                 $('#txtNum5Quina_2').val(numeros[4]);
-                                $('#txtGanhadoresQuinaQuina_2').val(retorno.resultado.QtdeGanhadoresQuina_2);
-                                $('#txtValorQuinaQuina_2').val(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaQuadra_2').val(retorno.resultado.QtdeGanhadoresQuadra_2);
-                                $('#txtValorQuinaQuadra_2').val(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaTerno_2').val(retorno.resultado.QtdeGanhadoresTerno_2);
-                                $('#txtValorQuinaTerno_2').val(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR'));
-                                $('#txtGanhadoresQuinaDuque_2').val(retorno.resultado.QtdeGanhadoresDuque_2);
-                                $('#txtValorQuinaDuque_2').val(retorno.resultado.ValorGanhadoresDuque_2.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoQuina_2').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaQuina_2').val(retorno.resultado.QtdeGanhadoresQuina_1);
+                                $('#txtValorQuinaQuina_2').val(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaQuadra_2').val(retorno.resultado.QtdeGanhadoresQuadra_1);
+                                $('#txtValorQuinaQuadra_2').val(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaTerno_2').val(retorno.resultado.QtdeGanhadoresTerno_1);
+                                $('#txtValorQuinaTerno_2').val(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaDuque_2').val(retorno.resultado.QtdeGanhadoresDuque_1);
+                                $('#txtValorQuinaDuque_2').val(retorno.resultado.ValorGanhadoresDuque_1.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoQuina_2').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
+
+                                ///resultado 1 jogo invertido somente para apresentação correta na tela
+                                $('#txtNumConcursoQuina').val(retorno.resultado.NumConcurso_2);
+                                $('#txtDataConcursoQuina').val(retorno.resultado.DatConcurso_2);
+                                var numeros_2 = retorno.resultado.NumSorteados_2.split('-');
+                                $('#txtNum1Quina').val(numeros_2[0]);
+                                $('#txtNum2Quina').val(numeros_2[1]);
+                                $('#txtNum3Quina').val(numeros_2[2]);
+                                $('#txtNum4Quina').val(numeros_2[3]);
+                                $('#txtNum5Quina').val(numeros_2[4]);
+                                $('#txtGanhadoresQuinaQuina').val(retorno.resultado.QtdeGanhadoresQuina_2);
+                                $('#txtValorQuinaQuina').val(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaQuadra').val(retorno.resultado.QtdeGanhadoresQuadra_2);
+                                $('#txtValorQuinaQuadra').val(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaTerno').val(retorno.resultado.QtdeGanhadoresTerno_2);
+                                $('#txtValorQuinaTerno').val(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaDuque').val(retorno.resultado.QtdeGanhadoresDuque_2);
+                                $('#txtValorQuinaDuque').val(retorno.resultado.ValorGanhadoresDuque_2.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoQuina').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
                             }
                         }
                         else {
@@ -532,44 +531,43 @@ function RecuperaUltimoESalvaQuina(resultado) {
     $.getJSON(urlBase + '/quina/' + resultado.concursoAnterior).done(function (retornoLasted) {
         if (retornoLasted.success) {
             var resultado2 = retornoLasted.data;
-            $('#txtNumConcursoQuina').val(resultado.concurso);
-            $('#txtDataConcursoQuina').val(resultado.dataStr);
+            $('#txtNumConcursoQuina_2').val(resultado.concurso);
+            $('#txtDataConcursoQuina_2').val(resultado.dataStr);
             var numeros = resultado.resultadoOrdenado.split('-');
-            $('#txtNum1Quina').val(numeros[0]);
-            $('#txtNum2Quina').val(numeros[1]);
-            $('#txtNum3Quina').val(numeros[2]);
-            $('#txtNum4Quina').val(numeros[3]);
-            $('#txtNum5Quina').val(numeros[4]);
-
-            $('#txtGanhadoresQuinaQuina').val(resultado.ganhadores);
-            $('#txtValorQuinaQuina').val(resultado.valor.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaQuadra').val(resultado.ganhadores_quadra);
-            $('#txtValorQuinaQuadra').val(resultado.valor_quadra.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaTerno').val(resultado.ganhadores_terno);
-            $('#txtValorQuinaTerno').val(resultado.valor_terno.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaDuque').val(resultado.qt_ganhador_duque);
-            $('#txtValorQuinaDuque').val(resultado.vr_rateio_duque.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoQuina').val(resultado.vrAcumulado.toLocaleString('pt-BR'));
-
-
-            ///resultado 2 jogo
-            $('#txtNumConcursoQuina_2').val(resultado2.concurso);
-            $('#txtDataConcursoQuina_2').val(resultado2.dataStr);
-            var numeros = resultado2.resultadoOrdenado.split('-');
             $('#txtNum1Quina_2').val(numeros[0]);
             $('#txtNum2Quina_2').val(numeros[1]);
             $('#txtNum3Quina_2').val(numeros[2]);
             $('#txtNum4Quina_2').val(numeros[3]);
             $('#txtNum5Quina_2').val(numeros[4]);
-            $('#txtGanhadoresQuinaQuina_2').val(resultado2.ganhadores);
-            $('#txtValorQuinaQuina_2').val(resultado2.valor.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaQuadra_2').val(resultado2.ganhadores_quadra);
-            $('#txtValorQuinaQuadra_2').val(resultado2.valor_quadra.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaTerno_2').val(resultado2.ganhadores_terno);
-            $('#txtValorQuinaTerno_2').val(resultado2.valor_terno.toLocaleString('pt-BR'));
-            $('#txtGanhadoresQuinaDuque_2').val(resultado2.qt_ganhador_duque);
-            $('#txtValorQuinaDuque_2').val(resultado2.vr_rateio_duque.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoQuina_2').val(resultado2.vrAcumulado.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaQuina_2').val(resultado.ganhadores);
+            $('#txtValorQuinaQuina_2').val(resultado.valor.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaQuadra_2').val(resultado.ganhadores_quadra);
+            $('#txtValorQuinaQuadra_2').val(resultado.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaTerno_2').val(resultado.ganhadores_terno);
+            $('#txtValorQuinaTerno_2').val(resultado.valor_terno.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaDuque_2').val(resultado.qt_ganhador_duque);
+            $('#txtValorQuinaDuque_2').val(resultado.vr_rateio_duque.toLocaleString('pt-BR'));
+            $('#txtValorAcumuladoQuina_2').val(resultado.vrAcumulado.toLocaleString('pt-BR'));
+
+
+            ///resultado 1 jogo invertido somente para apresentação correta na tela
+            $('#txtNumConcursoQuina').val(resultado2.concurso);
+            $('#txtDataConcursoQuina').val(resultado2.dataStr);
+            var numeros = resultado2.resultadoOrdenado.split('-');
+            $('#txtNum1Quina').val(numeros[0]);
+            $('#txtNum2Quina').val(numeros[1]);
+            $('#txtNum3Quina').val(numeros[2]);
+            $('#txtNum4Quina').val(numeros[3]);
+            $('#txtNum5Quina').val(numeros[4]);
+            $('#txtGanhadoresQuinaQuina').val(resultado2.ganhadores);
+            $('#txtValorQuinaQuina').val(resultado2.valor.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaQuadra').val(resultado2.ganhadores_quadra);
+            $('#txtValorQuinaQuadra').val(resultado2.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaTerno').val(resultado2.ganhadores_terno);
+            $('#txtValorQuinaTerno').val(resultado2.valor_terno.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaDuque').val(resultado2.qt_ganhador_duque);
+            $('#txtValorQuinaDuque').val(resultado2.vr_rateio_duque.toLocaleString('pt-BR'));
+            $('#txtValorAcumuladoQuina').val(resultado2.vrAcumulado.toLocaleString('pt-BR'));
 
 
             var quina = {
@@ -638,30 +636,7 @@ function RecuperaLoteca() {
                                 $('#txtValor16ptsLoteca').val(retorno.resultado.ValorGanhadores16pts);
                                 $('#txtValorAcumuladoLoteca').val(retorno.resultado.ValorAcumulado);
                                 for (var i = 0; i < retorno.resultado.ListaJogos.length; i++) {
-                                    switch (retorno.resultado.ListaJogos[i].IndTipoResultado) {
-
-                                        case 1:
-                                            {
-                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('X');
-                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
-                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
-                                                break;
-                                            }
-                                        case 2:
-                                            {
-                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
-                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('X');
-                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
-                                                break;
-                                            }
-                                        case 3:
-                                            {
-                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
-                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
-                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('X');
-                                                break;
-                                            }
-                                    }
+                                    AlteraResultadosLoteca(retorno.resultado.ListaJogos[i].IndTipoResultado, i);
                                 }
                             }
                         }
@@ -714,32 +689,7 @@ function RecuperaUltimoESalvaLoteca(resultado) {
                         IndFaixa: (i + 1),
                         IndTipoResultado: resultado.jogos[i].colunaUm ? 1 : (resultado.jogos[i].colunaDois ? 2 : 3)
                     }
-
-                    switch (jogosLoteca.IndTipoResultado) {
-
-                        case 1:
-                            {
-                                $('#txtNum' + (i + 1) + 'UmLoteca').val('X');
-                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
-                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
-                                break;
-                            }
-                        case 2:
-                            {
-                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
-                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('X');
-                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
-                                break;
-                            }
-                        case 3:
-                            {
-                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
-                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
-                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('X');
-                                break;
-                            }
-                    }
-
+                    AlteraResultadosLoteca(jogosLoteca.IndTipoResultado, i);
                     $.ajax({
                         url: '/Home/SalvarResultadoJogosLoteca',
                         type: "POST",
@@ -761,6 +711,33 @@ function RecuperaUltimoESalvaLoteca(resultado) {
 
         }
     });
+}
+
+function AlteraResultadosLoteca(tipo, index) {
+    switch (tipo) {
+
+        case 1:
+            {
+                $('#txtNum' + (index + 1) + 'UmLoteca').val('X');
+                $('#txtNum' + (index + 1) + 'MeioLoteca').val('');
+                $('#txtNum' + (index + 1) + 'DoisLoteca').val('');
+                break;
+            }
+        case 2:
+            {
+                $('#txtNum' + (index + 1) + 'UmLoteca').val('');
+                $('#txtNum' + (index + 1) + 'MeioLoteca').val('');
+                $('#txtNum' + (index + 1) + 'DoisLoteca').val('X');
+                break;
+            }
+        case 3:
+            {
+                $('#txtNum' + (index + 1) + 'UmLoteca').val('');
+                $('#txtNum' + (index + 1) + 'MeioLoteca').val('X');
+                $('#txtNum' + (index + 1) + 'DoisLoteca').val('');
+                break;
+            }
+    }
 }
 
 function RecuperaTimeMania() { }
