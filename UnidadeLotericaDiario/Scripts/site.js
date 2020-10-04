@@ -3,6 +3,19 @@ $(document).ready(function () {
     CarregarTela();
 });
 
+function FormataValoresCom1CasaDecimal(valor) {
+    var valorFormatado = '';
+    var splitValor = valor.split(',');
+    if (splitValor.length > 1 && splitValor[1] != null) {
+        var centavos = splitValor[1];
+        if (centavos.length == 1) {
+            valorFormatado = valor + "0";
+            return valorFormatado;
+        }
+    }
+    return valor;
+}
+
 function CarregarTela() {
     RecuperaMegaSena();
     RecuperaLotoMania();
@@ -39,12 +52,12 @@ function RecuperaMegaSena() {
                                 $('#txtNumero5').val(numeros[4]);
                                 $('#txtNumero6').val(numeros[5]);
                                 $('#txtQtdeGanhadoresSena').val(retorno.resultado.QtdeGanhadoresSena);
-                                $('#txtValorGanhadoresSena').val(retorno.resultado.ValorGanhadoresSena);
+                                $('#txtValorGanhadoresSena').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresSena));
                                 $('#txtQtdeGanhadoresQuinta').val(retorno.resultado.QtdeGanhadoresQuina);
-                                $('#txtValorGanhadoresQuinta').val(retorno.resultado.ValorGanhadoresQuina);
+                                $('#txtValorGanhadoresQuinta').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina));
                                 $('#txtQtdeGanhadoresQuadra').val(retorno.resultado.QtdeGanhadoresQuadra);
-                                $('#txtValorGanhadoresQuadra').val(retorno.resultado.ValorGanhadoresQuadra);
-                                $('#txtValorAcumulado').val(retorno.resultado.ValorAcumulado);
+                                $('#txtValorGanhadoresQuadra').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra));
+                                $('#txtValorAcumulado').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
                             }
                         }
                         else {
@@ -73,23 +86,23 @@ function RecuperaUltimoESalvaMegaSena(resultado) {
     $('#txtNumero5').val(numeros[4]);
     $('#txtNumero6').val(numeros[5]);
     $('#txtQtdeGanhadoresSena').val(resultado.ganhadores);
-    $('#txtValorGanhadoresSena').val(resultado.valor.toLocaleString('pt-BR'));
+    $('#txtValorGanhadoresSena').val(FormataValoresCom1CasaDecimal(resultado.valor.toLocaleString('pt-BR')));
     $('#txtQtdeGanhadoresQuinta').val(resultado.ganhadores_quina);
-    $('#txtValorGanhadoresQuinta').val(resultado.valor_quina.toLocaleString('pt-BR'));
+    $('#txtValorGanhadoresQuinta').val(FormataValoresCom1CasaDecimal(resultado.valor_quina.toLocaleString('pt-BR')));
     $('#txtQtdeGanhadoresQuadra').val(resultado.ganhadores_quadra);
-    $('#txtValorGanhadoresQuadra').val(resultado.valor_quadra.toLocaleString('pt-BR'));
-    $('#txtValorAcumulado').val(resultado.valor_acumulado.toLocaleString('pt-BR'));
+    $('#txtValorGanhadoresQuadra').val(FormataValoresCom1CasaDecimal(resultado.valor_quadra.toLocaleString('pt-BR')));
+    $('#txtValorAcumulado').val(FormataValoresCom1CasaDecimal(resultado.valor_acumulado.toLocaleString('pt-BR')));
     var megaSena = {
         NumConcurso: resultado.concurso,
         DatConcurso: resultado.dataStr,
         NumSorteados: resultado.resultadoOrdenado,
         QtdeGanhadoresSena: resultado.ganhadores,
-        ValorGanhadoresSena: resultado.valor.toLocaleString('pt-BR'),
+        ValorGanhadoresSena: FormataValoresCom1CasaDecimal(resultado.valor.toLocaleString('pt-BR')),
         QtdeGanhadoresQuina: resultado.ganhadores_quina,
-        ValorGanhadoresQuina: resultado.valor_quina.toLocaleString('pt-BR'),
+        ValorGanhadoresQuina: FormataValoresCom1CasaDecimal(resultado.valor_quina.toLocaleString('pt-BR')),
         QtdeGanhadoresQuadra: resultado.ganhadores_quadra,
-        ValorGanhadoresQuadra: resultado.valor_quadra.toLocaleString('pt-BR'),
-        ValorAcumulado: resultado.valor_acumulado.toLocaleString('pt-BR')
+        ValorGanhadoresQuadra: FormataValoresCom1CasaDecimal(resultado.valor_quadra.toLocaleString('pt-BR')),
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.valor_acumulado.toLocaleString('pt-BR'))
     }
     $.ajax({
         url: '/Home/SalvarResultadoMegaSena',
@@ -144,20 +157,20 @@ function RecuperaLotoMania() {
                                 $('#txtNum19Lotomania').val(numeros[18]);
                                 $('#txtNum20Lotomania').val(numeros[19]);
                                 $('#txtGanhadores20Lotomania').val(retorno.resultado.QtdeGanhadores20pts);
-                                $('#txtValor20Lotomania').val(retorno.resultado.ValorGanhadores20pts);
+                                $('#txtValor20Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores20pts));
                                 $('#txtGanhadores19Lotomania').val(retorno.resultado.QtdeGanhadores19pts);
-                                $('#txtValor19Lotomania').val(retorno.resultado.ValorGanhadores19pts);
+                                $('#txtValor19Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores19pts));
                                 $('#txtGanhadores18Lotomania').val(retorno.resultado.QtdeGanhadores18pts);
-                                $('#txtValor18Lotomania').val(retorno.resultado.ValorGanhadores18pts);
+                                $('#txtValor18Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores18pts));
                                 $('#txtGanhadores17Lotomania').val(retorno.resultado.QtdeGanhadores17pts);
-                                $('#txtValor17Lotomania').val(retorno.resultado.ValorGanhadores17pts);
+                                $('#txtValor17Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores17pts));
                                 $('#txtGanhadores16Lotomania').val(retorno.resultado.QtdeGanhadores16pts);
-                                $('#txtValor16Lotomania').val(retorno.resultado.ValorGanhadores16pts);
+                                $('#txtValor16Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores16pts));
                                 $('#txtGanhadores15Lotomania').val(retorno.resultado.QtdeGanhadores15pts);
-                                $('#txtValor15Lotomania').val(retorno.resultado.ValorGanhadores15pts);
+                                $('#txtValor15Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores15pts));
                                 $('#txtGanhadores0Lotomania').val(retorno.resultado.QtdeGanhadores0pts);
-                                $('#txtValor0Lotomania').val(retorno.resultado.ValorGanhadores0pts);
-                                $('#txtValorAcumuladoLotomania').val(retorno.resultado.ValorAcumulado);
+                                $('#txtValor0Lotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores0pts));
+                                $('#txtValorAcumuladoLotomania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
                             }
                         }
                         else {
@@ -200,20 +213,20 @@ function RecuperaUltimoESalvaLotoMania(resultado) {
     $('#txtNum19Lotomania').val(numeros[18]);
     $('#txtNum20Lotomania').val(numeros[19]);
     $('#txtGanhadores20Lotomania').val(resultado.qtGanhadoresFaixa1);
-    $('#txtValor20Lotomania').val(resultado.vrRateioFaixa1.toLocaleString('pt-BR'));
+    $('#txtValor20Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa1.toLocaleString('pt-BR')));
     $('#txtGanhadores19Lotomania').val(resultado.qtGanhadoresFaixa2);
-    $('#txtValor19Lotomania').val(resultado.vrRateioFaixa2.toLocaleString('pt-BR'));
+    $('#txtValor19Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa2.toLocaleString('pt-BR')));
     $('#txtGanhadores18Lotomania').val(resultado.qtGanhadoresFaixa3);
-    $('#txtValor18Lotomania').val(resultado.vrRateioFaixa3.toLocaleString('pt-BR'));
+    $('#txtValor18Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa3.toLocaleString('pt-BR')));
     $('#txtGanhadores17Lotomania').val(resultado.qtGanhadoresFaixa4);
-    $('#txtValor17Lotomania').val(resultado.vrRateioFaixa4.toLocaleString('pt-BR'));
+    $('#txtValor17Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa4.toLocaleString('pt-BR')));
     $('#txtGanhadores16Lotomania').val(resultado.qtGanhadoresFaixa5);
-    $('#txtValor16Lotomania').val(resultado.vrRateioFaixa5.toLocaleString('pt-BR'));
+    $('#txtValor16Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa5.toLocaleString('pt-BR')));
     //Resultados invertidos
     $('#txtGanhadores15Lotomania').val(resultado.qtGanhadoresFaixa7);
-    $('#txtValor15Lotomania').val(resultado.vrRateioFaixa7.toLocaleString('pt-BR'));
+    $('#txtValor15Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa7.toLocaleString('pt-BR')));
     $('#txtGanhadores0Lotomania').val(resultado.qtGanhadoresFaixa6);
-    $('#txtValor0Lotomania').val(resultado.vrRateioFaixa6.toLocaleString('pt-BR'));
+    $('#txtValor0Lotomania').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa6.toLocaleString('pt-BR')));
     //Resultados invertidos
 
     $('#txtValorAcumuladoLotomania').val(resultado.vrEstimativa.toLocaleString('pt-BR'));
@@ -222,20 +235,20 @@ function RecuperaUltimoESalvaLotoMania(resultado) {
         DatConcurso: resultado.dtApuracaoStr,
         NumSorteados: resultado.resultadoOrdenado,
         QtdeGanhadores20pts: resultado.qtGanhadoresFaixa1,
-        ValorGanhadores20pts: resultado.vrRateioFaixa1.toLocaleString('pt-BR'),
+        ValorGanhadores20pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa1.toLocaleString('pt-BR')),
         QtdeGanhadores19pts: resultado.qtGanhadoresFaixa2,
-        ValorGanhadores19pts: resultado.vrRateioFaixa2.toLocaleString('pt-BR'),
+        ValorGanhadores19pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa2.toLocaleString('pt-BR')),
         QtdeGanhadores18pts: resultado.qtGanhadoresFaixa3,
-        ValorGanhadores18pts: resultado.vrRateioFaixa3.toLocaleString('pt-BR'),
+        ValorGanhadores18pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa3.toLocaleString('pt-BR')),
         QtdeGanhadores17pts: resultado.qtGanhadoresFaixa4,
-        ValorGanhadores17pts: resultado.vrRateioFaixa4.toLocaleString('pt-BR'),
+        ValorGanhadores17pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa4.toLocaleString('pt-BR')),
         QtdeGanhadores16pts: resultado.qtGanhadoresFaixa5,
-        ValorGanhadores16pts: resultado.vrRateioFaixa5.toLocaleString('pt-BR'),
+        ValorGanhadores16pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa5.toLocaleString('pt-BR')),
         QtdeGanhadores15pts: resultado.qtGanhadoresFaixa7,   //Resultados invertidos
-        ValorGanhadores15pts: resultado.vrRateioFaixa7.toLocaleString('pt-BR'),   //Resultados invertidos
+        ValorGanhadores15pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa7.toLocaleString('pt-BR')),   //Resultados invertidos
         QtdeGanhadores0pts: resultado.qtGanhadoresFaixa6,   //Resultados invertidos
-        ValorGanhadores0pts: resultado.vrRateioFaixa6.toLocaleString('pt-BR'),   //Resultados invertidos
-        ValorAcumulado: resultado.vrEstimativa.toLocaleString('pt-BR')
+        ValorGanhadores0pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa6.toLocaleString('pt-BR')),   //Resultados invertidos
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vrEstimativa.toLocaleString('pt-BR'))
     }
     $.ajax({
         url: '/Home/SalvarResultadoLotoMania',
@@ -286,16 +299,16 @@ function RecuperaLotoFacil() {
                                 $('#txtNum15Lotofacil_2').val(numeros[14]);
 
                                 $('#txtGanhadores15Lotofacil_2').val(retorno.resultado.QtdeGanhadores15pts_1);
-                                $('#txtValor15Lotofacil_2').val(retorno.resultado.ValorGanhadores15pts_1.toLocaleString('pt-BR'));
+                                $('#txtValor15Lotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores15pts_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadores14Lotofacil_2').val(retorno.resultado.QtdeGanhadores14pts_1);
-                                $('#txtValor14Lotofacil_2').val(retorno.resultado.ValorGanhadores14pts_1.toLocaleString('pt-BR'));
+                                $('#txtValor14Lotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores14pts_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadores13Lotofacil_2').val(retorno.resultado.QtdeGanhadores13pts_1);
-                                $('#txtValor13Lotofacil_2').val(retorno.resultado.ValorGanhadores13pts_1.toLocaleString('pt-BR'));
+                                $('#txtValor13Lotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores13pts_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadores12Lotofacil_2').val(retorno.resultado.QtdeGanhadores12pts_1);
-                                $('#txtValor12Lotofacil_2').val(retorno.resultado.ValorGanhadores12pts_1.toLocaleString('pt-BR'));
+                                $('#txtValor12Lotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores12pts_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadores11Lotofacil_2').val(retorno.resultado.QtdeGanhadores11pts_1);
-                                $('#txtValor11Lotofacil_2').val(retorno.resultado.ValorGanhadores11pts_1.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoLotofacil_2').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
+                                $('#txtValor11Lotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores11pts_1.toLocaleString('pt-BR')));
+                                $('#txtValorAcumuladoLotofacil_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR')));
 
 
                                 ///resultado 2 jogo
@@ -319,16 +332,16 @@ function RecuperaLotoFacil() {
                                 $('#txtNum15Lotofacil').val(numeros[14]);
 
                                 $('#txtGanhadores15Lotofacil').val(retorno.resultado.QtdeGanhadores15pts_2);
-                                $('#txtValor15Lotofacil').val(retorno.resultado.ValorGanhadores15pts_2.toLocaleString('pt-BR'));
+                                $('#txtValor15Lotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores15pts_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadores14Lotofacil').val(retorno.resultado.QtdeGanhadores14pts_2);
-                                $('#txtValor14Lotofacil').val(retorno.resultado.ValorGanhadores14pts_2.toLocaleString('pt-BR'));
+                                $('#txtValor14Lotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores14pts_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadores13Lotofacil').val(retorno.resultado.QtdeGanhadores13pts_2);
-                                $('#txtValor13Lotofacil').val(retorno.resultado.ValorGanhadores13pts_2.toLocaleString('pt-BR'));
+                                $('#txtValor13Lotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores13pts_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadores12Lotofacil').val(retorno.resultado.QtdeGanhadores12pts_2);
-                                $('#txtValor12Lotofacil').val(retorno.resultado.ValorGanhadores12pts_2.toLocaleString('pt-BR'));
+                                $('#txtValor12Lotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores12pts_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadores11Lotofacil').val(retorno.resultado.QtdeGanhadores11pts_2);
-                                $('#txtValor11Lotofacil').val(retorno.resultado.ValorGanhadores11pts_2.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoLotofacil').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
+                                $('#txtValor11Lotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores11pts_2.toLocaleString('pt-BR')));
+                                $('#txtValorAcumuladoLotofacil').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR')));
                             }
                         }
                         else {
@@ -369,16 +382,16 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
             $('#txtNum14Lotofacil_2').val(numeros[13]);
             $('#txtNum15Lotofacil_2').val(numeros[14]);
             $('#txtGanhadores15Lotofacil_2').val(resultado.qt_ganhador_faixa1);
-            $('#txtValor15Lotofacil_2').val(resultado.vr_rateio_faixa1.toLocaleString('pt-BR'));
+            $('#txtValor15Lotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa1.toLocaleString('pt-BR')));
             $('#txtGanhadores14Lotofacil_2').val(resultado.qt_ganhador_faixa2);
-            $('#txtValor14Lotofacil_2').val(resultado.vr_rateio_faixa2.toLocaleString('pt-BR'));
+            $('#txtValor14Lotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa2.toLocaleString('pt-BR')));
             $('#txtGanhadores13Lotofacil_2').val(resultado.qt_ganhador_faixa3);
-            $('#txtValor13Lotofacil_2').val(resultado.vr_rateio_faixa3.toLocaleString('pt-BR'));
+            $('#txtValor13Lotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa3.toLocaleString('pt-BR')));
             $('#txtGanhadores12Lotofacil_2').val(resultado.qt_ganhador_faixa4);
-            $('#txtValor12Lotofacil_2').val(resultado.vr_rateio_faixa4.toLocaleString('pt-BR'));
+            $('#txtValor12Lotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa4.toLocaleString('pt-BR')));
             $('#txtGanhadores11Lotofacil_2').val(resultado.qt_ganhador_faixa5);
-            $('#txtValor11Lotofacil_2').val(resultado.vr_rateio_faixa5.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoLotofacil_2').val(resultado.vrAcumuladoEspecial.toLocaleString('pt-BR'));
+            $('#txtValor11Lotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa5.toLocaleString('pt-BR')));
+            $('#txtValorAcumuladoLotofacil_2').val(FormataValoresCom1CasaDecimal(resultado.vrAcumuladoEspecial.toLocaleString('pt-BR')));
 
             ///resultado 2 jogo
             $('#txtNumConcursoLotofacil').val(resultado2.concurso);
@@ -401,16 +414,16 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
             $('#txtNum15Lotofacil').val(numeros[14]);
 
             $('#txtGanhadores15Lotofacil').val(resultado2.qt_ganhador_faixa1);
-            $('#txtValor15Lotofacil').val(resultado2.vr_rateio_faixa1.toLocaleString('pt-BR'));
+            $('#txtValor15Lotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa1.toLocaleString('pt-BR')));
             $('#txtGanhadores14Lotofacil').val(resultado2.qt_ganhador_faixa2);
-            $('#txtValor14Lotofacil').val(resultado2.vr_rateio_faixa2.toLocaleString('pt-BR'));
+            $('#txtValor14Lotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa2.toLocaleString('pt-BR')));
             $('#txtGanhadores13Lotofacil').val(resultado2.qt_ganhador_faixa3);
-            $('#txtValor13Lotofacil').val(resultado2.vr_rateio_faixa3.toLocaleString('pt-BR'));
+            $('#txtValor13Lotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa3.toLocaleString('pt-BR')));
             $('#txtGanhadores12Lotofacil').val(resultado2.qt_ganhador_faixa4);
-            $('#txtValor12Lotofacil').val(resultado2.vr_rateio_faixa4.toLocaleString('pt-BR'));
+            $('#txtValor12Lotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa4.toLocaleString('pt-BR')));
             $('#txtGanhadores11Lotofacil').val(resultado2.qt_ganhador_faixa5);
-            $('#txtValor11Lotofacil').val(resultado2.vr_rateio_faixa5.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoLotofacil').val(resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR'));
+            $('#txtValor11Lotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa5.toLocaleString('pt-BR')));
+            $('#txtValorAcumuladoLotofacil').val(FormataValoresCom1CasaDecimal(resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR')));
 
 
             var lotofacil = {
@@ -418,30 +431,30 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
                 DatConcurso_1: resultado.dt_apuracaoStr,
                 NumSorteados_1: resultado.resultadoOrdenado,
                 QtdeGanhadores15pts_1: resultado.qt_ganhador_faixa1,
-                ValorGanhadores15pts_1: resultado.vr_rateio_faixa1.toLocaleString('pt-BR'),
+                ValorGanhadores15pts_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa1.toLocaleString('pt-BR')),
                 QtdeGanhadores14pts_1: resultado.qt_ganhador_faixa2,
-                ValorGanhadores14pts_1: resultado.vr_rateio_faixa2.toLocaleString('pt-BR'),
+                ValorGanhadores14pts_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa2.toLocaleString('pt-BR')),
                 QtdeGanhadores13pts_1: resultado.qt_ganhador_faixa3,
-                ValorGanhadores13pts_1: resultado.vr_rateio_faixa3.toLocaleString('pt-BR'),
+                ValorGanhadores13pts_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa3.toLocaleString('pt-BR')),
                 QtdeGanhadores12pts_1: resultado.qt_ganhador_faixa4,
-                ValorGanhadores12pts_1: resultado.vr_rateio_faixa4.toLocaleString('pt-BR'),
+                ValorGanhadores12pts_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa4.toLocaleString('pt-BR')),
                 QtdeGanhadores11pts_1: resultado.qt_ganhador_faixa5,
-                ValorGanhadores11pts_1: resultado.vr_rateio_faixa5.toLocaleString('pt-BR'),
-                ValorAcumulado_1: resultado.vrAcumuladoEspecial.toLocaleString('pt-BR'),
+                ValorGanhadores11pts_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_faixa5.toLocaleString('pt-BR')),
+                ValorAcumulado_1: FormataValoresCom1CasaDecimal(resultado.vrAcumuladoEspecial.toLocaleString('pt-BR')),
                 NumConcurso_2: resultado2.concurso,
                 DatConcurso_2: resultado2.dt_apuracaoStr,
                 NumSorteados_2: resultado2.resultadoOrdenado,
                 QtdeGanhadores15pts_2: resultado2.qt_ganhador_faixa1,
-                ValorGanhadores15pts_2: resultado2.vr_rateio_faixa1.toLocaleString('pt-BR'),
+                ValorGanhadores15pts_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa1.toLocaleString('pt-BR')),
                 QtdeGanhadores14pts_2: resultado2.qt_ganhador_faixa2,
-                ValorGanhadores14pts_2: resultado2.vr_rateio_faixa2.toLocaleString('pt-BR'),
+                ValorGanhadores14pts_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa2.toLocaleString('pt-BR')),
                 QtdeGanhadores13pts_2: resultado2.qt_ganhador_faixa3,
-                ValorGanhadores13pts_2: resultado2.vr_rateio_faixa3.toLocaleString('pt-BR'),
+                ValorGanhadores13pts_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa3.toLocaleString('pt-BR')),
                 QtdeGanhadores12pts_2: resultado2.qt_ganhador_faixa4,
-                ValorGanhadores12pts_2: resultado2.vr_rateio_faixa4.toLocaleString('pt-BR'),
+                ValorGanhadores12pts_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa4.toLocaleString('pt-BR')),
                 QtdeGanhadores11pts_2: resultado2.qt_ganhador_faixa5,
-                ValorGanhadores11pts_2: resultado2.vr_rateio_faixa5.toLocaleString('pt-BR'),
-                ValorAcumulado_2: resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR')
+                ValorGanhadores11pts_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_faixa5.toLocaleString('pt-BR')),
+                ValorAcumulado_2: FormataValoresCom1CasaDecimal(resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR'))
             }
             $.ajax({
                 url: '/Home/SalvarResultadoLotoFacil',
@@ -483,14 +496,14 @@ function RecuperaQuina() {
                                 $('#txtNum4Quina_2').val(numeros[3]);
                                 $('#txtNum5Quina_2').val(numeros[4]);
                                 $('#txtGanhadoresQuinaQuina_2').val(retorno.resultado.QtdeGanhadoresQuina_1);
-                                $('#txtValorQuinaQuina_2').val(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaQuina_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaQuadra_2').val(retorno.resultado.QtdeGanhadoresQuadra_1);
-                                $('#txtValorQuinaQuadra_2').val(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaQuadra_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaTerno_2').val(retorno.resultado.QtdeGanhadoresTerno_1);
-                                $('#txtValorQuinaTerno_2').val(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaTerno_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaDuque_2').val(retorno.resultado.QtdeGanhadoresDuque_1);
-                                $('#txtValorQuinaDuque_2').val(retorno.resultado.ValorGanhadoresDuque_1.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoQuina_2').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaDuque_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresDuque_1.toLocaleString('pt-BR')));
+                                $('#txtValorAcumuladoQuina_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR')));
 
                                 ///resultado 1 jogo invertido somente para apresentação correta na tela
                                 $('#txtNumConcursoQuina').val(retorno.resultado.NumConcurso_2);
@@ -502,14 +515,14 @@ function RecuperaQuina() {
                                 $('#txtNum4Quina').val(numeros_2[3]);
                                 $('#txtNum5Quina').val(numeros_2[4]);
                                 $('#txtGanhadoresQuinaQuina').val(retorno.resultado.QtdeGanhadoresQuina_2);
-                                $('#txtValorQuinaQuina').val(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaQuina').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaQuadra').val(retorno.resultado.QtdeGanhadoresQuadra_2);
-                                $('#txtValorQuinaQuadra').val(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaQuadra').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaTerno').val(retorno.resultado.QtdeGanhadoresTerno_2);
-                                $('#txtValorQuinaTerno').val(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaTerno').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR')));
                                 $('#txtGanhadoresQuinaDuque').val(retorno.resultado.QtdeGanhadoresDuque_2);
-                                $('#txtValorQuinaDuque').val(retorno.resultado.ValorGanhadoresDuque_2.toLocaleString('pt-BR'));
-                                $('#txtValorAcumuladoQuina').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
+                                $('#txtValorQuinaDuque').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresDuque_2.toLocaleString('pt-BR')));
+                                $('#txtValorAcumuladoQuina').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR')));
                             }
                         }
                         else {
@@ -540,14 +553,14 @@ function RecuperaUltimoESalvaQuina(resultado) {
             $('#txtNum4Quina_2').val(numeros[3]);
             $('#txtNum5Quina_2').val(numeros[4]);
             $('#txtGanhadoresQuinaQuina_2').val(resultado.ganhadores);
-            $('#txtValorQuinaQuina_2').val(resultado.valor.toLocaleString('pt-BR'));
+            $('#txtValorQuinaQuina_2').val(FormataValoresCom1CasaDecimal(resultado.valor.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaQuadra_2').val(resultado.ganhadores_quadra);
-            $('#txtValorQuinaQuadra_2').val(resultado.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtValorQuinaQuadra_2').val(FormataValoresCom1CasaDecimal(resultado.valor_quadra.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaTerno_2').val(resultado.ganhadores_terno);
-            $('#txtValorQuinaTerno_2').val(resultado.valor_terno.toLocaleString('pt-BR'));
+            $('#txtValorQuinaTerno_2').val(FormataValoresCom1CasaDecimal(resultado.valor_terno.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaDuque_2').val(resultado.qt_ganhador_duque);
-            $('#txtValorQuinaDuque_2').val(resultado.vr_rateio_duque.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoQuina_2').val(resultado.vrAcumulado.toLocaleString('pt-BR'));
+            $('#txtValorQuinaDuque_2').val(FormataValoresCom1CasaDecimal(resultado.vr_rateio_duque.toLocaleString('pt-BR')));
+            $('#txtValorAcumuladoQuina_2').val(FormataValoresCom1CasaDecimal(resultado.vrAcumulado.toLocaleString('pt-BR')));
 
 
             ///resultado 1 jogo invertido somente para apresentação correta na tela
@@ -560,14 +573,14 @@ function RecuperaUltimoESalvaQuina(resultado) {
             $('#txtNum4Quina').val(numeros[3]);
             $('#txtNum5Quina').val(numeros[4]);
             $('#txtGanhadoresQuinaQuina').val(resultado2.ganhadores);
-            $('#txtValorQuinaQuina').val(resultado2.valor.toLocaleString('pt-BR'));
+            $('#txtValorQuinaQuina').val(FormataValoresCom1CasaDecimal(resultado2.valor.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaQuadra').val(resultado2.ganhadores_quadra);
-            $('#txtValorQuinaQuadra').val(resultado2.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtValorQuinaQuadra').val(FormataValoresCom1CasaDecimal(resultado2.valor_quadra.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaTerno').val(resultado2.ganhadores_terno);
-            $('#txtValorQuinaTerno').val(resultado2.valor_terno.toLocaleString('pt-BR'));
+            $('#txtValorQuinaTerno').val(FormataValoresCom1CasaDecimal(resultado2.valor_terno.toLocaleString('pt-BR')));
             $('#txtGanhadoresQuinaDuque').val(resultado2.qt_ganhador_duque);
-            $('#txtValorQuinaDuque').val(resultado2.vr_rateio_duque.toLocaleString('pt-BR'));
-            $('#txtValorAcumuladoQuina').val(resultado2.vrAcumulado.toLocaleString('pt-BR'));
+            $('#txtValorQuinaDuque').val(FormataValoresCom1CasaDecimal(resultado2.vr_rateio_duque.toLocaleString('pt-BR')));
+            $('#txtValorAcumuladoQuina').val(FormataValoresCom1CasaDecimal(resultado2.vrAcumulado.toLocaleString('pt-BR')));
 
 
             var quina = {
@@ -575,27 +588,27 @@ function RecuperaUltimoESalvaQuina(resultado) {
                 DatConcurso_1: resultado.dataStr,
                 NumSorteados_1: resultado.resultadoOrdenado,
                 QtdeGanhadoresQuina_1: resultado.ganhadores,
-                ValorGanhadoresQuina_1: resultado.valor.toLocaleString('pt-BR'),
+                ValorGanhadoresQuina_1: FormataValoresCom1CasaDecimal(resultado.valor.toLocaleString('pt-BR')),
                 QtdeGanhadoresQuadra_1: resultado.ganhadores_quadra,
-                ValorGanhadoresQuadra_1: resultado.valor_quadra.toLocaleString('pt-BR'),
+                ValorGanhadoresQuadra_1: FormataValoresCom1CasaDecimal(resultado.valor_quadra.toLocaleString('pt-BR')),
                 QtdeGanhadoresTerno_1: resultado.ganhadores_terno,
-                ValorGanhadoresTerno_1: resultado.valor_terno.toLocaleString('pt-BR'),
+                ValorGanhadoresTerno_1: FormataValoresCom1CasaDecimal(resultado.valor_terno.toLocaleString('pt-BR')),
                 QtdeGanhadoresDuque_1: resultado.qt_ganhador_duque,
-                ValorGanhadoresDuque_1: resultado.vr_rateio_duque.toLocaleString('pt-BR'),
-                ValorAcumulado_1: resultado.vrAcumulado.toLocaleString('pt-BR'),
+                ValorGanhadoresDuque_1: FormataValoresCom1CasaDecimal(resultado.vr_rateio_duque.toLocaleString('pt-BR')),
+                ValorAcumulado_1: FormataValoresCom1CasaDecimal(resultado.vrAcumulado.toLocaleString('pt-BR')),
 
                 NumConcurso_2: resultado2.concurso,
                 DatConcurso_2: resultado2.dataStr,
                 NumSorteados_2: resultado2.resultadoOrdenado,
                 QtdeGanhadoresQuina_2: resultado2.ganhadores,
-                ValorGanhadoresQuina_2: resultado2.valor.toLocaleString('pt-BR'),
+                ValorGanhadoresQuina_2: FormataValoresCom1CasaDecimal(resultado2.valor.toLocaleString('pt-BR')),
                 QtdeGanhadoresQuadra_2: resultado2.ganhadores_quadra,
-                ValorGanhadoresQuadra_2: resultado2.valor_quadra.toLocaleString('pt-BR'),
+                ValorGanhadoresQuadra_2: FormataValoresCom1CasaDecimal(resultado2.valor_quadra.toLocaleString('pt-BR')),
                 QtdeGanhadoresTerno_2: resultado2.ganhadores_terno,
-                ValorGanhadoresTerno_2: resultado2.valor_terno.toLocaleString('pt-BR'),
+                ValorGanhadoresTerno_2: FormataValoresCom1CasaDecimal(resultado2.valor_terno.toLocaleString('pt-BR')),
                 QtdeGanhadoresDuque_2: resultado2.qt_ganhador_duque,
-                ValorGanhadoresDuque_2: resultado2.vr_rateio_duque.toLocaleString('pt-BR'),
-                ValorAcumulado_2: resultado2.vrAcumulado.toLocaleString('pt-BR')
+                ValorGanhadoresDuque_2: FormataValoresCom1CasaDecimal(resultado2.vr_rateio_duque.toLocaleString('pt-BR')),
+                ValorAcumulado_2: FormataValoresCom1CasaDecimal(resultado2.vrAcumulado.toLocaleString('pt-BR'))
             }
             $.ajax({
                 url: '/Home/SalvarResultadoQuina',
@@ -631,10 +644,10 @@ function RecuperaLoteca() {
                                 $('#txtNumConcursoLoteca').val(retorno.resultado.NumConcurso);
                                 $('#txtDataConcursoLoteca').val(retorno.resultado.DatConcurso);
                                 $('#txtGanhadores15ptsLoteca').val(retorno.resultado.QtdeGanhadores15pts);
-                                $('#txtValor15ptsLoteca').val(retorno.resultado.ValorGanhadores15pts);
+                                $('#txtValor15ptsLoteca').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores15pts));
                                 $('#txtGanhadores16ptsLoteca').val(retorno.resultado.QtdeGanhadores16pts);
-                                $('#txtValor16ptsLoteca').val(retorno.resultado.ValorGanhadores16pts);
-                                $('#txtValorAcumuladoLoteca').val(retorno.resultado.ValorAcumulado);
+                                $('#txtValor16ptsLoteca').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores16pts));
+                                $('#txtValorAcumuladoLoteca').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
                                 for (var i = 0; i < retorno.resultado.ListaJogos.length; i++) {
                                     AlteraResultadosLoteca(retorno.resultado.ListaJogos[i].IndTipoResultado, i);
                                 }
@@ -659,19 +672,19 @@ function RecuperaUltimoESalvaLoteca(resultado) {
     $('#txtNumConcursoLoteca').val(resultado.concurso);
     $('#txtDataConcursoLoteca').val(resultado.dtApuracaoStr);
     $('#txtGanhadores15ptsLoteca').val(resultado.qtGanhadorFaixa1);
-    $('#txtValor15ptsLoteca').val(resultado.vrRateioFaixa1.toLocaleString('pt-BR'));
+    $('#txtValor15ptsLoteca').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa1.toLocaleString('pt-BR')));
     $('#txtGanhadores16ptsLoteca').val(resultado.qtGanhadorFaixa2);
-    $('#txtValor16ptsLoteca').val(resultado.vrRateioFaixa2.toLocaleString('pt-BR'));
-    $('#txtValorAcumuladoLoteca').val(resultado.vrConcursoAcumulado.toLocaleString('pt-BR'));
+    $('#txtValor16ptsLoteca').val(FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa2.toLocaleString('pt-BR')));
+    $('#txtValorAcumuladoLoteca').val(FormataValoresCom1CasaDecimal(resultado.vrConcursoAcumulado.toLocaleString('pt-BR')));
 
     var loteca = {
         NumConcurso: resultado.concurso,
         DatConcurso: resultado.dtApuracaoStr,
         QtdeGanhadores15pts: resultado.qtGanhadorFaixa1,
-        ValorGanhadores15pts: resultado.vrRateioFaixa1.toLocaleString('pt-BR'),
+        ValorGanhadores15pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa1.toLocaleString('pt-BR')),
         QtdeGanhadores16pts: resultado.qtGanhadorFaixa2,
-        ValorGanhadores16pts: resultado.vrRateioFaixa2.toLocaleString('pt-BR'),
-        ValorAcumulado: resultado.vrConcursoAcumulado.toLocaleString('pt-BR')
+        ValorGanhadores16pts: FormataValoresCom1CasaDecimal(resultado.vrRateioFaixa2.toLocaleString('pt-BR')),
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vrConcursoAcumulado.toLocaleString('pt-BR'))
     }
     $.ajax({
         url: '/Home/SalvarResultadoLoteca',
@@ -740,10 +753,122 @@ function AlteraResultadosLoteca(tipo, index) {
     }
 }
 
-function RecuperaTimeMania() { }
+function RecuperaTimeMania() {
+    $.getJSON(urlBase + '/timemania/lasted').done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            $.ajax({
+                url: '/Home/RecuperarUltimoResultadoTimeMania',
+                async: true,
+                data: {},
+                success: function (retorno) {
+                    if (retorno.sucesso) {
+                        if (retorno.tipo == 1) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso) {
+                                RecuperaUltimoESalvaTimeMania(retornoLasted.data[0]);
+                            }
+                            else {
+                                $('#txtNumConcursoTimemania').val(retorno.resultado.NumConcurso);
+                                $('#txtDataConcursoTimemania').val(retorno.resultado.DatConcurso);
+                                var numeros = retorno.resultado.NumSorteados.split('-');
+                                $('#txtNum1Timemania').val(numeros[0]);
+                                $('#txtNum2Timemania').val(numeros[1]);
+                                $('#txtNum3Timemania').val(numeros[2]);
+                                $('#txtNum4Timemania').val(numeros[3]);
+                                $('#txtNum5Timemania').val(numeros[4]);
+                                $('#txtNum6Timemania').val(numeros[5]);
+                                $('#txtNum7Timemania').val(numeros[6]);
+
+                                $('#txtGanhadores7Timemania').val(retorno.resultado.QtdeGanhadores7pts);
+                                $('#txtValor7Timemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores7pts));
+                                $('#txtGanhadores6Timemania').val(retorno.resultado.QtdeGanhadores6pts);
+                                $('#txtValor6Timemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores6pts));
+                                $('#txtGanhadores5Timemania').val(retorno.resultado.QtdeGanhadores5pts);
+                                $('#txtValor5Timemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores5pts));
+                                $('#txtGanhadores4Timemania').val(retorno.resultado.QtdeGanhadores4pts);
+                                $('#txtValor4Timemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores4pts));
+                                $('#txtGanhadores3Timemania').val(retorno.resultado.QtdeGanhadores3pts);
+                                $('#txtValor3Timemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores3pts));
+
+                                $('#txtGanhadoresTimeCoracaoTimemania').val(retorno.resultado.QtdeGanhadoresTimeCoracao);
+                                $('#txtValorTimeCoracaoTimemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresTimeCoracao));
+                                $('#txtGanhadoresTimeSorteadoTimeMania').val(retorno.resultado.DscTimeSorteado);
+                                $('#txtValorAcumuladoTimemania').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
+                            }
+                        }
+                        else {
+                            RecuperaUltimoESalvaTimeMania(retornoLasted.data[0]);
+                        }
+                    }
+                    else {
+                        alert(retorno.mensagem);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        }
+    });
+}
 
 function RecuperaUltimoESalvaTimeMania(resultado) {
+    $('#txtNumConcursoTimemania').val(resultado.concurso);
+    $('#txtDataConcursoTimemania').val(resultado.dt_APURACAOStr);
+    var numeros = resultado.de_RESULTADO.split('-');
+    $('#txtNum1Timemania').val(numeros[0]);
+    $('#txtNum2Timemania').val(numeros[1]);
+    $('#txtNum3Timemania').val(numeros[2]);
+    $('#txtNum4Timemania').val(numeros[3]);
+    $('#txtNum5Timemania').val(numeros[4]);
+    $('#txtNum6Timemania').val(numeros[5]);
+    $('#txtNum7Timemania').val(numeros[6]);
 
+    $('#txtGanhadores7Timemania').val(resultado.qt_GANHADOR_FAIXA_1);
+    $('#txtValor7Timemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_1.toLocaleString('pt-BR')));
+    $('#txtGanhadores6Timemania').val(resultado.qt_GANHADOR_FAIXA_2);
+    $('#txtValor6Timemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_2.toLocaleString('pt-BR')));
+    $('#txtGanhadores5Timemania').val(resultado.qt_GANHADOR_FAIXA_3);
+    $('#txtValor5Timemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_3.toLocaleString('pt-BR')));
+    $('#txtGanhadores4Timemania').val(resultado.qt_GANHADOR_FAIXA_4);
+    $('#txtValor4Timemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_4.toLocaleString('pt-BR')));
+    $('#txtGanhadores3Timemania').val(resultado.qt_GANHADOR_FAIXA_5);
+    $('#txtValor3Timemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_5.toLocaleString('pt-BR')));
+
+    $('#txtGanhadoresTimeCoracaoTimemania').val(resultado.qt_GANHADOR_TIME_CORACAO);
+    $('#txtValorTimeCoracaoTimemania').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_TIME_CORACAO.toLocaleString('pt-BR')));
+    $('#txtGanhadoresTimeSorteadoTimeMania').val(resultado.timeCoracao);
+    $('#txtValorAcumuladoTimemania').val(FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO_PROXIMO_CONCURSO.toLocaleString('pt-BR')));
+    var timemania = {
+        NumConcurso: resultado.concurso,
+        DatConcurso: resultado.dt_APURACAOStr,
+        NumSorteados: resultado.de_RESULTADO,
+        QtdeGanhadores7pts: resultado.qt_GANHADOR_FAIXA_1,
+        ValorGanhadores7pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_1.toLocaleString('pt-BR')),
+        QtdeGanhadores6pts: resultado.qt_GANHADOR_FAIXA_2,
+        ValorGanhadores6pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_2.toLocaleString('pt-BR')),
+        QtdeGanhadores5pts: resultado.qt_GANHADOR_FAIXA_3,
+        ValorGanhadores5pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_3.toLocaleString('pt-BR')),
+        QtdeGanhadores4pts: resultado.qt_GANHADOR_FAIXA_4,
+        ValorGanhadores4pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_4.toLocaleString('pt-BR')),
+        QtdeGanhadores3pts: resultado.qt_GANHADOR_FAIXA_5,
+        ValorGanhadores3pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_5.toLocaleString('pt-BR')),
+        QtdeGanhadoresTimeCoracao: resultado.qt_GANHADOR_TIME_CORACAO,
+        ValorGanhadoresTimeCoracao: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_TIME_CORACAO.toLocaleString('pt-BR')),
+        DscTimeSorteado: resultado.timeCoracao,
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO_PROXIMO_CONCURSO.toLocaleString('pt-BR'))
+    }
+    $.ajax({
+        url: '/Home/SalvarResultadoTimeMania',
+        type: "POST",
+        async: true,
+        data: { timemania },
+        success: function (resultado) {
+            if (!resultado.sucesso)
+                console.log(resultado.mensagem);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        }
+    });
 }
 
 function RecuperaDuplaSena() { }

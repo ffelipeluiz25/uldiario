@@ -25,7 +25,7 @@ namespace UnidadeLotericaDiario.Repository
 
 
         /// <summary>
-        /// RecuperarUltimoResultadoMegaSena
+        /// RecuperarUltimoResultadoLotoMania
         /// </summary>
         /// <returns></returns>
         public LotoMania RecuperarUltimoResultadoLotoMania()
@@ -69,20 +69,20 @@ namespace UnidadeLotericaDiario.Repository
                     lotoMania.DatConcurso = dr["DAT_CONCURSO"].ToString();
                     lotoMania.NumSorteados = dr["NUM_SORTEADOS"].ToString();
                     lotoMania.QtdeGanhadores20pts = dr["QTD_GANHADORES_20PTS"].ToString();
-                    lotoMania.ValorGanhadores20pts =dr["VALOR_GANHADORES_20PTS"].ToString();
+                    lotoMania.ValorGanhadores20pts = dr["VALOR_GANHADORES_20PTS"].ToString();
                     lotoMania.QtdeGanhadores19pts = dr["QTD_GANHADORES_19PTS"].ToString();
-                    lotoMania.ValorGanhadores19pts =dr["VALOR_GANHADORES_19PTS"].ToString();
+                    lotoMania.ValorGanhadores19pts = dr["VALOR_GANHADORES_19PTS"].ToString();
                     lotoMania.QtdeGanhadores18pts = dr["QTD_GANHADORES_18PTS"].ToString();
-                    lotoMania.ValorGanhadores18pts =dr["VALOR_GANHADORES_18PTS"].ToString();
+                    lotoMania.ValorGanhadores18pts = dr["VALOR_GANHADORES_18PTS"].ToString();
                     lotoMania.QtdeGanhadores17pts = dr["QTD_GANHADORES_17PTS"].ToString();
-                    lotoMania.ValorGanhadores17pts =dr["VALOR_GANHADORES_17PTS"].ToString();
+                    lotoMania.ValorGanhadores17pts = dr["VALOR_GANHADORES_17PTS"].ToString();
                     lotoMania.QtdeGanhadores16pts = dr["QTD_GANHADORES_16PTS"].ToString();
-                    lotoMania.ValorGanhadores16pts =dr["VALOR_GANHADORES_16PTS"].ToString();
+                    lotoMania.ValorGanhadores16pts = dr["VALOR_GANHADORES_16PTS"].ToString();
                     lotoMania.QtdeGanhadores15pts = dr["QTD_GANHADORES_15PTS"].ToString();
-                    lotoMania.ValorGanhadores15pts =dr["VALOR_GANHADORES_15PTS"].ToString();
+                    lotoMania.ValorGanhadores15pts = dr["VALOR_GANHADORES_15PTS"].ToString();
                     lotoMania.QtdeGanhadores0pts = dr["QTD_GANHADORES_0PTS"].ToString();
-                    lotoMania.ValorGanhadores0pts =dr["VALOR_GANHADORES_0PTS"].ToString();
-                    lotoMania.ValorAcumulado =dr["VALOR_ACUMULADO"].ToString();
+                    lotoMania.ValorGanhadores0pts = dr["VALOR_GANHADORES_0PTS"].ToString();
+                    lotoMania.ValorAcumulado = dr["VALOR_ACUMULADO"].ToString();
                 }
                 dr.Dispose();
                 con.Close();
@@ -93,8 +93,9 @@ namespace UnidadeLotericaDiario.Repository
             {
                 throw ex;
             }
-            finally { 
-            
+            finally
+            {
+
             }
         }
 

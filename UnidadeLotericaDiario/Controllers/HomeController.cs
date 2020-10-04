@@ -239,5 +239,46 @@ namespace UnidadeLotericaDiario.Controllers
         }
 
         #endregion
+
+        #region TimeMania
+
+        /// <summary>
+        /// RecuperarUltimoResultadoTimeMania
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoTimeMania()
+        {
+            try
+            {
+                var resultado = new Repository.TimeManiaRepository().RecuperarUltimoResultadoTimeMania();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoTimeMania
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoTimeMania(TimeMania TimeMania)
+        {
+            try
+            {
+                new Repository.TimeManiaRepository().SalvarResultadoTimeMania(TimeMania);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+        #endregion
     }
 }

@@ -103,8 +103,9 @@ namespace UnidadeLotericaDiario.Repository
             {
                 throw ex;
             }
-            finally { 
-            
+            finally
+            {
+
             }
         }
 

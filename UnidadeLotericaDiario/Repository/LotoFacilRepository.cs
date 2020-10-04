@@ -77,7 +77,7 @@ namespace UnidadeLotericaDiario.Repository
                     lotoFacil.DatConcurso_1 = dr["DAT_CONCURSO_1"].ToString();
                     lotoFacil.NumSorteados_1 = dr["NUM_SORTEADOS_1"].ToString();
                     lotoFacil.QtdeGanhadores15pts_1 = dr["QTD_GANHADORES_1_15PTS"].ToString();
-                    lotoFacil.ValorGanhadores15pts_1 =dr["VALOR_GANHADORES_1_15PTS"].ToString();
+                    lotoFacil.ValorGanhadores15pts_1 = dr["VALOR_GANHADORES_1_15PTS"].ToString();
                     lotoFacil.QtdeGanhadores14pts_1 = dr["QTD_GANHADORES_1_14PTS"].ToString();
                     lotoFacil.ValorGanhadores14pts_1 = dr["VALOR_GANHADORES_1_14PTS"].ToString();
                     lotoFacil.QtdeGanhadores13pts_1 = dr["QTD_GANHADORES_1_13PTS"].ToString();
@@ -86,7 +86,7 @@ namespace UnidadeLotericaDiario.Repository
                     lotoFacil.ValorGanhadores12pts_1 = dr["VALOR_GANHADORES_1_12PTS"].ToString();
                     lotoFacil.QtdeGanhadores11pts_1 = dr["QTD_GANHADORES_1_11PTS"].ToString();
                     lotoFacil.ValorGanhadores11pts_1 = dr["VALOR_GANHADORES_1_11PTS"].ToString();
-                    lotoFacil.ValorAcumulado_1 =dr["VALOR_ACUMULADO_1"].ToString();
+                    lotoFacil.ValorAcumulado_1 = dr["VALOR_ACUMULADO_1"].ToString();
 
                     lotoFacil.NumConcurso_2 = dr["NUM_CONCURSO_2"].ToString();
                     lotoFacil.DatConcurso_2 = dr["DAT_CONCURSO_2"].ToString();
@@ -112,8 +112,9 @@ namespace UnidadeLotericaDiario.Repository
             {
                 throw ex;
             }
-            finally { 
-            
+            finally
+            {
+
             }
         }
 

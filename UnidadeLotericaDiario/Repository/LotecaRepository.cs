@@ -97,7 +97,7 @@ namespace UnidadeLotericaDiario.Repository
                     dr1.Dispose();
                     con.Close();
                 }
-                
+
                 return obj;
 
             }
