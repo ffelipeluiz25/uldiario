@@ -1,7 +1,9 @@
 
 body {
-    background-color: #321d80;
+    zoom: 27%;
     background-image: url('../img/funco_trevos_apagados.png');
+    background-repeat: no;
+    background-size: cover
 }
 
 span.titulo {
@@ -149,18 +151,18 @@ h1 {
         border: none;
     }
 
-/*LOTOGOL*/
-.card.card-lotogol {
+/*SUPERSETE*/
+.card.card-super-sete {
     background-color: #AAC02F;
     font-size: 0rem;
 }
 
-    .card.card-lotogol .card-header {
+    .card.card-super-sete .card-header {
         background-color: #98B12F;
         border: none;
     }
 
-    .card.card-lotogol hr {
+    .card.card-super-sete hr {
         border-top: 5px solid rgba(0,0,0,.3);
     }
 

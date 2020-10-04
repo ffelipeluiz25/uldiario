@@ -3,23 +3,35 @@ namespace UnidadeLotericaDiario.Models
 {
     public class LotoFacil
     {
-        public string NumConcurso { get; set; }
-        public string DatConcurso { get; set; }
-        public string NumSorteados { get; set; }
-        public string QtdeGanhadores20pts { get; set; }
-        public string ValorGanhadores20pts { get; set; }
-        public string QtdeGanhadores19pts { get; set; }
-        public string ValorGanhadores19pts { get; set; }
-        public string QtdeGanhadores18pts { get; set; }
-        public string ValorGanhadores18pts { get; set; }
-        public string QtdeGanhadores17pts { get; set; }
-        public string ValorGanhadores17pts { get; set; }
-        public string QtdeGanhadores16pts { get; set; }
-        public string ValorGanhadores16pts { get; set; }
-        public string QtdeGanhadores15pts { get; set; }
-        public string ValorGanhadores15pts { get; set; }
-        public string QtdeGanhadores0pts { get; set; }
-        public string ValorGanhadores0pts { get; set; }
-        public string ValorAcumulado { get; set; }
+        public string NumConcurso_1 { get; set; }
+        public string DatConcurso_1 { get; set; }
+        public string NumSorteados_1 { get; set; }
+        public string QtdeGanhadores15pts_1 { get; set; }
+        public string ValorGanhadores15pts_1 { get; set; }
+        public string QtdeGanhadores14pts_1 { get; set; }
+        public string ValorGanhadores14pts_1 { get; set; }
+        public string QtdeGanhadores13pts_1 { get; set; }
+        public string ValorGanhadores13pts_1 { get; set; }
+        public string QtdeGanhadores12pts_1 { get; set; }
+        public string ValorGanhadores12pts_1 { get; set; }
+        public string QtdeGanhadores11pts_1 { get; set; }
+        public string ValorGanhadores11pts_1 { get; set; }
+        public string ValorAcumulado_1 { get; set; }
+
+
+        public string NumConcurso_2 { get; set; }
+        public string DatConcurso_2 { get; set; }
+        public string NumSorteados_2 { get; set; }
+        public string QtdeGanhadores15pts_2 { get; set; }
+        public string ValorGanhadores15pts_2 { get; set; }
+        public string QtdeGanhadores14pts_2 { get; set; }
+        public string ValorGanhadores14pts_2 { get; set; }
+        public string QtdeGanhadores13pts_2 { get; set; }
+        public string ValorGanhadores13pts_2 { get; set; }
+        public string QtdeGanhadores12pts_2 { get; set; }
+        public string ValorGanhadores12pts_2 { get; set; }
+        public string QtdeGanhadores11pts_2 { get; set; }
+        public string ValorGanhadores11pts_2 { get; set; }
+        public string ValorAcumulado_2 { get; set; }
     }
 }

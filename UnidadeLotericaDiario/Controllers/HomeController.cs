@@ -137,5 +137,107 @@ namespace UnidadeLotericaDiario.Controllers
         }
 
         #endregion
+
+        #region Quina
+
+        /// <summary>
+        /// RecuperarUltimoResultadoQuina
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoQuina()
+        {
+            try
+            {
+                var resultado = new Repository.QuinaRepository().RecuperarUltimoResultadoQuina();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoQuina
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoQuina(Quina quina)
+        {
+            try
+            {
+                new Repository.QuinaRepository().SalvarResultadoQuina(quina);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+        #endregion
+
+
+        #region Loteca
+
+        /// <summary>
+        /// RecuperarUltimoResultadoLoteca
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoLoteca()
+        {
+            try
+            {
+                var resultado = new Repository.LotecaRepository().RecuperarUltimoResultadoLoteca();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoLoteca
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoLoteca(Loteca loteca)
+        {
+            try
+            {
+                new Repository.LotecaRepository().SalvarResultadoLoteca(loteca);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoJogosLoteca
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoJogosLoteca(JogosLoteca jogosLoteca)
+        {
+            try
+            {
+                new Repository.LotecaRepository().SalvarResultadoJogosLoteca(jogosLoteca);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+
+        #endregion
     }
 }

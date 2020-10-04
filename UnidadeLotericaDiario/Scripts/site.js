@@ -1,7 +1,6 @@
 ﻿var urlBase = 'https://lotericas.io/api/v1/jogos';
 $(document).ready(function () {
     CarregarTela();
-    document.getElementById('container').style.zoom = 0.3;
 });
 
 function CarregarTela() {
@@ -144,10 +143,6 @@ function RecuperaLotoMania() {
                                 $('#txtNum18Lotomania').val(numeros[17]);
                                 $('#txtNum19Lotomania').val(numeros[18]);
                                 $('#txtNum20Lotomania').val(numeros[19]);
-                                $('#txtNum21Lotomania').val(numeros[20]);
-                                $('#txtNum22Lotomania').val(numeros[21]);
-                                $('#txtNum23Lotomania').val(numeros[22]);
-                                $('#txtNum24Lotomania').val(numeros[23]);
                                 $('#txtGanhadores20Lotomania').val(retorno.resultado.QtdeGanhadores20pts);
                                 $('#txtValor20Lotomania').val(retorno.resultado.ValorGanhadores20pts);
                                 $('#txtGanhadores19Lotomania').val(retorno.resultado.QtdeGanhadores19pts);
@@ -204,10 +199,6 @@ function RecuperaUltimoESalvaLotoMania(resultado) {
     $('#txtNum18Lotomania').val(numeros[17]);
     $('#txtNum19Lotomania').val(numeros[18]);
     $('#txtNum20Lotomania').val(numeros[19]);
-    $('#txtNum21Lotomania').val(numeros[20]);
-    $('#txtNum22Lotomania').val(numeros[21]);
-    $('#txtNum23Lotomania').val(numeros[22]);
-    $('#txtNum24Lotomania').val(numeros[23]);
     $('#txtGanhadores20Lotomania').val(resultado.qtGanhadoresFaixa1);
     $('#txtValor20Lotomania').val(resultado.vrRateioFaixa1.toLocaleString('pt-BR'));
     $('#txtGanhadores19Lotomania').val(resultado.qtGanhadoresFaixa2);
@@ -271,52 +262,73 @@ function RecuperaLotoFacil() {
                 success: function (retorno) {
                     if (retorno.sucesso) {
                         if (retorno.tipo == 1) {
-                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso_1) {
                                 RecuperaUltimoESalvaLotoFacil(retornoLasted.data[0]);
                             }
                             else {
-                                $('#txtNumConcursoLotomania').val(retorno.resultado.NumConcurso);
-                                $('#txtDataConcursoLotomania').val(retorno.resultado.DatConcurso);
-                                var numeros = retorno.resultado.NumSorteados.split('-');
-                                $('#txtNum1Lotomania').val(numeros[0]);
-                                $('#txtNum2Lotomania').val(numeros[1]);
-                                $('#txtNum3Lotomania').val(numeros[2]);
-                                $('#txtNum4Lotomania').val(numeros[3]);
-                                $('#txtNum5Lotomania').val(numeros[4]);
-                                $('#txtNum6Lotomania').val(numeros[5]);
-                                $('#txtNum7Lotomania').val(numeros[6]);
-                                $('#txtNum8Lotomania').val(numeros[7]);
-                                $('#txtNum9Lotomania').val(numeros[8]);
-                                $('#txtNum10Lotomania').val(numeros[9]);
-                                $('#txtNum11Lotomania').val(numeros[10]);
-                                $('#txtNum12Lotomania').val(numeros[11]);
-                                $('#txtNum13Lotomania').val(numeros[12]);
-                                $('#txtNum14Lotomania').val(numeros[13]);
-                                $('#txtNum15Lotomania').val(numeros[14]);
-                                $('#txtNum16Lotomania').val(numeros[15]);
-                                $('#txtNum17Lotomania').val(numeros[16]);
-                                $('#txtNum18Lotomania').val(numeros[17]);
-                                $('#txtNum19Lotomania').val(numeros[18]);
-                                $('#txtNum20Lotomania').val(numeros[19]);
-                                $('#txtNum21Lotomania').val(numeros[20]);
-                                $('#txtNum22Lotomania').val(numeros[21]);
-                                $('#txtNum23Lotomania').val(numeros[22]);
-                                $('#txtNum24Lotomania').val(numeros[23]);
-                                $('#txtGanhadores20Lotomania').val(retorno.resultado.QtdeGanhadores20pts);
-                                $('#txtValor20Lotomania').val(retorno.resultado.ValorGanhadores20pts);
-                                $('#txtGanhadores19Lotomania').val(retorno.resultado.QtdeGanhadores19pts);
-                                $('#txtValor19Lotomania').val(retorno.resultado.ValorGanhadores19pts);
-                                $('#txtGanhadores18Lotomania').val(retorno.resultado.QtdeGanhadores18pts);
-                                $('#txtValor18Lotomania').val(retorno.resultado.ValorGanhadores18pts);
-                                $('#txtGanhadores17Lotomania').val(retorno.resultado.QtdeGanhadores17pts);
-                                $('#txtValor17Lotomania').val(retorno.resultado.ValorGanhadores17pts);
-                                $('#txtGanhadores16Lotomania').val(retorno.resultado.QtdeGanhadores16pts);
-                                $('#txtValor16Lotomania').val(retorno.resultado.ValorGanhadores16pts);
-                                $('#txtGanhadores15Lotomania').val(retorno.resultado.QtdeGanhadores15pts);
-                                $('#txtValor15Lotomania').val(retorno.resultado.ValorGanhadores15pts);
-                                $('#txtGanhadores0Lotomania').val(retorno.resultado.QtdeGanhadores0pts);
-                                $('#txtValor0Lotomania').val(retorno.resultado.ValorGanhadores0pts);
-                                $('#txtValorAcumuladoLotomania').val(retorno.resultado.ValorAcumulado);
+                                $('#txtNumConcursoLotofacil_2').val(retorno.resultado.NumConcurso_1);
+                                $('#txtDataConcursoLotofacil_2').val(retorno.resultado.DatConcurso_1);
+                                var numeros = retorno.resultado.NumSorteados_1.split('-');
+                                $('#txtNum1Lotofacil_2').val(numeros[0]);
+                                $('#txtNum2Lotofacil_2').val(numeros[1]);
+                                $('#txtNum3Lotofacil_2').val(numeros[2]);
+                                $('#txtNum4Lotofacil_2').val(numeros[3]);
+                                $('#txtNum5Lotofacil_2').val(numeros[4]);
+                                $('#txtNum6Lotofacil_2').val(numeros[5]);
+                                $('#txtNum7Lotofacil_2').val(numeros[6]);
+                                $('#txtNum8Lotofacil_2').val(numeros[7]);
+                                $('#txtNum9Lotofacil_2').val(numeros[8]);
+                                $('#txtNum10Lotofacil_2').val(numeros[9]);
+                                $('#txtNum11Lotofacil_2').val(numeros[10]);
+                                $('#txtNum12Lotofacil_2').val(numeros[11]);
+                                $('#txtNum13Lotofacil_2').val(numeros[12]);
+                                $('#txtNum14Lotofacil_2').val(numeros[13]);
+                                $('#txtNum15Lotofacil_2').val(numeros[14]);
+
+                                $('#txtGanhadores15Lotofacil_2').val(retorno.resultado.QtdeGanhadores15pts_1);
+                                $('#txtValor15Lotofacil_2').val(retorno.resultado.ValorGanhadores15pts_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadores14Lotofacil_2').val(retorno.resultado.QtdeGanhadores14pts_1);
+                                $('#txtValor14Lotofacil_2').val(retorno.resultado.ValorGanhadores14pts_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadores13Lotofacil_2').val(retorno.resultado.QtdeGanhadores13pts_1);
+                                $('#txtValor13Lotofacil_2').val(retorno.resultado.ValorGanhadores13pts_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadores12Lotofacil_2').val(retorno.resultado.QtdeGanhadores12pts_1);
+                                $('#txtValor12Lotofacil_2').val(retorno.resultado.ValorGanhadores12pts_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadores11Lotofacil_2').val(retorno.resultado.QtdeGanhadores11pts_1);
+                                $('#txtValor11Lotofacil_2').val(retorno.resultado.ValorGanhadores11pts_1.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoLotofacil_2').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
+
+
+                                ///resultado 2 jogo
+                                $('#txtNumConcursoLotofacil').val(retorno.resultado.NumConcurso_2);
+                                $('#txtDataConcursoLotofacil').val(retorno.resultado.DatConcurso_2);
+                                var numeros = retorno.resultado.NumSorteados_2.split('-');
+                                $('#txtNum1Lotofacil').val(numeros[0]);
+                                $('#txtNum2Lotofacil').val(numeros[1]);
+                                $('#txtNum3Lotofacil').val(numeros[2]);
+                                $('#txtNum4Lotofacil').val(numeros[3]);
+                                $('#txtNum5Lotofacil').val(numeros[4]);
+                                $('#txtNum6Lotofacil').val(numeros[5]);
+                                $('#txtNum7Lotofacil').val(numeros[6]);
+                                $('#txtNum8Lotofacil').val(numeros[7]);
+                                $('#txtNum9Lotofacil').val(numeros[8]);
+                                $('#txtNum10Lotofacil').val(numeros[9]);
+                                $('#txtNum11Lotofacil').val(numeros[10]);
+                                $('#txtNum12Lotofacil').val(numeros[11]);
+                                $('#txtNum13Lotofacil').val(numeros[12]);
+                                $('#txtNum14Lotofacil').val(numeros[13]);
+                                $('#txtNum15Lotofacil').val(numeros[14]);
+
+                                $('#txtGanhadores15Lotofacil').val(retorno.resultado.QtdeGanhadores15pts_2);
+                                $('#txtValor15Lotofacil').val(retorno.resultado.ValorGanhadores15pts_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadores14Lotofacil').val(retorno.resultado.QtdeGanhadores14pts_2);
+                                $('#txtValor14Lotofacil').val(retorno.resultado.ValorGanhadores14pts_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadores13Lotofacil').val(retorno.resultado.QtdeGanhadores13pts_2);
+                                $('#txtValor13Lotofacil').val(retorno.resultado.ValorGanhadores13pts_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadores12Lotofacil').val(retorno.resultado.QtdeGanhadores12pts_2);
+                                $('#txtValor12Lotofacil').val(retorno.resultado.ValorGanhadores12pts_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadores11Lotofacil').val(retorno.resultado.QtdeGanhadores11pts_2);
+                                $('#txtValor11Lotofacil').val(retorno.resultado.ValorGanhadores11pts_2.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoLotofacil').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
                             }
                         }
                         else {
@@ -334,80 +346,416 @@ function RecuperaLotoFacil() {
     });
 }
 
-function RecuperaUltimoESalvaLotoFacil() {
-    $('#txtNumConcursoLotomania').val(resultado.concurso);
-    $('#txtDataConcursoLotomania').val(resultado.dtApuracaoStr);
-    var numeros = resultado.resultadoOrdenado.split('-');
-    $('#txtNum1Lotomania').val(numeros[0]);
-    $('#txtNum2Lotomania').val(numeros[1]);
-    $('#txtNum3Lotomania').val(numeros[2]);
-    $('#txtNum4Lotomania').val(numeros[3]);
-    $('#txtNum5Lotomania').val(numeros[4]);
-    $('#txtNum6Lotomania').val(numeros[5]);
-    $('#txtNum7Lotomania').val(numeros[6]);
-    $('#txtNum8Lotomania').val(numeros[7]);
-    $('#txtNum9Lotomania').val(numeros[8]);
-    $('#txtNum10Lotomania').val(numeros[9]);
-    $('#txtNum11Lotomania').val(numeros[10]);
-    $('#txtNum12Lotomania').val(numeros[11]);
-    $('#txtNum13Lotomania').val(numeros[12]);
-    $('#txtNum14Lotomania').val(numeros[13]);
-    $('#txtNum15Lotomania').val(numeros[14]);
-    $('#txtNum16Lotomania').val(numeros[15]);
-    $('#txtNum17Lotomania').val(numeros[16]);
-    $('#txtNum18Lotomania').val(numeros[17]);
-    $('#txtNum19Lotomania').val(numeros[18]);
-    $('#txtNum20Lotomania').val(numeros[19]);
-    $('#txtNum21Lotomania').val(numeros[20]);
-    $('#txtNum22Lotomania').val(numeros[21]);
-    $('#txtNum23Lotomania').val(numeros[22]);
-    $('#txtNum24Lotomania').val(numeros[23]);
-    $('#txtGanhadores20Lotomania').val(resultado.qtGanhadoresFaixa1);
-    $('#txtValor20Lotomania').val(resultado.vrRateioFaixa1.toLocaleString('pt-BR'));
-    $('#txtGanhadores19Lotomania').val(resultado.qtGanhadoresFaixa2);
-    $('#txtValor19Lotomania').val(resultado.vrRateioFaixa2.toLocaleString('pt-BR'));
-    $('#txtGanhadores18Lotomania').val(resultado.qtGanhadoresFaixa3);
-    $('#txtValor18Lotomania').val(resultado.vrRateioFaixa3.toLocaleString('pt-BR'));
-    $('#txtGanhadores17Lotomania').val(resultado.qtGanhadoresFaixa4);
-    $('#txtValor17Lotomania').val(resultado.vrRateioFaixa4.toLocaleString('pt-BR'));
-    $('#txtGanhadores16Lotomania').val(resultado.qtGanhadoresFaixa5);
-    $('#txtValor16Lotomania').val(resultado.vrRateioFaixa5.toLocaleString('pt-BR'));
-    //Resultados invertidos
-    $('#txtGanhadores15Lotomania').val(resultado.qtGanhadoresFaixa7);
-    $('#txtValor15Lotomania').val(resultado.vrRateioFaixa7.toLocaleString('pt-BR'));
-    $('#txtGanhadores0Lotomania').val(resultado.qtGanhadoresFaixa6);
-    $('#txtValor0Lotomania').val(resultado.vrRateioFaixa6.toLocaleString('pt-BR'));
-    //Resultados invertidos
+function RecuperaUltimoESalvaLotoFacil(resultado) {
 
-    $('#txtValorAcumuladoLotomania').val(resultado.vrEstimativa.toLocaleString('pt-BR'));
-    var lotomania = {
+    $.getJSON(urlBase + '/lotofacil/' + resultado.concursoAnterior).done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            var resultado2 = retornoLasted.data;
+            $('#txtNumConcursoLotofacil_2').val(resultado.concurso);
+            $('#txtDataConcursoLotofacil_2').val(resultado.dt_apuracaoStr);
+            var numeros = resultado.resultadoOrdenado.split('-');
+            $('#txtNum1Lotofacil_2').val(numeros[0]);
+            $('#txtNum2Lotofacil_2').val(numeros[1]);
+            $('#txtNum3Lotofacil_2').val(numeros[2]);
+            $('#txtNum4Lotofacil_2').val(numeros[3]);
+            $('#txtNum5Lotofacil_2').val(numeros[4]);
+            $('#txtNum6Lotofacil_2').val(numeros[5]);
+            $('#txtNum7Lotofacil_2').val(numeros[6]);
+            $('#txtNum8Lotofacil_2').val(numeros[7]);
+            $('#txtNum9Lotofacil_2').val(numeros[8]);
+            $('#txtNum10Lotofacil_2').val(numeros[9]);
+            $('#txtNum11Lotofacil_2').val(numeros[10]);
+            $('#txtNum12Lotofacil_2').val(numeros[11]);
+            $('#txtNum13Lotofacil_2').val(numeros[12]);
+            $('#txtNum14Lotofacil_2').val(numeros[13]);
+            $('#txtNum15Lotofacil_2').val(numeros[14]);
+
+            $('#txtGanhadores15Lotofacil_2').val(resultado.qt_ganhador_faixa1);
+            $('#txtValor15Lotofacil_2').val(resultado.vr_rateio_faixa1.toLocaleString('pt-BR'));
+            $('#txtGanhadores14Lotofacil_2').val(resultado.qt_ganhador_faixa2);
+            $('#txtValor14Lotofacil_2').val(resultado.vr_rateio_faixa2.toLocaleString('pt-BR'));
+            $('#txtGanhadores13Lotofacil_2').val(resultado.qt_ganhador_faixa3);
+            $('#txtValor13Lotofacil_2').val(resultado.vr_rateio_faixa3.toLocaleString('pt-BR'));
+            $('#txtGanhadores12Lotofacil_2').val(resultado.qt_ganhador_faixa4);
+            $('#txtValor12Lotofacil_2').val(resultado.vr_rateio_faixa4.toLocaleString('pt-BR'));
+            $('#txtGanhadores11Lotofacil_2').val(resultado.qt_ganhador_faixa5);
+            $('#txtValor11Lotofacil_2').val(resultado.vr_rateio_faixa5.toLocaleString('pt-BR'));
+
+            $('#txtValorAcumuladoLotofacil_2').val(resultado.vrAcumuladoEspecial.toLocaleString('pt-BR'));
+
+
+            ///resultado 2 jogo
+            $('#txtNumConcursoLotofacil').val(resultado2.concurso);
+            $('#txtDataConcursoLotofacil').val(resultado2.dt_apuracaoStr);
+            var numeros = resultado2.resultadoOrdenado.split('-');
+            $('#txtNum1Lotofacil').val(numeros[0]);
+            $('#txtNum2Lotofacil').val(numeros[1]);
+            $('#txtNum3Lotofacil').val(numeros[2]);
+            $('#txtNum4Lotofacil').val(numeros[3]);
+            $('#txtNum5Lotofacil').val(numeros[4]);
+            $('#txtNum6Lotofacil').val(numeros[5]);
+            $('#txtNum7Lotofacil').val(numeros[6]);
+            $('#txtNum8Lotofacil').val(numeros[7]);
+            $('#txtNum9Lotofacil').val(numeros[8]);
+            $('#txtNum10Lotofacil').val(numeros[9]);
+            $('#txtNum11Lotofacil').val(numeros[10]);
+            $('#txtNum12Lotofacil').val(numeros[11]);
+            $('#txtNum13Lotofacil').val(numeros[12]);
+            $('#txtNum14Lotofacil').val(numeros[13]);
+            $('#txtNum15Lotofacil').val(numeros[14]);
+
+            $('#txtGanhadores15Lotofacil').val(resultado2.qt_ganhador_faixa1);
+            $('#txtValor15Lotofacil').val(resultado2.vr_rateio_faixa1.toLocaleString('pt-BR'));
+            $('#txtGanhadores14Lotofacil').val(resultado2.qt_ganhador_faixa2);
+            $('#txtValor14Lotofacil').val(resultado2.vr_rateio_faixa2.toLocaleString('pt-BR'));
+            $('#txtGanhadores13Lotofacil').val(resultado2.qt_ganhador_faixa3);
+            $('#txtValor13Lotofacil').val(resultado2.vr_rateio_faixa3.toLocaleString('pt-BR'));
+            $('#txtGanhadores12Lotofacil').val(resultado2.qt_ganhador_faixa4);
+            $('#txtValor12Lotofacil').val(resultado2.vr_rateio_faixa4.toLocaleString('pt-BR'));
+            $('#txtGanhadores11Lotofacil').val(resultado2.qt_ganhador_faixa5);
+            $('#txtValor11Lotofacil').val(resultado2.vr_rateio_faixa5.toLocaleString('pt-BR'));
+            $('#txtValorAcumuladoLotofacil').val(resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR'));
+
+
+            var lotofacil = {
+                NumConcurso_1: resultado.concurso,
+                DatConcurso_1: resultado.dt_apuracaoStr,
+                NumSorteados_1: resultado.resultadoOrdenado,
+                QtdeGanhadores15pts_1: resultado.qt_ganhador_faixa1,
+                ValorGanhadores15pts_1: resultado.vr_rateio_faixa1.toLocaleString('pt-BR'),
+                QtdeGanhadores14pts_1: resultado.qt_ganhador_faixa2,
+                ValorGanhadores14pts_1: resultado.vr_rateio_faixa2.toLocaleString('pt-BR'),
+                QtdeGanhadores13pts_1: resultado.qt_ganhador_faixa3,
+                ValorGanhadores13pts_1: resultado.vr_rateio_faixa3.toLocaleString('pt-BR'),
+                QtdeGanhadores12pts_1: resultado.qt_ganhador_faixa4,
+                ValorGanhadores12pts_1: resultado.vr_rateio_faixa4.toLocaleString('pt-BR'),
+                QtdeGanhadores11pts_1: resultado.qt_ganhador_faixa5,
+                ValorGanhadores11pts_1: resultado.vr_rateio_faixa5.toLocaleString('pt-BR'),
+                ValorAcumulado_1: resultado.vrAcumuladoEspecial.toLocaleString('pt-BR'),
+                NumConcurso_2: resultado2.concurso,
+                DatConcurso_2: resultado2.dt_apuracaoStr,
+                NumSorteados_2: resultado2.resultadoOrdenado,
+                QtdeGanhadores15pts_2: resultado2.qt_ganhador_faixa1,
+                ValorGanhadores15pts_2: resultado2.vr_rateio_faixa1.toLocaleString('pt-BR'),
+                QtdeGanhadores14pts_2: resultado2.qt_ganhador_faixa2,
+                ValorGanhadores14pts_2: resultado2.vr_rateio_faixa2.toLocaleString('pt-BR'),
+                QtdeGanhadores13pts_2: resultado2.qt_ganhador_faixa3,
+                ValorGanhadores13pts_2: resultado2.vr_rateio_faixa3.toLocaleString('pt-BR'),
+                QtdeGanhadores12pts_2: resultado2.qt_ganhador_faixa4,
+                ValorGanhadores12pts_2: resultado2.vr_rateio_faixa4.toLocaleString('pt-BR'),
+                QtdeGanhadores11pts_2: resultado2.qt_ganhador_faixa5,
+                ValorGanhadores11pts_2: resultado2.vr_rateio_faixa5.toLocaleString('pt-BR'),
+                ValorAcumulado_2: resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR')
+            }
+            $.ajax({
+                url: '/Home/SalvarResultadoLotoFacil',
+                type: "POST",
+                async: true,
+                data: { lotofacil },
+                success: function (resultado) {
+                    if (!resultado.sucesso)
+                        console.log(resultado.mensagem);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
+            });
+        }
+    });
+}
+
+function RecuperaQuina() {
+    $.getJSON(urlBase + '/quina/lasted').done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            $.ajax({
+                url: '/Home/RecuperarUltimoResultadoQuina',
+                async: true,
+                data: {},
+                success: function (retorno) {
+                    if (retorno.sucesso) {
+                        if (retorno.tipo == 1) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso) {
+                                RecuperaUltimoESalvaQuina(retornoLasted.data[0]);
+                            }
+                            else {
+                                $('#txtNumConcursoQuina').val(retorno.resultado.NumConcurso_1);
+                                $('#txtDataConcursoQuina').val(retorno.resultado.DatConcurso_1);
+                                var numeros = retorno.resultado.NumSorteados_1.split('-');
+                                $('#txtNum1Quina').val(numeros[0]);
+                                $('#txtNum2Quina').val(numeros[1]);
+                                $('#txtNum3Quina').val(numeros[2]);
+                                $('#txtNum4Quina').val(numeros[3]);
+                                $('#txtNum5Quina').val(numeros[4]);
+                                $('#txtGanhadoresQuinaQuina').val(retorno.resultado.QtdeGanhadoresQuina_1);
+                                $('#txtValorQuinaQuina').val(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaQuadra').val(retorno.resultado.QtdeGanhadoresQuadra_1);
+                                $('#txtValorQuinaQuadra').val(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaTerno').val(retorno.resultado.QtdeGanhadoresTerno_1);
+                                $('#txtValorQuinaTerno').val(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaDuque').val(retorno.resultado.QtdeGanhadoresDuque_1);
+                                $('#txtValorQuinaDuque').val(retorno.resultado.ValorGanhadoresDuque_1.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoQuina').val(retorno.resultado.ValorAcumulado_1.toLocaleString('pt-BR'));
+
+                                ///resultado 2 jogo
+                                $('#txtNum1Quina_2').val(numeros[0]);
+                                $('#txtNum2Quina_2').val(numeros[1]);
+                                $('#txtNum3Quina_2').val(numeros[2]);
+                                $('#txtNum4Quina_2').val(numeros[3]);
+                                $('#txtNum5Quina_2').val(numeros[4]);
+                                $('#txtGanhadoresQuinaQuina_2').val(retorno.resultado.QtdeGanhadoresQuina_2);
+                                $('#txtValorQuinaQuina_2').val(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaQuadra_2').val(retorno.resultado.QtdeGanhadoresQuadra_2);
+                                $('#txtValorQuinaQuadra_2').val(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaTerno_2').val(retorno.resultado.QtdeGanhadoresTerno_2);
+                                $('#txtValorQuinaTerno_2').val(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR'));
+                                $('#txtGanhadoresQuinaDuque_2').val(retorno.resultado.QtdeGanhadoresDuque_2);
+                                $('#txtValorQuinaDuque_2').val(retorno.resultado.ValorGanhadoresDuque_2.toLocaleString('pt-BR'));
+                                $('#txtValorAcumuladoQuina_2').val(retorno.resultado.ValorAcumulado_2.toLocaleString('pt-BR'));
+                            }
+                        }
+                        else {
+                            RecuperaUltimoESalvaQuina(retornoLasted.data[0]);
+                        }
+                    }
+                    else {
+                        alert(resultado.mensagem);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        }
+    });
+}
+
+function RecuperaUltimoESalvaQuina(resultado) {
+    $.getJSON(urlBase + '/quina/' + resultado.concursoAnterior).done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            var resultado2 = retornoLasted.data;
+            $('#txtNumConcursoQuina').val(resultado.concurso);
+            $('#txtDataConcursoQuina').val(resultado.dataStr);
+            var numeros = resultado.resultadoOrdenado.split('-');
+            $('#txtNum1Quina').val(numeros[0]);
+            $('#txtNum2Quina').val(numeros[1]);
+            $('#txtNum3Quina').val(numeros[2]);
+            $('#txtNum4Quina').val(numeros[3]);
+            $('#txtNum5Quina').val(numeros[4]);
+
+            $('#txtGanhadoresQuinaQuina').val(resultado.ganhadores);
+            $('#txtValorQuinaQuina').val(resultado.valor.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaQuadra').val(resultado.ganhadores_quadra);
+            $('#txtValorQuinaQuadra').val(resultado.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaTerno').val(resultado.ganhadores_terno);
+            $('#txtValorQuinaTerno').val(resultado.valor_terno.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaDuque').val(resultado.qt_ganhador_duque);
+            $('#txtValorQuinaDuque').val(resultado.vr_rateio_duque.toLocaleString('pt-BR'));
+            $('#txtValorAcumuladoQuina').val(resultado.vrAcumulado.toLocaleString('pt-BR'));
+
+
+            ///resultado 2 jogo
+            $('#txtNumConcursoQuina_2').val(resultado2.concurso);
+            $('#txtDataConcursoQuina_2').val(resultado2.dataStr);
+            var numeros = resultado2.resultadoOrdenado.split('-');
+            $('#txtNum1Quina_2').val(numeros[0]);
+            $('#txtNum2Quina_2').val(numeros[1]);
+            $('#txtNum3Quina_2').val(numeros[2]);
+            $('#txtNum4Quina_2').val(numeros[3]);
+            $('#txtNum5Quina_2').val(numeros[4]);
+            $('#txtGanhadoresQuinaQuina_2').val(resultado2.ganhadores);
+            $('#txtValorQuinaQuina_2').val(resultado2.valor.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaQuadra_2').val(resultado2.ganhadores_quadra);
+            $('#txtValorQuinaQuadra_2').val(resultado2.valor_quadra.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaTerno_2').val(resultado2.ganhadores_terno);
+            $('#txtValorQuinaTerno_2').val(resultado2.valor_terno.toLocaleString('pt-BR'));
+            $('#txtGanhadoresQuinaDuque_2').val(resultado2.qt_ganhador_duque);
+            $('#txtValorQuinaDuque_2').val(resultado2.vr_rateio_duque.toLocaleString('pt-BR'));
+            $('#txtValorAcumuladoQuina_2').val(resultado2.vrAcumulado.toLocaleString('pt-BR'));
+
+
+            var quina = {
+                NumConcurso_1: resultado.concurso,
+                DatConcurso_1: resultado.dataStr,
+                NumSorteados_1: resultado.resultadoOrdenado,
+                QtdeGanhadoresQuina_1: resultado.ganhadores,
+                ValorGanhadoresQuina_1: resultado.valor.toLocaleString('pt-BR'),
+                QtdeGanhadoresQuadra_1: resultado.ganhadores_quadra,
+                ValorGanhadoresQuadra_1: resultado.valor_quadra.toLocaleString('pt-BR'),
+                QtdeGanhadoresTerno_1: resultado.ganhadores_terno,
+                ValorGanhadoresTerno_1: resultado.valor_terno.toLocaleString('pt-BR'),
+                QtdeGanhadoresDuque_1: resultado.qt_ganhador_duque,
+                ValorGanhadoresDuque_1: resultado.vr_rateio_duque.toLocaleString('pt-BR'),
+                ValorAcumulado_1: resultado.vrAcumulado.toLocaleString('pt-BR'),
+
+                NumConcurso_2: resultado2.concurso,
+                DatConcurso_2: resultado2.dataStr,
+                NumSorteados_2: resultado2.resultadoOrdenado,
+                QtdeGanhadoresQuina_2: resultado2.ganhadores,
+                ValorGanhadoresQuina_2: resultado2.valor.toLocaleString('pt-BR'),
+                QtdeGanhadoresQuadra_2: resultado2.ganhadores_quadra,
+                ValorGanhadoresQuadra_2: resultado2.valor_quadra.toLocaleString('pt-BR'),
+                QtdeGanhadoresTerno_2: resultado2.ganhadores_terno,
+                ValorGanhadoresTerno_2: resultado2.valor_terno.toLocaleString('pt-BR'),
+                QtdeGanhadoresDuque_2: resultado2.qt_ganhador_duque,
+                ValorGanhadoresDuque_2: resultado2.vr_rateio_duque.toLocaleString('pt-BR'),
+                ValorAcumulado_2: resultado2.vrAcumulado.toLocaleString('pt-BR')
+            }
+            $.ajax({
+                url: '/Home/SalvarResultadoQuina',
+                type: "POST",
+                async: true,
+                data: { quina },
+                success: function (resultado) {
+                    if (!resultado.sucesso)
+                        console.log(resultado.mensagem);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
+            });
+        }
+    });
+}
+
+function RecuperaLoteca() {
+    $.getJSON(urlBase + '/loteca/lasted').done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            $.ajax({
+                url: '/Home/RecuperarUltimoResultadoLoteca',
+                async: true,
+                data: {},
+                success: function (retorno) {
+                    if (retorno.sucesso) {
+                        if (retorno.tipo == 1) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso) {
+                                RecuperaUltimoESalvaLoteca(retornoLasted.data[0]);
+                            }
+                            else {
+                                $('#txtNumConcursoLoteca').val(retorno.resultado.NumConcurso);
+                                $('#txtDataConcursoLoteca').val(retorno.resultado.DatConcurso);
+                                $('#txtGanhadores15ptsLoteca').val(retorno.resultado.QtdeGanhadores15pts);
+                                $('#txtValor15ptsLoteca').val(retorno.resultado.ValorGanhadores15pts);
+                                $('#txtGanhadores16ptsLoteca').val(retorno.resultado.QtdeGanhadores16pts);
+                                $('#txtValor16ptsLoteca').val(retorno.resultado.ValorGanhadores16pts);
+                                $('#txtValorAcumuladoLoteca').val(retorno.resultado.ValorAcumulado);
+                                for (var i = 0; i < retorno.resultado.ListaJogos.length; i++) {
+                                    switch (retorno.resultado.ListaJogos[i].IndTipoResultado) {
+
+                                        case 1:
+                                            {
+                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('X');
+                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
+                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
+                                                break;
+                                            }
+                                        case 2:
+                                            {
+                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
+                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('X');
+                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
+                                                break;
+                                            }
+                                        case 3:
+                                            {
+                                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
+                                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
+                                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('X');
+                                                break;
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            RecuperaUltimoESalvaLoteca(retornoLasted.data[0]);
+                        }
+                    }
+                    else {
+                        alert(retorno.mensagem);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        }
+    });
+}
+
+function RecuperaUltimoESalvaLoteca(resultado) {
+    $('#txtNumConcursoLoteca').val(resultado.concurso);
+    $('#txtDataConcursoLoteca').val(resultado.dtApuracaoStr);
+    $('#txtGanhadores15ptsLoteca').val(resultado.qtGanhadorFaixa1);
+    $('#txtValor15ptsLoteca').val(resultado.vrRateioFaixa1.toLocaleString('pt-BR'));
+    $('#txtGanhadores16ptsLoteca').val(resultado.qtGanhadorFaixa2);
+    $('#txtValor16ptsLoteca').val(resultado.vrRateioFaixa2.toLocaleString('pt-BR'));
+    $('#txtValorAcumuladoLoteca').val(resultado.vrConcursoAcumulado.toLocaleString('pt-BR'));
+
+    var loteca = {
         NumConcurso: resultado.concurso,
         DatConcurso: resultado.dtApuracaoStr,
-        NumSorteados: resultado.resultadoOrdenado,
-        QtdeGanhadores20pts: resultado.qtGanhadoresFaixa1,
-        ValorGanhadores20pts: resultado.vrRateioFaixa1.toLocaleString('pt-BR'),
-        QtdeGanhadores19pts: resultado.qtGanhadoresFaixa2,
-        ValorGanhadores19pts: resultado.vrRateioFaixa2.toLocaleString('pt-BR'),
-        QtdeGanhadores18pts: resultado.qtGanhadoresFaixa3,
-        ValorGanhadores18pts: resultado.vrRateioFaixa3.toLocaleString('pt-BR'),
-        QtdeGanhadores17pts: resultado.qtGanhadoresFaixa4,
-        ValorGanhadores17pts: resultado.vrRateioFaixa4.toLocaleString('pt-BR'),
-        QtdeGanhadores16pts: resultado.qtGanhadoresFaixa5,
-        ValorGanhadores16pts: resultado.vrRateioFaixa5.toLocaleString('pt-BR'),
-        QtdeGanhadores15pts: resultado.qtGanhadoresFaixa7,   //Resultados invertidos
-        ValorGanhadores15pts: resultado.vrRateioFaixa7.toLocaleString('pt-BR'),   //Resultados invertidos
-        QtdeGanhadores0pts: resultado.qtGanhadoresFaixa6,   //Resultados invertidos
-        ValorGanhadores0pts: resultado.vrRateioFaixa6.toLocaleString('pt-BR'),   //Resultados invertidos
-        ValorAcumulado: resultado.vrEstimativa.toLocaleString('pt-BR')
+        QtdeGanhadores15pts: resultado.qtGanhadorFaixa1,
+        ValorGanhadores15pts: resultado.vrRateioFaixa1.toLocaleString('pt-BR'),
+        QtdeGanhadores16pts: resultado.qtGanhadorFaixa2,
+        ValorGanhadores16pts: resultado.vrRateioFaixa2.toLocaleString('pt-BR'),
+        ValorAcumulado: resultado.vrConcursoAcumulado.toLocaleString('pt-BR')
     }
     $.ajax({
-        url: '/Home/SalvarResultadoLotoMania',
+        url: '/Home/SalvarResultadoLoteca',
         type: "POST",
         async: true,
-        data: { lotomania },
-        success: function (resultado) {
-            if (!resultado.sucesso)
-                console.log(resultado.mensagem);
+        data: { loteca },
+        success: function (resultadoSalvarLoteca) {
+
+            if (!resultadoSalvarLoteca.sucesso)
+                console.log(resultadoSalvarLoteca.mensagem);
+            else {
+                for (var i = 0; i < resultado.jogos.length; i++) {
+                    var jogosLoteca = {
+                        NumConcurso: resultado.jogos[i].concurso,
+                        IndFaixa: (i + 1),
+                        IndTipoResultado: resultado.jogos[i].colunaUm ? 1 : (resultado.jogos[i].colunaDois ? 2 : 3)
+                    }
+
+                    switch (jogosLoteca.IndTipoResultado) {
+
+                        case 1:
+                            {
+                                $('#txtNum' + (i + 1) + 'UmLoteca').val('X');
+                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
+                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
+                                break;
+                            }
+                        case 2:
+                            {
+                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
+                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('X');
+                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('');
+                                break;
+                            }
+                        case 3:
+                            {
+                                $('#txtNum' + (i + 1) + 'UmLoteca').val('');
+                                $('#txtNum' + (i + 1) + 'MeioLoteca').val('');
+                                $('#txtNum' + (i + 1) + 'DoisLoteca').val('X');
+                                break;
+                            }
+                    }
+
+                    $.ajax({
+                        url: '/Home/SalvarResultadoJogosLoteca',
+                        type: "POST",
+                        async: true,
+                        data: { jogosLoteca },
+                        success: function (resultado) {
+                            if (!resultado.sucesso)
+                                console.log(resultado.mensagem);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+                        }
+                    });
+                }
+
+            }
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -415,9 +763,26 @@ function RecuperaUltimoESalvaLotoFacil() {
     });
 }
 
-function RecuperaQuina() { }
-function RecuperaLoteca() { }
 function RecuperaTimeMania() { }
+
+function RecuperaUltimoESalvaTimeMania(resultado) {
+
+}
+
 function RecuperaDuplaSena() { }
+
+function RecuperaUltimoESalvaDuplaSena(resultado) {
+
+}
+
 function RecuperaSorteSete() { }
+
+function RecuperaUltimoESalvaSorteSete(resultado) {
+
+}
+
 function RecuperaDiaDeSorte() { }
+
+function RecuperaUltimoESalvaDiaDeSort(resultado) {
+
+}

@@ -32,26 +32,36 @@ namespace UnidadeLotericaDiario.Repository
             {
                 String sql = @"
                     SELECT DISTINCT
-                         RL.NUM_CONCURSO,
-                         RL.DAT_CONCURSO,
-                         RL.NUM_SORTEADOS,
-                         RL.QTD_GANHADORES_20PTS,
-                         RL.VALOR_GANHADORES_20PTS,
-                         RL.QTD_GANHADORES_19PTS,
-                         RL.VALOR_GANHADORES_19PTS,
-                         RL.QTD_GANHADORES_18PTS,
-                         RL.VALOR_GANHADORES_18PTS,
-                         RL.QTD_GANHADORES_17PTS,
-                         RL.VALOR_GANHADORES_17PTS,
-                         RL.QTD_GANHADORES_16PTS,
-                         RL.VALOR_GANHADORES_16PTS,
-                         RL.QTD_GANHADORES_15PTS,
-                         RL.VALOR_GANHADORES_15PTS,
-                         RL.QTD_GANHADORES_0PTS,
-                         RL.VALOR_GANHADORES_0PTS,
-                         RL.VALOR_ACUMULADO
+                         RL.NUM_CONCURSO_1, 
+                         RL.DAT_CONCURSO_1,
+                         RL.NUM_SORTEADOS_1,
+                         RL.QTD_GANHADORES_1_15PTS, 
+                         RL.VALOR_GANHADORES_1_15PTS,
+                         RL.QTD_GANHADORES_1_14PTS, 
+                         RL.VALOR_GANHADORES_1_14PTS,
+                         RL.QTD_GANHADORES_1_13PTS, 
+                         RL.VALOR_GANHADORES_1_13PTS,
+                         RL.QTD_GANHADORES_1_12PTS, 
+                         RL.VALOR_GANHADORES_1_12PTS,
+                         RL.QTD_GANHADORES_1_11PTS, 
+                         RL.VALOR_GANHADORES_1_11PTS,
+                         RL.VALOR_ACUMULADO_1,
+                         RL.NUM_CONCURSO_2, 
+                         RL.DAT_CONCURSO_2,
+                         RL.NUM_SORTEADOS_2,
+                         RL.QTD_GANHADORES_2_15PTS,
+                         RL.VALOR_GANHADORES_2_15PTS,
+                         RL.QTD_GANHADORES_2_14PTS, 
+                         RL.VALOR_GANHADORES_2_14PTS,
+                         RL.QTD_GANHADORES_2_13PTS, 
+                         RL.VALOR_GANHADORES_2_13PTS,
+                         RL.QTD_GANHADORES_2_12PTS, 
+                         RL.VALOR_GANHADORES_2_12PTS,
+                         RL.QTD_GANHADORES_2_11PTS, 
+                         RL.VALOR_GANHADORES_2_11PTS,
+                         RL.VALOR_ACUMULADO_2 
                     FROM
-                         RESULTADO_LOTOMANIA RL
+                         RESULTADO_LOTOFACIL RL
                     ORDER BY 1 desc; ";
 
                 MySqlConnection con = new MySqlConnection(_connectionString);
@@ -63,24 +73,35 @@ namespace UnidadeLotericaDiario.Repository
                 while (dr.Read())
                 {
                     lotoFacil = new LotoFacil();
-                    lotoFacil.NumConcurso = dr["NUM_CONCURSO"].ToString();
-                    lotoFacil.DatConcurso = dr["DAT_CONCURSO"].ToString();
-                    lotoFacil.NumSorteados = dr["NUM_SORTEADOS"].ToString();
-                    lotoFacil.QtdeGanhadores20pts = dr["QTD_GANHADORES_20PTS"].ToString();
-                    lotoFacil.ValorGanhadores20pts =dr["VALOR_GANHADORES_20PTS"].ToString();
-                    lotoFacil.QtdeGanhadores19pts = dr["QTD_GANHADORES_19PTS"].ToString();
-                    lotoFacil.ValorGanhadores19pts =dr["VALOR_GANHADORES_19PTS"].ToString();
-                    lotoFacil.QtdeGanhadores18pts = dr["QTD_GANHADORES_18PTS"].ToString();
-                    lotoFacil.ValorGanhadores18pts =dr["VALOR_GANHADORES_18PTS"].ToString();
-                    lotoFacil.QtdeGanhadores17pts = dr["QTD_GANHADORES_17PTS"].ToString();
-                    lotoFacil.ValorGanhadores17pts =dr["VALOR_GANHADORES_17PTS"].ToString();
-                    lotoFacil.QtdeGanhadores16pts = dr["QTD_GANHADORES_16PTS"].ToString();
-                    lotoFacil.ValorGanhadores16pts =dr["VALOR_GANHADORES_16PTS"].ToString();
-                    lotoFacil.QtdeGanhadores15pts = dr["QTD_GANHADORES_15PTS"].ToString();
-                    lotoFacil.ValorGanhadores15pts =dr["VALOR_GANHADORES_15PTS"].ToString();
-                    lotoFacil.QtdeGanhadores0pts = dr["QTD_GANHADORES_0PTS"].ToString();
-                    lotoFacil.ValorGanhadores0pts =dr["VALOR_GANHADORES_0PTS"].ToString();
-                    lotoFacil.ValorAcumulado =dr["VALOR_ACUMULADO"].ToString();
+                    lotoFacil.NumConcurso_1 = dr["NUM_CONCURSO_1"].ToString();
+                    lotoFacil.DatConcurso_1 = dr["DAT_CONCURSO_1"].ToString();
+                    lotoFacil.NumSorteados_1 = dr["NUM_SORTEADOS_1"].ToString();
+                    lotoFacil.QtdeGanhadores15pts_1 = dr["QTD_GANHADORES_1_15PTS"].ToString();
+                    lotoFacil.ValorGanhadores15pts_1 =dr["VALOR_GANHADORES_1_15PTS"].ToString();
+                    lotoFacil.QtdeGanhadores14pts_1 = dr["QTD_GANHADORES_1_14PTS"].ToString();
+                    lotoFacil.ValorGanhadores14pts_1 = dr["VALOR_GANHADORES_1_14PTS"].ToString();
+                    lotoFacil.QtdeGanhadores13pts_1 = dr["QTD_GANHADORES_1_13PTS"].ToString();
+                    lotoFacil.ValorGanhadores13pts_1 = dr["VALOR_GANHADORES_1_13PTS"].ToString();
+                    lotoFacil.QtdeGanhadores12pts_1 = dr["QTD_GANHADORES_1_12PTS"].ToString();
+                    lotoFacil.ValorGanhadores12pts_1 = dr["VALOR_GANHADORES_1_12PTS"].ToString();
+                    lotoFacil.QtdeGanhadores11pts_1 = dr["QTD_GANHADORES_1_11PTS"].ToString();
+                    lotoFacil.ValorGanhadores11pts_1 = dr["VALOR_GANHADORES_1_11PTS"].ToString();
+                    lotoFacil.ValorAcumulado_1 =dr["VALOR_ACUMULADO_1"].ToString();
+
+                    lotoFacil.NumConcurso_2 = dr["NUM_CONCURSO_2"].ToString();
+                    lotoFacil.DatConcurso_2 = dr["DAT_CONCURSO_2"].ToString();
+                    lotoFacil.NumSorteados_2 = dr["NUM_SORTEADOS_2"].ToString();
+                    lotoFacil.QtdeGanhadores15pts_2 = dr["QTD_GANHADORES_2_15PTS"].ToString();
+                    lotoFacil.ValorGanhadores15pts_2 = dr["VALOR_GANHADORES_2_15PTS"].ToString();
+                    lotoFacil.QtdeGanhadores14pts_2 = dr["QTD_GANHADORES_2_14PTS"].ToString();
+                    lotoFacil.ValorGanhadores14pts_2 = dr["VALOR_GANHADORES_2_14PTS"].ToString();
+                    lotoFacil.QtdeGanhadores13pts_2 = dr["QTD_GANHADORES_2_13PTS"].ToString();
+                    lotoFacil.ValorGanhadores13pts_2 = dr["VALOR_GANHADORES_2_13PTS"].ToString();
+                    lotoFacil.QtdeGanhadores12pts_2 = dr["QTD_GANHADORES_2_12PTS"].ToString();
+                    lotoFacil.ValorGanhadores12pts_2 = dr["VALOR_GANHADORES_2_12PTS"].ToString();
+                    lotoFacil.QtdeGanhadores11pts_2 = dr["QTD_GANHADORES_2_11PTS"].ToString();
+                    lotoFacil.ValorGanhadores11pts_2 = dr["VALOR_GANHADORES_2_11PTS"].ToString();
+                    lotoFacil.ValorAcumulado_2 = dr["VALOR_ACUMULADO_2"].ToString();
                 }
                 dr.Dispose();
                 con.Close();
@@ -104,46 +125,66 @@ namespace UnidadeLotericaDiario.Repository
         {
             try
             {
-                var sql = @"INSERT INTO RESULTADO_LOTOMANIA 
+                var sql = @"INSERT INTO RESULTADO_LOTOFACIL
                                 (
-                                    NUM_CONCURSO,
-                                    DAT_CONCURSO,
-                                    NUM_SORTEADOS,
-                                    QTD_GANHADORES_20PTS,
-                                    VALOR_GANHADORES_20PTS,
-                                    QTD_GANHADORES_19PTS,
-                                    VALOR_GANHADORES_19PTS,
-                                    QTD_GANHADORES_18PTS,
-                                    VALOR_GANHADORES_18PTS,
-                                    QTD_GANHADORES_17PTS,
-                                    VALOR_GANHADORES_17PTS,
-                                    QTD_GANHADORES_16PTS,
-                                    VALOR_GANHADORES_16PTS,
-                                    QTD_GANHADORES_15PTS,
-                                    VALOR_GANHADORES_15PTS,
-                                    QTD_GANHADORES_0PTS,
-                                    VALOR_GANHADORES_0PTS,
-                                    VALOR_ACUMULADO
+                                    NUM_CONCURSO_1,
+                                    DAT_CONCURSO_1,
+                                    NUM_SORTEADOS_1,
+                                    QTD_GANHADORES_1_15PTS,
+                                    VALOR_GANHADORES_1_15PTS,
+                                    QTD_GANHADORES_1_14PTS,
+                                    VALOR_GANHADORES_1_14PTS,
+                                    QTD_GANHADORES_1_13PTS,
+                                    VALOR_GANHADORES_1_13PTS,
+                                    QTD_GANHADORES_1_12PTS,
+                                    VALOR_GANHADORES_1_12PTS,
+                                    QTD_GANHADORES_1_11PTS,
+                                    VALOR_GANHADORES_1_11PTS,
+                                    VALOR_ACUMULADO_1,
+                                    NUM_CONCURSO_2,
+                                    DAT_CONCURSO_2,
+                                    NUM_SORTEADOS_2,
+                                    QTD_GANHADORES_2_15PTS,
+                                    VALOR_GANHADORES_2_15PTS,
+                                    QTD_GANHADORES_2_14PTS,
+                                    VALOR_GANHADORES_2_14PTS,
+                                    QTD_GANHADORES_2_13PTS,
+                                    VALOR_GANHADORES_2_13PTS,
+                                    QTD_GANHADORES_2_12PTS,
+                                    VALOR_GANHADORES_2_12PTS,
+                                    QTD_GANHADORES_2_11PTS,
+                                    VALOR_GANHADORES_2_11PTS,
+                                    VALOR_ACUMULADO_2
                                 ) VALUES 
                                 (
-                                    '" + data.NumConcurso + @"',
-                                    '" + data.DatConcurso + @"',
-                                    '" + data.NumSorteados + @"',
-                                    '" + data.QtdeGanhadores20pts + @"',
-                                    '" + data.ValorGanhadores20pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores19pts + @"',
-                                    '" + data.ValorGanhadores19pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores18pts + @"',
-                                    '" + data.ValorGanhadores18pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores17pts + @"',
-                                    '" + data.ValorGanhadores18pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores16pts + @"',
-                                    '" + data.ValorGanhadores16pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores15pts + @"',
-                                    '" + data.ValorGanhadores15pts.ToString() + @"',
-                                    '" + data.QtdeGanhadores0pts + @"',
-                                    '" + data.ValorGanhadores0pts.ToString() + @"',
-                                    '" + data.ValorAcumulado.ToString() + @"'
+                                    '" + data.NumConcurso_1 + @"',
+                                    '" + data.DatConcurso_1 + @"',
+                                    '" + data.NumSorteados_1 + @"',
+                                    '" + data.QtdeGanhadores15pts_1 + @"',
+                                    '" + data.ValorGanhadores15pts_1.ToString() + @"',
+                                    '" + data.QtdeGanhadores14pts_1 + @"',
+                                    '" + data.ValorGanhadores14pts_1.ToString() + @"',
+                                    '" + data.QtdeGanhadores13pts_1 + @"',
+                                    '" + data.ValorGanhadores13pts_1.ToString() + @"',
+                                    '" + data.QtdeGanhadores12pts_1 + @"',
+                                    '" + data.ValorGanhadores12pts_1.ToString() + @"',
+                                    '" + data.QtdeGanhadores11pts_1 + @"',
+                                    '" + data.ValorGanhadores11pts_1.ToString() + @"',
+                                    '" + data.ValorAcumulado_1.ToString() + @"',
+                                    '" + data.NumConcurso_2 + @"',
+                                    '" + data.DatConcurso_2 + @"',
+                                    '" + data.NumSorteados_2 + @"',
+                                    '" + data.QtdeGanhadores15pts_2 + @"',
+                                    '" + data.ValorGanhadores15pts_2.ToString() + @"',
+                                    '" + data.QtdeGanhadores14pts_2 + @"',
+                                    '" + data.ValorGanhadores14pts_2.ToString() + @"',
+                                    '" + data.QtdeGanhadores13pts_2 + @"',
+                                    '" + data.ValorGanhadores13pts_2.ToString() + @"',
+                                    '" + data.QtdeGanhadores12pts_2 + @"',
+                                    '" + data.ValorGanhadores12pts_2.ToString() + @"',
+                                    '" + data.QtdeGanhadores11pts_2 + @"',
+                                    '" + data.ValorGanhadores11pts_2.ToString() + @"',
+                                    '" + data.ValorAcumulado_2.ToString() + @"'
                                 )";
                 MySqlConnection con = new MySqlConnection(_connectionString);
                 MySqlCommand comand = new MySqlCommand(sql, con);
