@@ -871,20 +871,294 @@ function RecuperaUltimoESalvaTimeMania(resultado) {
     });
 }
 
-function RecuperaDuplaSena() { }
+function RecuperaDuplaSena() {
+
+    $.getJSON(urlBase + '/duplasena/lasted').done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            $.ajax({
+                url: '/Home/RecuperarUltimoResultadoDuplaSena',
+                async: true,
+                data: {},
+                success: function (retorno) {
+                    if (retorno.sucesso) {
+                        if (retorno.tipo == 1) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso_1) {
+                                RecuperaUltimoESalvaDuplaSena(retornoLasted.data[0]);
+                            }
+                            else {
+                                $('#txtNumConcursoDuplaSena').val(retorno.resultado.NumConcurso);
+                                $('#txtDataConcursoDuplaSena').val(retorno.resultado.DatConcurso);
+                                var numeros = retorno.resultado.NumSorteados_1.split('-');
+                                $('#txtNum1DuplaSena').val(numeros[0]);
+                                $('#txtNum2DuplaSena').val(numeros[1]);
+                                $('#txtNum3DuplaSena').val(numeros[2]);
+                                $('#txtNum4DuplaSena').val(numeros[3]);
+                                $('#txtNum5DuplaSena').val(numeros[4]);
+                                $('#txtNum6DuplaSena').val(numeros[5]);
+                                $('#txtGanhadoresDuplaSenaSena').val(retorno.resultado.QtdeGanhadoresSena_1);
+                                $('#txtValorDuplaSenaSena').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresSena_1.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaQuina').val(retorno.resultado.QtdeGanhadoresQuina_1);
+                                $('#txtValorDuplaSenaQuina').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina_1.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaQuadra').val(retorno.resultado.QtdeGanhadoresQuadra_1);
+                                $('#txtValorDuplaSenaQuadra').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra_1.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaTerno').val(retorno.resultado.QtdeGanhadoresTerno_1);
+                                $('#txtValorDuplaSenaTerno').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresTerno_1.toLocaleString('pt-BR')));
+
+                                ///resultado 2 jogo
+                                var numeros = retorno.resultado.NumSorteados_2.split('-');
+                                $('#txtNum1DuplaSena_2').val(numeros[0]);
+                                $('#txtNum2DuplaSena_2').val(numeros[1]);
+                                $('#txtNum3DuplaSena_2').val(numeros[2]);
+                                $('#txtNum4DuplaSena_2').val(numeros[3]);
+                                $('#txtNum5DuplaSena_2').val(numeros[4]);
+                                $('#txtNum6DuplaSena_2').val(numeros[5]);
+                                $('#txtGanhadoresDuplaSenaSena_2').val(retorno.resultado.QtdeGanhadoresSena_2);
+                                $('#txtValorDuplaSenaSena_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresSena_2.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaQuina_2').val(retorno.resultado.QtdeGanhadoresQuina_2);
+                                $('#txtValorDuplaSenaQuina_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina_2.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaQuadra_2').val(retorno.resultado.QtdeGanhadoresQuadra_2);
+                                $('#txtValorDuplaSenaQuadra_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra_2.toLocaleString('pt-BR')));
+                                $('#txtGanhadoresDuplaSenaTerno_2').val(retorno.resultado.QtdeGanhadoresTerno_2);
+                                $('#txtValorDuplaSenaTerno_2').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresTerno_2.toLocaleString('pt-BR')));
+
+                                $('#txtValorAcumuladoDuplaSena').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado.toLocaleString('pt-BR')));
+                            }
+                        }
+                        else {
+                            RecuperaUltimoESalvaDuplaSena(retornoLasted.data[0]);
+                        }
+                    }
+                    else {
+                        alert(retorno.mensagem);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        }
+    });
+}
 
 function RecuperaUltimoESalvaDuplaSena(resultado) {
+    $('#txtNumConcursoDuplaSena').val(resultado.concurso);
+    $('#txtDataConcursoDuplaSena').val(resultado.dataStr);
+    var numeros = resultado.resultadoOrdenadoSorteio1.split('-');
+    $('#txtNum1DuplaSena').val(numeros[0]);
+    $('#txtNum2DuplaSena').val(numeros[1]);
+    $('#txtNum3DuplaSena').val(numeros[2]);
+    $('#txtNum4DuplaSena').val(numeros[3]);
+    $('#txtNum5DuplaSena').val(numeros[4]);
+    $('#txtNum6DuplaSena').val(numeros[5]);
+    $('#txtGanhadoresDuplaSenaSena').val(resultado.ganhadores_sena1);
+    $('#txtValorDuplaSenaSena').val(FormataValoresCom1CasaDecimal(resultado.valor_sena1.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaQuina').val(resultado.qt_ganhador_quina_faixa1);
+    $('#txtValorDuplaSenaQuina').val(FormataValoresCom1CasaDecimal(resultado.vr_quina_faixa1.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaQuadra').val(resultado.qt_ganhador_quadra_faixa1);
+    $('#txtValorDuplaSenaQuadra').val(FormataValoresCom1CasaDecimal(resultado.vr_quadra_faixa1.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaTerno').val(resultado.qt_ganhador_terno_faixa1);
+    $('#txtValorDuplaSenaTerno').val(FormataValoresCom1CasaDecimal(resultado.vr_terno_faixa1.toLocaleString('pt-BR')));
 
+    ///resultado 2 jogo
+    var numeros = resultado.resultadoOrdenadoSorteio2.split('-');
+    $('#txtNum1DuplaSena_2').val(numeros[0]);
+    $('#txtNum2DuplaSena_2').val(numeros[1]);
+    $('#txtNum3DuplaSena_2').val(numeros[2]);
+    $('#txtNum4DuplaSena_2').val(numeros[3]);
+    $('#txtNum5DuplaSena_2').val(numeros[4]);
+    $('#txtNum6DuplaSena_2').val(numeros[5]);
+    $('#txtGanhadoresDuplaSenaSena_2').val(resultado.ganhadores_sena2);
+    $('#txtValorDuplaSenaSena_2').val(FormataValoresCom1CasaDecimal(resultado.valor_sena2.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaQuina_2').val(resultado.ganhadores_quina2);
+    $('#txtValorDuplaSenaQuina_2').val(FormataValoresCom1CasaDecimal(resultado.valor_quina2.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaQuadra_2').val(resultado.ganhadores_quadra2);
+    $('#txtValorDuplaSenaQuadra_2').val(FormataValoresCom1CasaDecimal(resultado.valor_quadra2.toLocaleString('pt-BR')));
+    $('#txtGanhadoresDuplaSenaTerno_2').val(resultado.qt_ganhador_terno_faixa2);
+    $('#txtValorDuplaSenaTerno_2').val(FormataValoresCom1CasaDecimal(resultado.vr_terno_faixa2.toLocaleString('pt-BR')));
+
+    $('#txtValorAcumuladoDuplaSena').val(FormataValoresCom1CasaDecimal(resultado.vr_acumulado_especial.toLocaleString('pt-BR')));
+
+
+    var duplaSena = {
+        NumConcurso: resultado.concurso,
+        DatConcurso: resultado.dataStr,
+        NumSorteados_1: resultado.resultadoOrdenadoSorteio1,
+        QtdeGanhadoresSena_1: resultado.ganhadores_sena1,
+        ValorGanhadoresSena_1: FormataValoresCom1CasaDecimal(resultado.valor_sena1.toLocaleString('pt-BR')),
+        QtdeGanhadoresQuina_1: resultado.qt_ganhador_quina_faixa1,
+        ValorGanhadoresQuina_1: FormataValoresCom1CasaDecimal(resultado.vr_quina_faixa1.toLocaleString('pt-BR')),
+        QtdeGanhadoresQuadra_1: resultado.qt_ganhador_quadra_faixa1,
+        ValorGanhadoresQuadra_1: FormataValoresCom1CasaDecimal(resultado.vr_quadra_faixa1.toLocaleString('pt-BR')),
+        QtdeGanhadoresTerno_1: resultado.qt_ganhador_terno_faixa1,
+        ValorGanhadoresTerno_1: FormataValoresCom1CasaDecimal(resultado.vr_terno_faixa1.toLocaleString('pt-BR')),
+        NumSorteados_2: resultado.resultadoOrdenadoSorteio2,
+        QtdeGanhadoresSena_2: resultado.ganhadores_sena2,
+        ValorGanhadoresSena_2: FormataValoresCom1CasaDecimal(resultado.valor_sena2.toLocaleString('pt-BR')),
+        QtdeGanhadoresQuina_2: resultado.ganhadores_quina2,
+        ValorGanhadoresQuina_2: FormataValoresCom1CasaDecimal(resultado.valor_quina2.toLocaleString('pt-BR')),
+        QtdeGanhadoresQuadra_2: resultado.ganhadores_quadra2,
+        ValorGanhadoresQuadra_2: FormataValoresCom1CasaDecimal(resultado.valor_quadra2.toLocaleString('pt-BR')),
+        QtdeGanhadoresTerno_2: resultado.qt_ganhador_terno_faixa2,
+        ValorGanhadoresTerno_2: FormataValoresCom1CasaDecimal(resultado.vr_terno_faixa2.toLocaleString('pt-BR')),
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_acumulado_especial.toLocaleString('pt-BR'))
+    }
+    $.ajax({
+        url: '/Home/SalvarResultadoDuplaSena',
+        type: "POST",
+        async: true,
+        data: { duplaSena },
+        success: function (resultado) {
+            if (!resultado.sucesso)
+                console.log(resultado.mensagem);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        }
+    });
 }
 
-function RecuperaSorteSete() { }
+function RecuperaSorteSete() {
+    $.ajax({
+        url: '/Home/RecuperarUltimoResultadoSuperSete',
+        async: true,
+        data: {},
+        success: function (retorno) {
+            $('#txtNumConcursoSuperSete').val(retorno.resultado.NumConcurso);
+            $('#txtDataConcursoSuperSete').val(retorno.resultado.DatConcurso);
+            var numeros = retorno.resultado.NumSorteados.split('-');
+            $('#txtNum1SuperSete').val(numeros[0]);
+            $('#txtNum2SuperSete').val(numeros[1]);
+            $('#txtNum3SuperSete').val(numeros[2]);
+            $('#txtNum4SuperSete').val(numeros[3]);
+            $('#txtNum5SuperSete').val(numeros[4]);
+            $('#txtNum6SuperSete').val(numeros[5]);
+            $('#txtNum7SuperSete').val(numeros[6]);
+            $('#txtGanhadoresSuperSete_7pts').val(retorno.resultado.QtdeGanhadores_7pts);
+            $('#txtValorSuperSete_7pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores_7pts.toLocaleString('pt-BR')));
+            $('#txtGanhadoresSuperSete_6pts').val(retorno.resultado.QtdeGanhadores_6pts);
+            $('#txtValorSuperSete_6pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores_6pts.toLocaleString('pt-BR')));
+            $('#txtGanhadoresSuperSete_5pts').val(retorno.resultado.QtdeGanhadores_5pts);
+            $('#txtValorSuperSete_5pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores_5pts.toLocaleString('pt-BR')));
+            $('#txtGanhadoresSuperSete_4pts').val(retorno.resultado.QtdeGanhadores_4pts);
+            $('#txtValorSuperSete_4pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores_4pts.toLocaleString('pt-BR')));
+            $('#txtGanhadoresSuperSete_3pts').val(retorno.resultado.QtdeGanhadores_3pts);
+            $('#txtValorSuperSete_3pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadores_3pts.toLocaleString('pt-BR')));
+            $('#txtValorAcumuladoSuperSete').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado.toLocaleString('pt-BR')));
+        }
+    });
+}
 
 function RecuperaUltimoESalvaSorteSete(resultado) {
+    //TODO: Atualizar quando tiver na API
+}
+
+function RecuperaDiaDeSorte() {
+    $.getJSON(urlBase + '/diadesorte/lasted').done(function (retornoLasted) {
+        if (retornoLasted.success) {
+            $.ajax({
+                url: '/Home/RecuperarUltimoResultadoDiaDeSorte',
+                async: true,
+                data: {},
+                success: function (retorno) {
+                    if (retorno.sucesso) {
+                        if (retorno.tipo == 1) {
+                            if (Number(retornoLasted.data[0].concurso) > retorno.resultado.NumConcurso) {
+                                RecuperaUltimoESalvaDiaDeSorte(retornoLasted.data[0]);
+                            }
+                            else {
+                                $('#txtNumeroConcursoDiaDeSorte').val(retorno.resultado.NumConcurso);
+                                $('#txtDataConcursoDiaDeSorte').val(retorno.resultado.DatConcurso);
+                                var numeros = retorno.resultado.NumSorteados.split('-');
+                                $('#txtNumero1DiaDeSorte').val(numeros[0]);
+                                $('#txtNumero2DiaDeSorte').val(numeros[1]);
+                                $('#txtNumero3DiaDeSorte').val(numeros[2]);
+                                $('#txtNumero4DiaDeSorte').val(numeros[3]);
+                                $('#txtNumero5DiaDeSorte').val(numeros[4]);
+                                $('#txtNumero6DiaDeSorte').val(numeros[5]);
+                                $('#txtNumero7DiaDeSorte').val(numeros[6]);
+
+                                $('#txtQtdeGanhadores_7pts').val(retorno.resultado.QtdeGanhadoresSena);
+                                $('#txtValorGanhadores_7pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresSena));
+                                $('#txtQtdeGanhadores_6pts').val(retorno.resultado.QtdeGanhadoresQuina);
+                                $('#txtValorGanhadores_6pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuina));
+                                $('#txtQtdeGanhadores_5pts').val(retorno.resultado.QtdeGanhadoresQuadra);
+                                $('#txtValorGanhadores_5pts').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorGanhadoresQuadra));
+
+                                $('#txtMesSorteadoDiaDeSorte').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
+                                $('#txtGanhadoresMesDiaDeSorte').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
+                                $('#txtValorMesDiaDeSorte').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
+                                $('#txtValorAcumuladoDiaDeSorte').val(FormataValoresCom1CasaDecimal(retorno.resultado.ValorAcumulado));
+                            }
+                        }
+                        else {
+                            RecuperaUltimoESalvaDiaDeSorte(retornoLasted.data[0]);
+                        }
+                    }
+                    else {
+                        alert(resultado.mensagem);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+            });
+        }
+    });
 
 }
 
-function RecuperaDiaDeSorte() { }
+function RecuperaUltimoESalvaDiaDeSorte(resultado) {
+    $('#txtNumeroConcursoDiaDeSorte').val(resultado.concurso);
+    $('#txtDataConcursoDiaDeSorte').val(resultado.dt_APURACAOStr);
+    var numeros = resultado.de_RESULTADO.split('-');
+    $('#txtNumero1DiaDeSorte').val(numeros[0]);
+    $('#txtNumero2DiaDeSorte').val(numeros[1]);
+    $('#txtNumero3DiaDeSorte').val(numeros[2]);
+    $('#txtNumero4DiaDeSorte').val(numeros[3]);
+    $('#txtNumero5DiaDeSorte').val(numeros[4]);
+    $('#txtNumero6DiaDeSorte').val(numeros[5]);
+    $('#txtNumero7DiaDeSorte').val(numeros[6]);
 
-function RecuperaUltimoESalvaDiaDeSort(resultado) {
+    $('#txtQtdeGanhadores_7pts').val(resultado.qt_GANHADOR_FAIXA_1);
+    $('#txtValorGanhadores_7pts').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_1.toLocaleString('pt-BR')));
+    $('#txtQtdeGanhadores_6pts').val(resultado.qt_GANHADOR_FAIXA_2);
+    $('#txtValorGanhadores_6pts').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_2.toLocaleString('pt-BR')));
+    $('#txtQtdeGanhadores_5pts').val(resultado.qt_GANHADOR_FAIXA_3);
+    $('#txtValorGanhadores_5pts').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_3.toLocaleString('pt-BR')));
+    $('#txtQtdeGanhadores_4pts').val(resultado.qt_GANHADOR_FAIXA_4);
+    $('#txtValorGanhadores_4pts').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_4.toLocaleString('pt-BR')));
 
+    $('#txtMesSorteadoDiaDeSorte').val(resultado.mes_DE_SORTE);
+    $('#txtGanhadoresMesDiaDeSorte').val(resultado.qt_GANHADOR_MES_DE_SORTE);
+    $('#txtValorMesDiaDeSorte').val(FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_MES_DE_SORTE.toLocaleString('pt-BR')));
+    $('#txtValorAcumuladoDiaDeSorte').val(FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO.toLocaleString('pt-BR')));
+
+    var diaDeSorte = {
+        NumConcurso: resultado.concurso,
+        DatConcurso: resultado.dt_APURACAOStr,
+        NumSorteados: resultado.de_RESULTADO,
+        QtdeGanhadores_7pts: resultado.qt_GANHADOR_FAIXA_1,
+        ValorGanhadores_7pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_1.toLocaleString('pt-BR')),
+        QtdeGanhadores_6pts: resultado.qt_GANHADOR_FAIXA_2,
+        ValorGanhadores_6pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_2.toLocaleString('pt-BR')),
+        QtdeGanhadores_5pts: resultado.qt_GANHADOR_FAIXA_3,
+        ValorGanhadores_5pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_3.toLocaleString('pt-BR')),
+        QtdeGanhadores_4pts: resultado.qt_GANHADOR_FAIXA_4,
+        ValorGanhadores_4pts: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_FAIXA_4.toLocaleString('pt-BR')),
+        MesSorteado: resultado.mes_DE_SORTE,
+        QtdeGanhadores: resultado.qt_GANHADOR_MES_DE_SORTE,
+        ValorTotal: FormataValoresCom1CasaDecimal(resultado.vr_RATEIO_MES_DE_SORTE.toLocaleString('pt-BR')),
+        ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO.toLocaleString('pt-BR'))
+    }
+    $.ajax({
+        url: '/Home/SalvarResultadoDiaDeSorte',
+        type: "POST",
+        async: true,
+        data: { diaDeSorte },
+        success: function (resultado) {
+            if (!resultado.sucesso)
+                console.log(resultado.mensagem);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        }
+    });
 }

@@ -125,7 +125,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DiaDeSorte.cs" />
+    <Compile Include="Models\SuperSete.cs" />
     <Compile Include="Models\JogosLoteca.cs" />
+    <Compile Include="Models\DuplaSena.cs" />
     <Compile Include="Models\LotoFacil.cs" />
     <Compile Include="Models\Loteca.cs" />
     <Compile Include="Models\TimeMania.cs" />
@@ -133,7 +136,10 @@
     <Compile Include="Models\LotoMania.cs" />
     <Compile Include="Models\MegaSena.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DiaDeSorteRepository.cs" />
+    <Compile Include="Repository\SuperSeteRepository.cs" />
     <Compile Include="Repository\LotecaRepository.cs" />
+    <Compile Include="Repository\DuplaSenaRepository.cs" />
     <Compile Include="Repository\TimeManiaRepository.cs" />
     <Compile Include="Repository\QuinaRepository.cs" />
     <Compile Include="Repository\LotoFacilRepository.cs" />

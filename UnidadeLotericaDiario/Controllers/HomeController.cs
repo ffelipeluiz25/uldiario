@@ -280,5 +280,112 @@ namespace UnidadeLotericaDiario.Controllers
             }
         }
         #endregion
+
+        #region DuplaSena
+
+        /// <summary>
+        /// RecuperarUltimoResultadoDuplaSena
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoDuplaSena()
+        {
+            try
+            {
+                var resultado = new Repository.DuplaSenaRepository().RecuperarUltimoResultadoDuplaSena();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoDuplaSena
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoDuplaSena(DuplaSena duplaSena)
+        {
+            try
+            {
+                new Repository.DuplaSenaRepository().SalvarResultadoDuplaSena(duplaSena);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+        #endregion
+
+        #region Super Sete
+
+        /// <summary>
+        /// RecuperarUltimoResultadoSuperSete
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoSuperSete()
+        {
+            try
+            {
+                var resultado = new Repository.SuperSeteRepository().RecuperarUltimoResultadoSuperSete();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion
+
+        #region Dia de Sorte
+
+        /// <summary>
+        /// RecuperarUltimoResultadoDiaDeSorte
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult RecuperarUltimoResultadoDiaDeSorte()
+        {
+            try
+            {
+                var resultado = new Repository.DiaDeSorteRepository().RecuperarUltimoResultadoDiaDeSorte();
+                if (resultado == null)
+                    return Json(new { sucesso = true, tipo = 2 }, JsonRequestBehavior.AllowGet);
+                else
+                    return Json(new { sucesso = true, tipo = 1, resultado }, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// SalvarResultadoDiaDeSorte
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SalvarResultadoDiaDeSorte(DiaDeSorte diaDeSorte)
+        {
+            try
+            {
+                new Repository.DiaDeSorteRepository().SalvarResultadoDiaDeSorte(diaDeSorte);
+                return Json(new { sucesso = true });
+            }
+            catch (System.Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
+        }
+
+        #endregion
     }
 }
