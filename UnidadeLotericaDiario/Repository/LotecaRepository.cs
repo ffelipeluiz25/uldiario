@@ -44,7 +44,8 @@ namespace UnidadeLotericaDiario.Repository
                           RL.VALOR_ACUMULADO
                     FROM
                           RESULTADO_LOTECA RL
-                    ORDER BY 1 desc; ";
+                    ORDER BY 1 DESC
+                    LIMIT 1; ";
 
 
 

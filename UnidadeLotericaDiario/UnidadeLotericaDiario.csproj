@@ -160,13 +160,15 @@
     <Content Include="img\icone-loteria.svg" />
     <Content Include="img\logo-loteria.svg" />
     <Content Include="img\loterias-caixa-logo-1.png" />
+    <Content Include="img\maiores_18.png" />
     <Content Include="img\quadro resultados =resultados e premios=.png" />
     <Content Include="img\SAC CAIXA.png" />
     <Content Include="img\WLA e CERTIFIED.png" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.min.js" />
-    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\cadastro-jogos.js" />
+    <Content Include="Scripts\resultados-jogos.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -62,7 +62,8 @@ namespace UnidadeLotericaDiario.Repository
                          RL.VALOR_ACUMULADO_2 
                     FROM
                          RESULTADO_LOTOFACIL RL
-                    ORDER BY 1 desc; ";
+                    ORDER BY 1 DESC
+                    LIMIT 1; ";
 
                 MySqlConnection con = new MySqlConnection(_connectionString);
                 MySqlCommand cmd = new MySqlCommand(sql, con);

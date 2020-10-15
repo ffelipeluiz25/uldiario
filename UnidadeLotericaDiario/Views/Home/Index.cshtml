@@ -1,13 +1,20 @@
 ﻿<div class="container-fluid" id="container">
-    <span class="titulo">
-        <img src="~/img/quadro resultados =resultados e premios=.png" style="width: 2533px; margin-left: 100px;" />
-        <img src="~/img/caixa loterias.png" width="350" style="margin-left: 1940px;" />
-    </span>
     <div class="row">
-
+        <div class="col-6">
+            <img src="~/img/quadro resultados =resultados e premios=.png" style="width: 3333px;" class="rounded float-left" />
+        </div>
+        <div class="col-3">
+        </div>
+        <div class="col-1">
+            <img src="~/img/maiores_18.png" style="width: 340px;" class="rounded float-left" />
+        </div>
+        <div class="col-2">
+            <img src="~/img/caixa loterias.png" style="width: 580px;" class="rounded float-right" />
+        </div>
+    </div>
+    <div class="row" style="margin-top: 120px">
         <div class="col-12" style="padding-left: 10rem; padding-right: 10rem;">
             <div class="row">
-
                 <div class="col">
                     <!--MEGASENA-->
                     <div class="card card-mega-sena mb-5">
@@ -23,13 +30,13 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Concurso</label>
-                                            <input class="form-control-mega-sena" id="txtNumeroConcurso">
+                                            <input class="form-control" id="txtNumeroConcurso">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Data</label>
-                                            <input class="form-control-mega-sena" id="txtDataConcurso">
+                                            <input class="form-control" id="txtDataConcurso">
                                         </div>
                                     </div>
                                 </div>
@@ -40,22 +47,22 @@
                                             <label style="font-size: 30px;">Números sorteados</label>
                                             <div class="row">
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero1">
+                                                    <input class="form-control text-center" id="txtNumero1">
                                                 </div>
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero2">
+                                                    <input class="form-control text-center" id="txtNumero2">
                                                 </div>
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero3">
+                                                    <input class="form-control text-center" id="txtNumero3">
                                                 </div>
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero4">
+                                                    <input class="form-control text-center" id="txtNumero4">
                                                 </div>
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero5">
+                                                    <input class="form-control text-center" id="txtNumero5">
                                                 </div>
                                                 <div class="col-2">
-                                                    <input class="form-control-mega-sena text-center" id="txtNumero6">
+                                                    <input class="form-control text-center" id="txtNumero6">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,13 +76,13 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control-mega-sena" id="txtQtdeGanhadoresSena">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadoresSena">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control-mega-sena" id="txtValorGanhadoresSena">
+                                            <input class="form-control valor" style="text-align: right;" id="txtValorGanhadoresSena">
                                         </div>
                                     </div>
                                 </div>
@@ -85,12 +92,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control-mega-sena" id="txtQtdeGanhadoresQuinta">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadoresQuinta">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control-mega-sena" id="txtValorGanhadoresQuinta">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadoresQuinta">
                                         </div>
                                     </div>
                                 </div>
@@ -100,12 +107,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control-mega-sena" id="txtQtdeGanhadoresQuadra">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadoresQuadra">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control-mega-sena" id="txtValorGanhadoresQuadra">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadoresQuadra">
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +124,7 @@
                                         <div class="form-group row form-row">
                                             <label for="" class="col-3 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
                                             <div class="col-8">
-                                                <input class="form-control-mega-sena" id="txtValorAcumulado" style="margin-top: 10px">
+                                                <input class="form-control" style="margin-top: 10px;" id="txtValorAcumulado">
                                             </div>
                                         </div>
                                     </div>
@@ -468,13 +475,13 @@
                                             <div class="col-3">
                                                 <div class="form-group mb-0">
                                                     <label style="font-size: 30px;">Ganhador</label>
-                                                    <input class="form-control" id="txtGanhadores15ptsLoteca">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores15ptsLoteca">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group mb-0">
                                                     <label style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValor15ptsLoteca">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor15ptsLoteca">
                                                 </div>
                                             </div>
                                             <div class="col-1"></div>
@@ -487,12 +494,12 @@
                                             <label style="font-size: 30px;">16 Pontos</label>
                                             <div class="col-3">
                                                 <div class="form-group mb-0">
-                                                    <input class="form-control" id="txtGanhadores16ptsLoteca">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores16ptsLoteca">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group mb-0">
-                                                    <input class="form-control" id="txtValor16ptsLoteca">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor16ptsLoteca">
                                                 </div>
                                             </div>
                                             <div class="col-1"></div>
@@ -549,73 +556,73 @@
                                             <label style="font-size: 30px;">Números sorteados</label>
                                             <div class="row mb-4">
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum1Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum1Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum2Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum2Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum3Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum3Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum4Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum4Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum5Lotomania">
-                                                </div>
-
-                                            </div>
-                                            <div class="row mb-4">
-                                                <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum6Lotomania">
-                                                </div>
-                                                <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum7Lotomania">
-                                                </div>
-                                                <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum8Lotomania">
-                                                </div>
-                                                <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum9Lotomania">
-                                                </div>
-                                                <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum10Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum5Lotomania">
                                                 </div>
 
                                             </div>
                                             <div class="row mb-4">
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum11Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum6Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum12Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum7Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum13Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum8Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum14Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum9Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum15Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum10Lotomania">
+                                                </div>
+
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-2" style="margin-left: 25px;">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum11Lotomania">
+                                                </div>
+                                                <div class="col-2" style="margin-left: 25px;">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum12Lotomania">
+                                                </div>
+                                                <div class="col-2" style="margin-left: 25px;">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum13Lotomania">
+                                                </div>
+                                                <div class="col-2" style="margin-left: 25px;">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum14Lotomania">
+                                                </div>
+                                                <div class="col-2" style="margin-left: 25px;">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum15Lotomania">
                                                 </div>
 
                                             </div>
                                             <div class="row">
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum16Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum16Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum17Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum17Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum18Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum18Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum19Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum19Lotomania">
                                                 </div>
                                                 <div class="col-2" style="margin-left: 25px;">
-                                                    <input class="form-control text-center" style="width:170px" id="txtNum20Lotomania">
+                                                    <input class="form-control text-center" style="width:134%" id="txtNum20Lotomania">
                                                 </div>
                                             </div>
                                         </div>
@@ -628,13 +635,13 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control" id="txtGanhadores20Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores20Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control" id="txtValor20Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor20Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -644,12 +651,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores19Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores19Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor19Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor19Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -659,12 +666,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores18Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores18Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor18Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor18Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -674,12 +681,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores17Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores17Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor17Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor17Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -689,12 +696,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores16Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores16Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor16Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor16Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -704,12 +711,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores15Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores15Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor15Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor15Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -719,12 +726,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores0Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores0Lotomania">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor0Lotomania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor0Lotomania">
                                         </div>
                                     </div>
                                 </div>
@@ -792,7 +799,7 @@
                                                     <input class="form-control text-center" style="width: 120%" id="txtNum6Timemania">
                                                 </div>
                                                 <div class="col">
-                                                    <input class="form-control text-center" style="width: 120%" id="txtNum7Timemania">
+                                                    <input class="form-control text-center" style="width: 100%" id="txtNum7Timemania">
                                                 </div>
                                             </div>
                                         </div>
@@ -806,13 +813,13 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control" id="txtGanhadores7Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores7Timemania">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control" id="txtValor7Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor7Timemania">
                                         </div>
                                     </div>
                                 </div>
@@ -822,12 +829,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores6Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores6Timemania">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor6Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor6Timemania">
                                         </div>
                                     </div>
                                 </div>
@@ -837,12 +844,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores5Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores5Timemania">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor5Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor5Timemania">
                                         </div>
                                     </div>
                                 </div>
@@ -852,12 +859,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores4Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores4Timemania">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor4Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor4Timemania">
                                         </div>
                                     </div>
                                 </div>
@@ -867,12 +874,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadores3Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadores3Timemania">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValor3Timemania">
+                                            <input class="form-control" style="text-align: right;" id="txtValor3Timemania">
                                         </div>
                                     </div>
                                 </div>
@@ -882,7 +889,7 @@
                                     </div>
                                     <div class="col-9">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresTimeSorteadoTimeMania">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresTimeSorteadoTimeMania">
                                         </div>
                                     </div>
                                 </div>
@@ -893,13 +900,13 @@
                                             <div class="col-3">
                                                 <div class="form-group mb-0">
                                                     <label style="font-size: 30px;">Ganhador</label>
-                                                    <input class="form-control" id="txtGanhadoresTimeCoracaoTimemania">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresTimeCoracaoTimemania">
                                                 </div>
                                             </div>
                                             <div class="col-5">
                                                 <div class="form-group mb-0">
                                                     <label style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValorTimeCoracaoTimemania">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorTimeCoracaoTimemania">
                                                 </div>
                                             </div>
                                         </div>
@@ -955,55 +962,55 @@
                                                     <label style="font-size: 30px;">Números sorteados</label>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum1Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum1Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum2Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum2Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum3Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum3Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum4Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum4Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum5Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum5Lotofacil">
                                                         </div>
 
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum6Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum6Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum7Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum7Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum8Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum8Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum9Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum9Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum10Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum10Lotofacil">
                                                         </div>
 
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum11Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum11Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum12Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum12Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum13Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum13Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum14Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum14Lotofacil">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum15Lotofacil">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum15Lotofacil">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1016,13 +1023,13 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">Ganhador</label>
-                                                    <input class="form-control" id="txtGanhadores15Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores15Lotofacil">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValor15Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor15Lotofacil">
                                                 </div>
                                             </div>
                                         </div>
@@ -1032,12 +1039,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores14Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores14Lotofacil">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor14Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor14Lotofacil">
                                                 </div>
                                             </div>
                                         </div>
@@ -1047,12 +1054,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores13Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores13Lotofacil">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor13Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor13Lotofacil">
                                                 </div>
                                             </div>
                                         </div>
@@ -1062,12 +1069,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores12Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores12Lotofacil">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor12Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor12Lotofacil">
                                                 </div>
                                             </div>
                                         </div>
@@ -1077,12 +1084,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores11Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores11Lotofacil">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor11Lotofacil">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor11Lotofacil">
                                                 </div>
                                             </div>
                                         </div>
@@ -1092,7 +1099,7 @@
                                                 <div class="form-group row form-row">
                                                     <label for="" class="col-4 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
                                                     <div class="col-8">
-                                                        <input class="form-control" id="txtValorAcumuladoLotofacil">
+                                                        <input class="form-control" id="txtValorAcumuladoLotofacil" style="margin-top:10px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1120,53 +1127,53 @@
                                                     <label style="font-size: 30px;">Números sorteados</label>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum1Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum1Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum2Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum2Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum3Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum3Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum4Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum4Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum5Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum5Lotofacil_2">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum6Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum6Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum7Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum7Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum8Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum8Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px; ">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum9Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum9Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum10Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum10Lotofacil_2">
                                                         </div>
                                                     </div>
                                                     <div class="row mb-4">
                                                         <div class="col-2" style="margin-left: 40px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum11Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum11Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum12Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum12Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum13Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum13Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum14Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum14Lotofacil_2">
                                                         </div>
                                                         <div class="col-2" style="margin-left: 10px;">
-                                                            <input class="form-control text-center" style="width:130px" id="txtNum15Lotofacil_2">
+                                                            <input class="form-control text-center" style="width:130%" id="txtNum15Lotofacil_2">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1179,13 +1186,13 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">Ganhador</label>
-                                                    <input class="form-control" id="txtGanhadores15Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores15Lotofacil_2">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValor15Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor15Lotofacil_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1195,12 +1202,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores14Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores14Lotofacil_2">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor14Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor14Lotofacil_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1210,12 +1217,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores13Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores13Lotofacil_2">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor13Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor13Lotofacil_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1225,12 +1232,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores12Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores12Lotofacil_2">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor12Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor12Lotofacil_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1240,12 +1247,12 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadores11Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadores11Lotofacil_2">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValor11Lotofacil_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValor11Lotofacil_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1255,7 +1262,7 @@
                                                 <div class="form-group row form-row">
                                                     <label for="" class="col-4 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
                                                     <div class="col-8">
-                                                        <input class="form-control" id="txtValorAcumuladoLotofacil_2">
+                                                        <input class="form-control" id="txtValorAcumuladoLotofacil_2" style="margin-top:10px">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1299,22 +1306,22 @@
                                                     <label style="font-size: 30px;">1° Sorteio - números sorteados</label>
                                                     <div class="row">
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum1DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum1DuplaSena">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum2DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum2DuplaSena">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum3DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum3DuplaSena">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum4DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum4DuplaSena">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum5DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum5DuplaSena">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum6DuplaSena">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum6DuplaSena">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1328,13 +1335,13 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">Ganhadores</label>
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaSena">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaSena">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
                                                     <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValorDuplaSenaSena">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaSena">
                                                 </div>
                                             </div>
                                         </div>
@@ -1344,27 +1351,27 @@
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaQuina">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaQuina">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaQuina">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaQuina">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
                                             <div class="col-2 text-right pb-3">
-                                                <span style="font-size: 30px;">Quadra</span>
+                                                <span style="font-size: 25px;">Quadra</span>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaQuadra">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaQuadra">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaQuadra">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaQuadra">
                                                 </div>
                                             </div>
                                         </div>
@@ -1374,38 +1381,37 @@
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaTerno">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaTerno">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaTerno">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaTerno">
                                                 </div>
                                             </div>
                                         </div>
-                                        <br />
                                         <div class="row form-row">
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">2° Sorteio - números sorteados</label>
                                                     <div class="row">
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum1DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum1DuplaSena_2">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum2DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum2DuplaSena_2">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum3DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum3DuplaSena_2">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum4DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum4DuplaSena_2">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum5DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum5DuplaSena_2">
                                                         </div>
                                                         <div class="col-2">
-                                                            <input class="form-control text-center" style="width: 90px;" id="txtNum6DuplaSena_2">
+                                                            <input class="form-control text-center" style="width:110%;" id="txtNum6DuplaSena_2">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1418,13 +1424,13 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">Ganhadores</label>
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaSena_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaSena_2">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
                                                     <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                                    <input class="form-control" id="txtValorDuplaSenaSena_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaSena_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1434,27 +1440,27 @@
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaQuina_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaQuina_2">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaQuina_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaQuina_2">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
                                             <div class="col-2 text-right pb-3">
-                                                <span style="font-size: 30px;">Quadra</span>
+                                                <span style="font-size: 25px;">Quadra</span>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaQuadra_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaQuadra_2">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaQuadra_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaQuadra_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1464,12 +1470,12 @@
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresDuplaSenaTerno_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresDuplaSenaTerno_2">
                                                 </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorDuplaSenaTerno_2">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorDuplaSenaTerno_2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1548,89 +1554,89 @@
                                         <div class="row form-row align-items-end">
                                             <div class="col-3 text-right pb-3">
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label style="font-size: 30px;">Ganhadores</label>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
                                                     <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
-                                            <div class="col-3 text-right pb-3">
+                                            <div class="col-3 text-left pb-3">
                                                 <span style="font-size: 30px;">7 acertos</span>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresSuperSete_7pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresSuperSete_7pts">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorSuperSete_7pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorSuperSete_7pts">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
-                                            <div class="col-3 text-right pb-3">
+                                            <div class="col-3 text-left pb-3">
                                                 <span style="font-size: 30px;">6 acertos</span>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresSuperSete_6pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresSuperSete_6pts">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorSuperSete_6pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorSuperSete_6pts">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
-                                            <div class="col-3 text-right pb-3">
+                                            <div class="col-3 text-left pb-3">
                                                 <span style="font-size: 30px;">5 acertos</span>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresSuperSete_5pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresSuperSete_5pts">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorSuperSete_5pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorSuperSete_5pts">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
-                                            <div class="col-3 text-right pb-3">
+                                            <div class="col-3 text-left pb-3">
                                                 <span style="font-size: 30px;">4 acertos</span>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresSuperSete_4pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresSuperSete_4pts">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorSuperSete_4pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorSuperSete_4pts">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row form-row align-items-end">
-                                            <div class="col-3 text-right pb-3">
+                                            <div class="col-3 text-left pb-3">
                                                 <span style="font-size: 30px;">3 acertos</span>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtGanhadoresSuperSete_3pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresSuperSete_3pts">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-5">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="txtValorSuperSete_3pts">
+                                                    <input class="form-control" style="text-align: right;" id="txtValorSuperSete_3pts">
                                                 </div>
                                             </div>
                                         </div>
@@ -1639,7 +1645,7 @@
                                             <div class="col-11">
                                                 <div class="form-group row">
                                                     <label for="" class="col-4 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <input class="form-control" style="width: 410px;margin-top: 10px;" id="txtValorAcumuladoSuperSete">
                                                     </div>
                                                 </div>
@@ -1710,13 +1716,13 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control" id="txtGanhadoresQuinaQuina">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaQuina">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control" id="txtValorQuinaQuina">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaQuina">
                                         </div>
                                     </div>
                                 </div>
@@ -1726,12 +1732,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaQuadra">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaQuadra">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaQuadra">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaQuadra">
                                         </div>
                                     </div>
                                 </div>
@@ -1741,12 +1747,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaTerno">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaTerno">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaTerno">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaTerno">
                                         </div>
                                     </div>
                                 </div>
@@ -1756,12 +1762,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaDuque">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaDuque">
                                         </div>
                                     </div>
                                     <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaDuque">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaDuque">
                                         </div>
                                     </div>
                                 </div>
@@ -1771,7 +1777,7 @@
                                         <div class="form-group row form-row">
                                             <label for="" class="col-3 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
                                             <div class="col-8">
-                                                <input class="form-control" id="txtValorAcumuladoQuina">
+                                                <input class="form-control" id="txtValorAcumuladoQuina" style="margin-top: 10px">
                                             </div>
                                         </div>
                                     </div>
@@ -1825,16 +1831,16 @@
                                     <div class="col-2 text-right pb-3">
                                         <span style="font-size: 30px;">Quina</span>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control" id="txtGanhadoresQuinaQuina_2">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaQuina_2">
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-7">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control" id="txtValorQuinaQuina_2">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaQuina_2">
                                         </div>
                                     </div>
                                 </div>
@@ -1842,14 +1848,14 @@
                                     <div class="col-2 text-right pb-3">
                                         <span style="font-size: 30px;">Quadra</span>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaQuadra_2">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaQuadra_2">
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaQuadra_2">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaQuadra_2">
                                         </div>
                                     </div>
                                 </div>
@@ -1857,14 +1863,14 @@
                                     <div class="col-2 text-right pb-3">
                                         <span style="font-size: 30px;">Terno</span>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaTerno_2">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaTerno_2">
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaTerno_2">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaTerno_2">
                                         </div>
                                     </div>
                                 </div>
@@ -1872,26 +1878,24 @@
                                     <div class="col-2 text-right pb-3">
                                         <span style="font-size: 30px;">Duque</span>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtGanhadoresQuinaDuque_2">
+                                            <input class="form-control" style="text-align: right;" id="txtGanhadoresQuinaDuque_2">
                                         </div>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-7">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorQuinaDuque_2">
+                                            <input class="form-control" style="text-align: right;" id="txtValorQuinaDuque_2">
                                         </div>
                                     </div>
                                 </div>
-
                                 <br />
-
                                 <div class="row form-row">
                                     <div class="col-12">
                                         <div class="form-group row form-row">
                                             <label for="" class="col-3 col-form-label text-right mt-2" style="font-size: 30px;">Acumulado</label>
                                             <div class="col-8">
-                                                <input class="form-control" id="txtValorAcumuladoQuina_2">
+                                                <input class="form-control" id="txtValorAcumuladoQuina_2" style="margin-top: 10px">
                                             </div>
                                         </div>
                                     </div>
@@ -1963,13 +1967,13 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label style="font-size: 30px;">Ganhador</label>
-                                            <input class="form-control" id="txtQtdeGanhadores_7pts">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadores_7pts">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label class="text-center w-100" style="font-size: 30px;">Valor em R$</label>
-                                            <input class="form-control" id="txtValorGanhadores_7pts">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadores_7pts">
                                         </div>
                                     </div>
                                 </div>
@@ -1979,12 +1983,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtQtdeGanhadores_6pts">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadores_6pts">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorGanhadores_6pts">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadores_6pts">
                                         </div>
                                     </div>
                                 </div>
@@ -1994,12 +1998,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtQtdeGanhadores_5pts">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadores_5pts">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorGanhadores_5pts">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadores_5pts">
                                         </div>
                                     </div>
                                 </div>
@@ -2009,12 +2013,12 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtQtdeGanhadores_4pts">
+                                            <input class="form-control" style="text-align: right;" id="txtQtdeGanhadores_4pts">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="txtValorGanhadores_4pts">
+                                            <input class="form-control" style="text-align: right;" id="txtValorGanhadores_4pts">
                                         </div>
                                     </div>
                                 </div>
@@ -2023,19 +2027,19 @@
                                         <div class="form-group row">
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <label style="font-size: 30px;">Mês sorteado</label>
+                                                    <label style="font-size: 28px;">Mês sorteado</label>
                                                     <input class="form-control" id="txtMesSorteadoDiaDeSorte">
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
-                                                    <label style="font-size: 30px;">Ganhadores</label>
-                                                    <input class="form-control" id="txtGanhadoresMesDiaDeSorte">
+                                                    <label style="font-size: 28px;">Ganhadores</label>
+                                                    <input class="form-control" style="text-align: right;" id="txtGanhadoresMesDiaDeSorte">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label style="font-size: 30px;">Valor em R$</label>
+                                                    <label style="font-size: 28px;">Valor em R$</label>
                                                     <input class="form-control" id="txtValorMesDiaDeSorte">
                                                 </div>
                                             </div>
@@ -2065,18 +2069,19 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top: 70px;">
         <div class="col-md-3">
-            <img src="~/img/caixagovbr.png" style="width: 350px;margin-left: 1200px;" />
+            <img src="~/img/caixagovbr.png" style="width: 556px; margin-left: 1200px;" />
         </div>
         <div class="col-md-3">
-            <img src="~/img/bsi 27001.png" style="width: 350px;margin-left: 590px;" />
+            <img src="~/img/bsi 27001.png" style="width: 445px; margin-left: 590px;" />
         </div>
         <div class="col-md-3">
-            <img src="~/img/WLA e CERTIFIED.png" style="width: 1000px;margin-left: -90px;" />
+            <img src="~/img/WLA e CERTIFIED.png" style="width: 1081px; margin-left: -203px;" />
         </div>
         <div class="col-md-3">
-            <img src="~/img/SAC CAIXA.png" style="margin-left: -280px;" />
+            <img src="~/img/SAC CAIXA.png" style="width: 1900px;" class="rounded float-right" />
         </div>
     </div>
 </div>
+@Scripts.Render("~/resultados-jogos")

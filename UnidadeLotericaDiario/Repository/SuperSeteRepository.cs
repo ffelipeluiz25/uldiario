@@ -48,7 +48,8 @@ namespace UnidadeLotericaDiario.Repository
 	                    RS.VALOR_ACUMULADO
                     FROM
                          RESULTADO_SUPERSETE RS
-                    ORDER BY 1 desc; ";
+                    ORDER BY 1 DESC
+                    LIMIT 1; ";
 
                 MySqlConnection con = new MySqlConnection(_connectionString);
                 MySqlCommand cmd = new MySqlCommand(sql, con);

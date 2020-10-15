@@ -53,7 +53,8 @@ namespace UnidadeLotericaDiario.Repository
 	                    RT.VALOR_ACUMULADO 
                     FROM
                          RESULTADO_TIMEMANIA RT
-                    ORDER BY 1 desc; ";
+                    ORDER BY 1 DESC
+                    LIMIT 1; ";
 
                 MySqlConnection con = new MySqlConnection(_connectionString);
                 MySqlCommand cmd = new MySqlCommand(sql, con);
