@@ -7,16 +7,13 @@ namespace UnidadeLotericaDiario.Controllers
 {
     public class HomeController : Controller
     {
+
+
         [Route("/")]
+        [Route("/Home")]
         public ActionResult Home()
         {
-            return View("Index");
-        }
-
-        [Route("/cadjogos")]
-        public ActionResult cadjogos()
-        {
-            return View("About");
+            return View("Home");
         }
 
         #region MegaSena

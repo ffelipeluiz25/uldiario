@@ -16,15 +16,18 @@ namespace UnidadeLotericaDiario
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
 
-            bundles.Add(new ScriptBundle("~/resultados-jogos")
+            bundles.Add(new ScriptBundle("~/painelresultados")
                 .Include("~/Scripts/jquery.min.js",
                 "~/Scripts/bootstrap.bundle.min.js",
-                "~/Scripts/resultados-jogos.js"));
+                "~/Scripts/PainelResultados/painel-resultados.js"));
 
-            bundles.Add(new ScriptBundle("~/cadastro-jogos")
+            bundles.Add(new ScriptBundle("~/cad-mega-sena")
                .Include("~/Scripts/jquery.min.js",
                "~/Scripts/bootstrap.bundle.min.js",
-               "~/Scripts/cadastro-jogos.js"));
+               "~/Scripts/CadastrosJogos/cad-mega-sena.js"));
+
+            bundles.Add(new ScriptBundle("~/home").Include("~/Scripts/home.js"));
+            bundles.Add(new ScriptBundle("~/cad-mega-sena").Include("~/Scripts/CadastrosJogos/cad-mega-sena.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

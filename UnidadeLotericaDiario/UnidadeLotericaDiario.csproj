@@ -121,6 +121,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\PainelResultadosController.cs" />
+    <Compile Include="Controllers\CadJogosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +151,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\geral.css" />
+    <Content Include="Content\menu-lateral.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -165,10 +168,12 @@
     <Content Include="img\SAC CAIXA.png" />
     <Content Include="img\WLA e CERTIFIED.png" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\CadastrosJogos\cad-mega-sena.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\cadastro-jogos.js" />
-    <Content Include="Scripts\resultados-jogos.js" />
+    <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\PainelResultados\painel-resultados.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -180,9 +185,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\PainelResultado\PainelResultado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -197,6 +201,8 @@
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\jquery.min.map" />
+    <Content Include="Views\Shared\_LayoutPainelResultados.cshtml" />
+    <Content Include="Views\CadJogos\CadMegaSena.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

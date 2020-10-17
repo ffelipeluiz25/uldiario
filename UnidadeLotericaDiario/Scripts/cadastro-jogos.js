@@ -59,6 +59,7 @@ function Eventos() {
         else
             alert('Todos os campos devem ser preenchidos');
     });
+
     $('#btnNovoMegaSena').on('click', function (e) {
         $('.card-mega-sena').find('[id*=txt]').val('');
     });
