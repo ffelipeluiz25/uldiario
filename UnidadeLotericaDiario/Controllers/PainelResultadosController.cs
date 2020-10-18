@@ -8,5 +8,13 @@ namespace UnidadeLotericaDiario.Controllers
         {
             return View("PainelResultado");
         }
+
+        [Route("/painel-resultados-mobile")]
+        public ActionResult PainelResultadoMobile()
+        {
+            return View("PainelResultadoMobile");
+        }
+
+        
     }
 }

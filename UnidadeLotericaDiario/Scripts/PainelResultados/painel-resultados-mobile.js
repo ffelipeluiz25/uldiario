@@ -1,27 +1,10 @@
 ﻿var urlBase = 'https://lotericas.io/api/v1/jogos';
 $(document).ready(function () {
     CarregarTela();
-    EventoFullScreen();
-   
-});
-
-function EventoFullScreen() {
-    $('#bodyResultados').on('click', function (e) {
-        openFullscreen($('html')[0]);
-    });
-}
-
-function openFullscreen(elem) {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        console.log('Dispositivo Movel');
     }
-}
+});
 
 function FormataValoresCom1CasaDecimal(valor) {
     var valorFormatado = '';

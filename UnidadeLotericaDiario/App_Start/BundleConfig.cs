@@ -21,6 +21,11 @@ namespace UnidadeLotericaDiario
                 "~/Scripts/bootstrap.bundle.min.js",
                 "~/Scripts/PainelResultados/painel-resultados.js"));
 
+            bundles.Add(new ScriptBundle("~/painelresultadosmobile")
+               .Include("~/Scripts/jquery.min.js",
+               "~/Scripts/bootstrap.bundle.min.js",
+               "~/Scripts/PainelResultados/painel-resultadosmobile.js"));
+
             bundles.Add(new ScriptBundle("~/cad-mega-sena")
                .Include("~/Scripts/jquery.min.js",
                "~/Scripts/bootstrap.bundle.min.js",

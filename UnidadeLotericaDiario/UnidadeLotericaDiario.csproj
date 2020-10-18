@@ -173,6 +173,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\cadastro-jogos.js" />
     <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\PainelResultados\painel-resultados-mobile.js" />
     <Content Include="Scripts\PainelResultados\painel-resultados.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -203,6 +204,7 @@
     <Content Include="Scripts\jquery.min.map" />
     <Content Include="Views\Shared\_LayoutPainelResultados.cshtml" />
     <Content Include="Views\CadJogos\CadMegaSena.cshtml" />
+    <Content Include="Views\PainelResultado\PainelResultadoMobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
