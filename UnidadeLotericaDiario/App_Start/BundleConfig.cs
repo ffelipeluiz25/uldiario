@@ -31,7 +31,8 @@ namespace UnidadeLotericaDiario
                "~/Scripts/bootstrap.bundle.min.js",
                "~/Scripts/CadastrosJogos/cad-mega-sena.js"));
 
-            bundles.Add(new ScriptBundle("~/homeJs").Include("~/Scripts/home.js"));
+            bundles.Add(new ScriptBundle("~/homeJs").Include("~/Scripts/jquery.min.js",
+                "~/Scripts/bootstrap.bundle.min.js", "~/Scripts/home.js"));
 
             bundles.Add(new ScriptBundle("~/loginJs").Include("~/Scripts/jquery.min.js",
                 "~/Scripts/bootstrap.bundle.min.js", "~/Scripts/Login/login.js"));
