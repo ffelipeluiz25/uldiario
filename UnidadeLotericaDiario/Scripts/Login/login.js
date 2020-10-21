@@ -11,7 +11,7 @@ function VerificarUsuarioLogado() {
         type: "POST",
         success: function (retorno) {
             if (retorno.sucesso)
-                window.location.href = '/home/home';
+                window.location.href = '/home';
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR);
@@ -35,7 +35,7 @@ function Eventos() {
             async: true,
             success: function (retorno) {
                 if (retorno.sucesso) 
-                    window.location.href = '/home/home';
+                    window.location.href = '/home';
                 else
                     alert(retorno.mensagem);
             },

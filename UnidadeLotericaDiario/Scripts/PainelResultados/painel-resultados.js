@@ -1,9 +1,29 @@
 ﻿var urlBase = 'https://lotericas.io/api/v1/jogos';
 $(document).ready(function () {
+
+    VerificarUsuarioLogado();
     CarregarTela();
     EventoFullScreen();
    
 });
+
+function VerificarUsuarioLogado() {
+    $.ajax({
+        url: '/Login/VerificarUsuarioLogado',
+        async: true,
+        data: {},
+        type: "POST",
+        success: function (retorno) {
+            if (!retorno.sucesso)
+                window.location.href = '/';
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        }
+    });
+}
 
 function EventoFullScreen() {
     $('#bodyResultados').on('click', function (e) {
