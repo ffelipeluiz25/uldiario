@@ -52,7 +52,7 @@ function RecuperaMegaSena() {
     $.getJSON(urlBase + '/megasena/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoMegaSena',
+                url: '/PainelResultado/RecuperarUltimoResultadoMegaSena',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -125,7 +125,7 @@ function RecuperaUltimoESalvaMegaSena(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.valor_acumulado.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoMegaSena',
+        url: '/PainelResultado/SalvarResultadoMegaSena',
         type: "POST",
         async: true,
         data: { megaSena },
@@ -143,7 +143,7 @@ function RecuperaLotoMania() {
     $.getJSON(urlBase + '/lotomania/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoLotoMania',
+                url: '/PainelResultado/RecuperarUltimoResultadoLotoMania',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -271,7 +271,7 @@ function RecuperaUltimoESalvaLotoMania(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vrEstimativa.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoLotoMania',
+        url: '/PainelResultado/SalvarResultadoLotoMania',
         type: "POST",
         async: true,
         data: { lotomania },
@@ -289,7 +289,7 @@ function RecuperaLotoFacil() {
     $.getJSON(urlBase + '/lotofacil/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoLotoFacil',
+                url: '/PainelResultado/RecuperarUltimoResultadoLotoFacil',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -477,7 +477,7 @@ function RecuperaUltimoESalvaLotoFacil(resultado) {
                 ValorAcumulado_2: FormataValoresCom1CasaDecimal(resultado2.vrAcumuladoEspecial.toLocaleString('pt-BR'))
             }
             $.ajax({
-                url: '/Home/SalvarResultadoLotoFacil',
+                url: '/PainelResultado/SalvarResultadoLotoFacil',
                 type: "POST",
                 async: true,
                 data: { lotofacil },
@@ -497,7 +497,7 @@ function RecuperaQuina() {
     $.getJSON(urlBase + '/quina/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoQuina',
+                url: '/PainelResultado/RecuperarUltimoResultadoQuina',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -631,7 +631,7 @@ function RecuperaUltimoESalvaQuina(resultado) {
                 ValorAcumulado_2: FormataValoresCom1CasaDecimal(resultado2.vrAcumulado.toLocaleString('pt-BR'))
             }
             $.ajax({
-                url: '/Home/SalvarResultadoQuina',
+                url: '/PainelResultado/SalvarResultadoQuina',
                 type: "POST",
                 async: true,
                 data: { quina },
@@ -651,7 +651,7 @@ function RecuperaLoteca() {
     $.getJSON(urlBase + '/loteca/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoLoteca',
+                url: '/PainelResultado/RecuperarUltimoResultadoLoteca',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -707,7 +707,7 @@ function RecuperaUltimoESalvaLoteca(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vrConcursoAcumulado.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoLoteca',
+        url: '/PainelResultado/SalvarResultadoLoteca',
         type: "POST",
         async: true,
         data: { loteca },
@@ -724,7 +724,7 @@ function RecuperaUltimoESalvaLoteca(resultado) {
                     }
                     AlteraResultadosLoteca(jogosLoteca.IndTipoResultado, i);
                     $.ajax({
-                        url: '/Home/SalvarResultadoJogosLoteca',
+                        url: '/PainelResultado/SalvarResultadoJogosLoteca',
                         type: "POST",
                         async: true,
                         data: { jogosLoteca },
@@ -777,7 +777,7 @@ function RecuperaTimeMania() {
     $.getJSON(urlBase + '/timemania/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoTimeMania',
+                url: '/PainelResultado/RecuperarUltimoResultadoTimeMania',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -877,7 +877,7 @@ function RecuperaUltimoESalvaTimeMania(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO_PROXIMO_CONCURSO.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoTimeMania',
+        url: '/PainelResultado/SalvarResultadoTimeMania',
         type: "POST",
         async: true,
         data: { timemania },
@@ -896,7 +896,7 @@ function RecuperaDuplaSena() {
     $.getJSON(urlBase + '/duplasena/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoDuplaSena',
+                url: '/PainelResultado/RecuperarUltimoResultadoDuplaSena',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -1022,7 +1022,7 @@ function RecuperaUltimoESalvaDuplaSena(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_acumulado_especial.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoDuplaSena',
+        url: '/PainelResultado/SalvarResultadoDuplaSena',
         type: "POST",
         async: true,
         data: { duplaSena },
@@ -1038,7 +1038,7 @@ function RecuperaUltimoESalvaDuplaSena(resultado) {
 
 function RecuperaSorteSete() {
     $.ajax({
-        url: '/Home/RecuperarUltimoResultadoSuperSete',
+        url: '/PainelResultado/RecuperarUltimoResultadoSuperSete',
         async: true,
         data: {},
         success: function (retorno) {
@@ -1075,7 +1075,7 @@ function RecuperaDiaDeSorte() {
     $.getJSON(urlBase + '/diadesorte/lasted').done(function (retornoLasted) {
         if (retornoLasted.success) {
             $.ajax({
-                url: '/Home/RecuperarUltimoResultadoDiaDeSorte',
+                url: '/PainelResultado/RecuperarUltimoResultadoDiaDeSorte',
                 async: true,
                 data: {},
                 success: function (retorno) {
@@ -1169,7 +1169,7 @@ function RecuperaUltimoESalvaDiaDeSorte(resultado) {
         ValorAcumulado: FormataValoresCom1CasaDecimal(resultado.vr_ACUMULADO.toLocaleString('pt-BR'))
     }
     $.ajax({
-        url: '/Home/SalvarResultadoDiaDeSorte',
+        url: '/PainelResultado/SalvarResultadoDiaDeSorte',
         type: "POST",
         async: true,
         data: { diaDeSorte },

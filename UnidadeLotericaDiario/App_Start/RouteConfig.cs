@@ -16,28 +16,27 @@ namespace UnidadeLotericaDiario
             routes.MapRoute(
                "CadMegaSena",
                "cadastro-megasena",
-               new { controller = "CadJogos", action = "CadMegaSena" }
-           );
+               new { controller = "CadJogos", action = "CadMegaSena" });
 
             routes.MapRoute(
                 "PainelResultado",
                 "painel-resultados",
-                new { controller = "PainelResultado", action = "PainelResultado" }
-            );
+                new { controller = "PainelResultado", action = "PainelResultado" });
 
             routes.MapRoute(
                 "PainelResultadoMobile",
                 "painel-resultados-mobile",
-                new { controller = "PainelResultado", action = "PainelResultadoMobile" }
-            );
+                new { controller = "PainelResultado", action = "PainelResultadoMobile" });
+
+            routes.MapRoute(
+              "Home",
+              "home",
+              new { controller = "Home", action = "Home" });
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
-            );
-
-
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional });
 
         }
     }

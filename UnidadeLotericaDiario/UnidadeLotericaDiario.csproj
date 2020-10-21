@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PainelResultadosController.cs" />
     <Compile Include="Controllers\CadJogosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Models\LotoMania.cs" />
     <Compile Include="Models\MegaSena.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\DiaDeSorteRepository.cs" />
     <Compile Include="Repository\SuperSeteRepository.cs" />
     <Compile Include="Repository\LotecaRepository.cs" />
@@ -147,9 +149,11 @@
     <Compile Include="Repository\LotoFacilRepository.cs" />
     <Compile Include="Repository\LotoManiaRepository.cs" />
     <Compile Include="Repository\MegaSenaRepository.cs" />
+    <Compile Include="Transientes\LoginRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\geral.css" />
     <Content Include="Content\menu-lateral.css" />
     <Content Include="favicon.ico" />
@@ -158,6 +162,7 @@
     <Content Include="img\bsi 27001.png" />
     <Content Include="img\caixa loterias.png" />
     <Content Include="img\caixagovbr.png" />
+    <Content Include="img\favicon.jpg" />
     <Content Include="img\funco_trevos_apagados.png" />
     <Content Include="img\icone-loteria-timemania.svg" />
     <Content Include="img\icone-loteria.svg" />
@@ -173,6 +178,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\cadastro-jogos.js" />
     <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\Login\login.js" />
     <Content Include="Scripts\PainelResultados\painel-resultados-mobile.js" />
     <Content Include="Scripts\PainelResultados\painel-resultados.js" />
     <Content Include="Web.config" />
@@ -205,6 +211,7 @@
     <Content Include="Views\Shared\_LayoutPainelResultados.cshtml" />
     <Content Include="Views\CadJogos\CadMegaSena.cshtml" />
     <Content Include="Views\PainelResultado\PainelResultadoMobile.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -16,6 +16,26 @@ function Eventos() {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
+
+    $('#btnLogout').on('click', function () {
+        $.ajax({
+            url: '/Login/Logout',
+            data: { },
+            type: "POST",
+            async: true,
+            success: function (retorno) {
+                if (retorno.sucesso)
+                    window.location.href = '/';
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        });
+
+    });
+    
     
     $('#divTitulo').on('click', function () {
         ConfiguraVisibilidadeDivs('divBodyHome');
