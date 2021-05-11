@@ -26,7 +26,7 @@ namespace UnidadeLotericaDiario.Repository
 
 
         /// <summary>
-        /// RecuperarUltimoResultadoDiaDeSorte
+        /// RecuperarUltimoResultadoDiaDeSorte 
         /// </summary>
         /// <returns></returns>
         public DiaDeSorte RecuperarUltimoResultadoDiaDeSorte()

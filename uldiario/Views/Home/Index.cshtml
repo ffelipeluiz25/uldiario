@@ -1,0 +1,2045 @@
+﻿@{
+    ViewData["Title"] = "Unidade Loterica Diario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid" id="divPrincipal" style="display: none">
+    <div class="row">
+        <div class="col-8 titulo-principal">
+            Resultados e prêmios
+        </div>
+        <div class="col-2">
+            <img src="/img/maiores de 18 FT.png" width="250" style="margin-left: 30%;" />
+        </div>
+        <div class="col-2">
+            <img src="/img/caixa_loterias.png" width="500" style="margin-left: 52%;" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-3">
+            <div class="card card-mega-sena">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>mega sena</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números Sorteados</label>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero1">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero2">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero3">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero4">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero5">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Sena</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresSena" pattern="^\d*(\.\d{0})?$">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadoresSena" pattern="^\d*(\.\d{0,2})?$">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quina</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuina" pattern="^\d*(\.\d{0})?$">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuina" pattern="^\d*(\.\d{0,2})?$">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quadra</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuadra" pattern="^\d*(\.\d{0})?$">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuadra" pattern="^\d*(\.\d{0,2})?$">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group row form-row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card card-lotomania">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>lotomania</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group" style="margin-right: -17%;">
+                                    <label>Números sorteados</label>
+                                    <div class="row mb-4">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero1">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero2">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero3">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero4">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero5">
+                                        </div>
+
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero6">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero7">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero8">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero9">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero10">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero11">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero12">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero13">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero14">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero15">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero16">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero17">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero18">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero19">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero20">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>20</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadores20pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadores20pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>19</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores19pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores19pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>18</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores18pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores18pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>17</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores17pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores17pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>16</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores16pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores16pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>15</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores15pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores15pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>0</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores0pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores0pts">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group row form-row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card card-lotofacil">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>lotofácil</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row form-row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Concurso</label>
+                                            <input class="form-control" id="txtNumeroConcurso1">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Data</label>
+                                            <input class="form-control" id="txtDataConcurso1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col-12">
+                                        <div class="form-group" style="margin-right: -17%;">
+                                            <label>Números sorteados</label>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero1_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero2_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero3_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero4_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero5_1">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero6_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero7_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero8_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero9_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero10_1">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero11_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero12_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero13_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero14_1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero15_1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>15</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label>Ganhador</label>
+                                            <input class="form-control text-right" id="txtQtdeGanhadores15pts_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <label class="text-center w-100">Valor em R$</label>
+                                            <input class="form-control text-right" id="txtValorGanhadores15pts_1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>14</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores14pts_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores14pts_1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>13</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores13pts_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores13pts_1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>12</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores12pts_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores12pts_1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>11</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores11pts_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores11pts_1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col-12">
+                                        <div class="form-group row form-row">
+                                            <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                            <div class="col-9">
+                                                <input class="form-control" id="txtValorAcumulado1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6" style="border-left:15px solid #471541">
+                                <div class="row form-row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Concurso</label>
+                                            <input class="form-control" id="txtNumeroConcurso2">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Data</label>
+                                            <input class="form-control" id="txtDataConcurso2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col-12">
+                                        <div class="form-group" style="margin-right: -17%;">
+                                            <label>Números sorteados</label>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero1_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero2_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero3_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero4_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero5_2">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero6_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero7_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero8_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero9_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero10_2">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero11_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero12_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero13_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero14_2">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control text-center" id="txtNumero15_2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>15</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label>Ganhador</label>
+                                            <input class="form-control text-right" id="txtQtdeGanhadores15pts_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <label class="text-center w-100">Valor em R$</label>
+                                            <input class="form-control text-right" id="txtValorGanhadores15pts_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>14</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores14pts_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores14pts_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>13</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores13pts_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores13pts_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>12</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores12pts_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores12pts_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row align-items-end">
+                                    <div class="col-2 text-right pb-3">
+                                        <span>11</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtQtdeGanhadores11pts_2">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control text-right" id="txtValorGanhadores11pts_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col-12">
+                                        <div class="form-group row form-row">
+                                            <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                            <div class="col-9">
+                                                <input class="form-control" id="txtValorAcumulado2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card card-quina">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>Quina</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso1">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números sorteados</label>
+                                    <div class="row" style="margin-right: -15%;">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero1_1" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero2_1" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero3_1" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero4_1" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero5_1" style="width: 115%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quina</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuina1">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuina1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quadra</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuadra1">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuadra1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Terno</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresTerno1">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresTerno1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Duque</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresDuque1">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresDuque1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group row form-row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-12">
+                    <hr />
+                </div>
+
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso2">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números sorteados</label>
+                                    <div class="row" style="margin-right: -15%;">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero1_2" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero2_2" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero3_2" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero4_2" style="width: 115%;">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero5_2" style="width: 115%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quina</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuina2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuina2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quadra</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresQuadra2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresQuadra2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Terno</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresTerno2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresTerno2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Duque</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadoresDuque2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadoresDuque2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group row form-row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-3" style="margin-top: -16%;">
+            <div class="card card-loteca">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>loteca</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>1</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_1">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_1">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>2</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_2">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_2">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>3</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_3">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_3">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>4</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_4">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_4">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>5</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_5">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_5">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>6</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_6">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_6">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>7</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_7">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_7">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_7">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>8</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_8">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_8">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_8">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>9</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_9">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_9">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_9">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>10</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_10">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_10">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>11</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_11">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_11">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_11">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>12</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_12">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_12">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>13</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_13">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_13">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_13">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>14</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero0_14">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero1_14">
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtNumero2_14">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-2 text-right pt-5">14  Acertos</label>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label>Ganhador</label>
+                                            <input class="form-control text-right" id="txtQtdeGanhadores14pts">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <label>Valor em R$</label>
+                                            <input class="form-control text-right" id="txtValorGanhadores14pts">
+                                        </div>
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-2 text-right pt-5">13 Acertos</label>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label>Ganhador</label>
+                                            <input class="form-control text-right" id="txtQtdeGanhadores13pts">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <label>Valor em R$</label>
+                                            <input class="form-control text-right" id="txtValorGanhadores13pts">
+                                        </div>
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3" style="margin-top: -5.5%;">
+            <div class="card card-timemania">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria-timemania.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>timemania</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números sorteados</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero1">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero2">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero3">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero4">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero5">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero6">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero7">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>7 números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadores7pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-right w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadores7pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>6 números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores6pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores6pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>5 números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores5pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores5pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>4 números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores4pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores4pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>3 números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores3pts">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores3pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left pb-3">
+                                <span>Time sorteado</span>
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresTimeSorteado">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-3">
+                                        <label for="" class="text-right pt-5">Time do coração</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label>Ganhador</label>
+                                            <input class="form-control" id="txtQtdeGanhadoresTimeCoracao">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Valor em R$</label>
+                                            <input class="form-control text-right" id="txtValorGanhadoresTimeCoracao">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-8">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2" style="margin-top: -10%;">
+            <div class="card card-dupla-sena">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>dupla-sena</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>1° Sorteio - números sorteados</label>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero1">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero2">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero3">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero4">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero5">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Sena</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhadores</label>
+                                    <input class="form-control" id="txtQtdeGanhadoresSena">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control" id="txtValorGanhadoresSena">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quina</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresQuina">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresQuina">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quadra</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresQuadra">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresQuadra">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Terno</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresTerno">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresTerno">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>2° Sorteio - números sorteados</label>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero7">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero8">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero9">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero10">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero11">
+                                        </div>
+                                        <div class="col-2">
+                                            <input class="form-control text-center" id="txtNumero12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Sena</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhadores</label>
+                                    <input class="form-control" id="txtQtdeGanhadoresSena2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control" id="txtValorGanhadoresSena2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quina</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresQuina2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresQuina2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Quadra</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresQuadra2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresQuadra2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-2 text-right pb-3">
+                                <span>Terno</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtQtdeGanhadoresTerno2">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtValorGanhadoresTerno2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-12">Acumulado para o 1° sorteio</label>
+                                    <div class="col-9" style="margin-left: 25%;">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2" style="margin-top: -10%;">
+            <div class="card card-super-sete">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>super-sete</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números sorteados</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero1" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero2" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero3" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero4" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero5" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero6" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero7" style="width: 125%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left">
+                                <div class="form-group">
+                                    <br />
+                                    <label>7 acertos</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadores7pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadores7pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left">
+                                <div class="form-group">
+                                    <br />
+                                    <label>6 acertos</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores6pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores6pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left">
+                                <div class="form-group">
+                                    <br />
+                                    <label>5 acertos</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores5pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores5pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left">
+                                <div class="form-group">
+                                    <br />
+                                    <label>4 acertos</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores4pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores4pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-left">
+                                <div class="form-group">
+                                    <br />
+                                    <label>3 acertos</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores3pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores3pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-8">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2" style="margin-top: 0.5%;">
+            <div class="card card-dia-de-sorte">
+                <div class="card-header">
+                    <h2>
+                        <img src="/img/icone-loteria.svg" class="mr-2" width="40" alt="ícone Loteria" />
+                        <span>dia de sorte</span>
+                    </h2>
+                </div>
+
+                <div class="card-body">
+                    <form>
+                        <div class="row form-row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Concurso</label>
+                                    <input class="form-control" id="txtNumeroConcurso">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input class="form-control" id="txtDataConcurso">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Números sorteados</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero1" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero2" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero3" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero4" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero5" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero6" style="width: 125%;">
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control text-center" id="txtNumero7" style="width: 125%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-right pb-3">
+                                <span>7 Números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Ganhador</label>
+                                    <input class="form-control text-right" id="txtQtdeGanhadores7pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="text-center w-100">Valor em R$</label>
+                                    <input class="form-control text-right" id="txtValorGanhadores7pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-right pb-3">
+                                <span>6 Números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores6pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores6pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-right pb-3">
+                                <span>5 Números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores5pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores5pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row align-items-end">
+                            <div class="col-3 text-right pb-3">
+                                <span>4 Números</span>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtQtdeGanhadores4pts">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input class="form-control text-right" id="txtValorGanhadores4pts">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label>Mês sorteado</label>
+                                            <input class="form-control" id="txtNumMesSorteado">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label>Ganhadores</label>
+                                            <input class="form-control" id="txtNumGanhadores">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label>Valor em R$</label>
+                                            <input class="form-control" id="txtValorTotal">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-row">
+                            <div class="col-12">
+                                <div class="form-group row form-row">
+                                    <label for="" class="col-3 col-form-label" style="margin-top: -1%;">Acumulado</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="txtValorAcumulado">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-4">
+            <img src="/img/caixagovbr.png" />
+        </div>
+        <div class="col-1" style="margin-left: -11%">
+            <img src="/img/bsi_27001.png" width="400" />
+        </div>
+        <div class="col-4" style="margin-left: 6%">
+            <img src="/img/wla_transparente.png" width="1100" />
+        </div>
+        <div class="col-2" style="margin-left: -6%;">
+            <img src="/img/SAC_CAIXA.png" />
+        </div>
+    </div>
+</div>

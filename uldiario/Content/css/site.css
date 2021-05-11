@@ -1,0 +1,281 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.body-principal {
+    background: url('../../img/funco_trevos_apagados.png');
+    background-size: 60%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+
+body {
+    background-color: #321d80;
+}
+
+h1 {
+    color: #ffffff;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.card h2 {
+    font-family: 'Syne', sans-serif;
+    color: #ffffff;
+}
+
+.card h2 span {
+    font-size: 2.525rem;
+}
+
+.card input {
+    border: none;
+    font-size: 3.125rem;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.card label,
+.card span {
+    font-family: 'Calibri', sans-serif;
+    font-size: 2.525rem;
+    color: #ffffff;
+}
+
+/*MEGA-SENA*/
+.card.card-mega-sena {
+    background-color: #066C3A;
+}
+
+    .card.card-mega-sena .card-header {
+        background-color: #00612A;
+        border: none;
+    }
+
+/*LOTOMANIA*/
+.card.card-lotomania {
+    background-color: #D59809;
+}
+
+    .card.card-lotomania .card-header {
+        background-color: #BA5016;
+        border: none;
+    }
+
+/*LOTOfácil*/
+.card.card-lotofacil {
+    background-color: #571F50;
+}
+
+    .card.card-lotofacil .card-header {
+        background-color: #46183C;
+        border: none;
+    }
+
+/*QUINA*/
+.card.card-quina {
+    background-color: #172A64;
+}
+
+    .card.card-quina .card-header {
+        background-color: #1A184A;
+        border: none;
+    }
+
+    .card.card-quina hr {
+        border-top: 5px solid rgba(0,0,0,.3);
+    }
+
+/*LOTECA*/
+.card.card-loteca {
+    background-color: #B73825;
+}
+
+    .card.card-loteca .card-header {
+        background-color: #A32619;
+        border: none;
+    }
+
+    .card.card-loteca hr {
+        border-top: 5px solid rgba(0,0,0,.3);
+    }
+
+/*TIMEMANIA*/
+.card.card-timemania {
+    background-color: #FDEE1F;
+}
+
+    .card.card-timemania .card-header {
+        background-color: #D8C303;
+        border: none;
+    }
+
+    .card.card-timemania label,
+    .card.card-timemania span {
+        color: #256C44;
+    }
+
+/*DUPLA-SENA*/
+.card.card-dupla-sena {
+    background-color: #7B393A;
+}
+
+    .card.card-dupla-sena .card-header {
+        background-color: #52372C;
+        border: none;
+    }
+
+/*LOTOGOL*/
+.card.card-lotogol {
+    background-color: #3A8BB6;
+}
+
+    .card.card-lotogol .card-header {
+        background-color: #1F7D9F;
+        border: none;
+    }
+
+    .card.card-lotogol hr {
+        border-top: 5px solid rgba(0,0,0,.3);
+    }
+
+/*DIA DE SORTE*/
+.card.card-dia-de-sorte {
+    background-color: #DDD374;
+}
+
+    .card.card-dia-de-sorte .card-header {
+        background-color: #B6A50D;
+        border: none;
+    }
+
+    .card.card-dia-de-sorte hr {
+        border-top: 5px solid rgba(0,0,0,.3);
+    }
+
+    .card.card-dia-de-sorte label,
+    .card.card-dia-de-sorte span {
+        color: #282828;
+    }
+/*Super Sete*/
+.card.card-super-sete {
+    background-color: #a4ff60;
+}
+
+    .card.card-super-sete .card-header {
+        background-color: #9be24d;
+        border: none;
+    }
+
+    .card.card-super-sete hr {
+        border-top: 5px solid rgba(0,0,0,.3);
+    }
+
+    .card.card-super-sete label,
+    .card.card-super-sete span {
+        color: #282828;
+    }
+
+
+.container-fluid {
+    width: 100%;
+    padding: 0px 100px 100px 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.titulo-principal {
+    color: #ffffff;
+    font-size: 12.675rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: -1%;
+}
+
+
+.container-fluid-mobile {
+    width: 100%;
+    padding: 0px 50px 50px 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.titulo-principal-mobile {
+    color: #ffffff;
+    font-size: 4.675rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: -1%;
+}
+
+
