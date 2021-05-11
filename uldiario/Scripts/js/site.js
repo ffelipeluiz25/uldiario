@@ -103,6 +103,7 @@ function CarregarTela() {
                 PreencheResultadosDuplaSena(resultado);
                 PreencheResultadosSuperSete(resultado);
                 PreencheResultadosDiaDeSorte(resultado);
+
             }
             else
                 alert(resultado.mensagem);
